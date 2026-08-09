@@ -6,12 +6,12 @@ aaa = 26
 ab = 
 ac = random.exe
 ad = copy C:\registry\backspacekey c:\tester
-andfinder = 12
+andfinder = 2
 arrc = 10
 backspace = down arrow
 bedit =   
 cc = 0
-cccccc = 1
+cccccc = 6
 Command? = 0
 Count = 14
 counta = 0
@@ -27,13 +27,13 @@ dd3 = 14
 dte = hhC:\Program\matrixrain.exe
 EDITMODE = 0
 emacs = 12
-exenow = color ffffff
+exenow = ^C
 fcc = 40
 firstclick = 
 hideANS = 0
 INSMODE = 0
-instring =   
-JOINSTRING NO = 12
+instring = ascacs
+JOINSTRING NO = 3
 JOINSTRING STRING = 
 jssb = C:\Program
 lastclick = 
@@ -44,8 +44,8 @@ max = 0
 maxscroll = 0
 nextexe = 
 olddir = c:\
-org = color ffffff
-orgmode = color
+org = ^C
+orgmode = ^C
 Q-text = 
 Scanner-CT = 1
 scroll = 0
@@ -106,7 +106,7 @@ Data = {
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    31159
+    9146
 }
 dcaps = { 
     0111010001100011111110001100011000100000

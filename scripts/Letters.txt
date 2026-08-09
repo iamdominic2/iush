@@ -1198,7 +1198,7 @@ Define Megakey (warp=false)
     {
         If Sensing.KeyPressed(c)
         {
-            Call INSERT at character(cursor location) string("^C") oldstring(TextEdit);
+            Call INSERT at character(cursor location) string("") oldstring(TextEdit);
             TextEdit = Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ">"), instring);
             List.Add(cm, TextEdit);
             Call execute(TextEdit) skip new("") SIGINT("^C");
