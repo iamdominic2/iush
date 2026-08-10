@@ -22,6 +22,6 @@ Classic spaced repetition active recall. For students and learners alike.
 1.01: Suspend and exit
 1.1: Wrong linear interpolation bug fixed, freeze on G + Item #0 fixed
 1.2: Undesirible registeration of "q" and "a" into text fields when using them as quick triggers to edit fixed.
-1.3: Integration into iush, with a command to exit,  remapped some keybinds like Delete to "-" to account for the fact that some keyboards don't have such physical keys
+1.3: Integration into iush, with a command to exit,  remapped some keybinds like Delete to "-" to account for the fact that some keyboards don't have such physical keys, fixed broken Optimal-factor matrix
 
 *Note: Domemory save data is only lost on Reload*
