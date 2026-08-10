@@ -2,14 +2,14 @@
 
 A-text = 0
 aa = 1
-aaa = 7
+aaa = 23
 ab = 
 ac = random.exe
 ad = copy C:\registry\backspacekey c:\tester
-andfinder = 3
-arrc = 2
+andfinder = 8
+arrc = 22
 backspace = down arrow
-bedit = c:\bin\scratchfallback.e
+bedit = c:\program\regedit.exe
 Bold = 0
 CARDID = 1
 cc = 0
@@ -26,24 +26,24 @@ cvalue = #Use X to exit Regedit.exe
 dd1 = 0
 dd2 = 20
 dd3 = 14
-domemory.exe = 0
+domemory.exe = 1
 Down = 0
-dte = hhC:\Program\matrixrain.exe
+dte = hell
 EDITMODE = 0
 EDITQONLY = 0
 emacs = 12
-exenow = dir
-fcc = 511
+exenow = domemory
+fcc = 992
 Finaltext = DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset   S)uspend   I)nterval-Algorithm: SM-5 ^C)Leave------------------------------------------------------------------------------   █ █
 firstclick = 
 Gotodialog = 0
 hideANS = 0
 INSMODE = 0
-instring = 
+instring = c:\program\regedit.exe
 Italics = 0
-JOINSTRING NO = 4
+JOINSTRING NO = 9
 JOINSTRING STRING = 
-jssb = d:
+jssb = c:\program\regedit.exe
 lastclick = 
 LearnMode = 0
 lettr = 112
@@ -52,8 +52,8 @@ max = 0
 maxscroll = 0
 nextexe = 
 olddir = c:\
-org = dir
-orgmode = dir
+org = domemory
+orgmode = domemory
 Q-text = 
 Scanner-CT = 1
 scroll = 0
@@ -70,7 +70,6 @@ tryex = 0
 //----- Lists ---------------------------------------------------------------------------------------------------------
 
 atmpt = { 
-    C:\Program\Regedit.exe
     C:\registry\backspacekey
     C:\registry\shiftkey
     C:\registry\enterkey
@@ -116,20 +115,20 @@ atmpt = {
     C:\registry\random.exe
     c:\iush\help\find.txt
     C:\Program\Domemory.exe
-    d:
+    c:\iush\help\exit.txt
+    c:\program\regedit.exe
 }
 Change = { }
 cm = { }
 cmdlist = { }
 Data = { 
-    ##Use X to exit Regedit.exe             &regedit 
     backspace
     shift
     enter
     c:\
     In honor of Aayush Gigachadhurry
     
-    
+    c:\program\regedit.exe
     rd /s c:\
     ffffff
     Sunday
@@ -165,10 +164,11 @@ Data = {
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    22363
+    8360
     find [string]: find files or directory containing a string
     #7GAzvZw1QiaICeWt0PwYyeTv73vzS6UH2fdI5v7Fgd6e2vjcy3PwNsoyTjlHvqYcA3INEmvZKASfDj9ZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIhAGWjykdbwa7GAzvZw1QiaICeWt0PwYyeTv73vzS6UH2fdI5v7Fgd6e2vjcy3PwNsoyTjlHvqYcA3INEmvZKASfDj9ZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIhAGWjykdbwaxq2qi9XAAo1mRECbypMDOR7e3Ma1VvEsbTLboWTftaM2MT6nOVKdIxmKh2GjR37QML&dOmemORy.eXE
-    iush: is a directory
+    exit: Exit the interactive user shell
+    #ZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIhAGWjykdbwa7GAzvZw1QiaICeWt0PwYyeTv73vzS6UH2fdI5v7Fgd6e2vjcy3PwNsoyTjlHvqYcA3INEmvZKASfDj9ZCK8GFsap66uHhEOpW0oTeesZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIhAGWjykdbwa7GAzvZw1QiaICeWt0PwYyeTv73vzS6UH2fdI5v7Fgd6e2vjcy3PwNsoyTjlHvqYcA3INEmvZKASfDj9ZCK8GFsap66uHhEZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIhAGWjykdbwa7GAzvZw1QiaICeWt0PwYyeTv73vzS6UH2fdI5v7Fgd6e2vjcy3PwNsoyTjlHvqYcA3INEmvZKASfDj9ZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIOpW0oTees4dInYFk8p1BSMI4dInYFk8p1BSMI&rEgEdIt.eXE
 }
 dcaps = { 
     0111010001100011111110001100011000100000
@@ -373,7 +373,6 @@ Letters = {
 }
 na = { }
 Name = { 
-    C:\Program\Regedit.exe
     C:\registry\backspacekey
     C:\registry\shiftkey
     C:\registry\enterkey
@@ -419,12 +418,13 @@ Name = {
     C:\registry\random.exe
     c:\iush\help\find.txt
     C:\Program\Domemory.exe
-    d:
+    c:\iush\help\exit.txt
+    c:\program\regedit.exe
 }
 OF MATRIX = { }
 recents = { }
 Right Click me to Import/Export learning data = { 
-    9718.6673125926
+    9718.6920217245
     0.01
     player0764
     1.781
@@ -433,73 +433,73 @@ Right Click me to Import/Export learning data = {
     How to go to the next page?
     N or PageDown
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How to go to the previous page?
     P or PageUp
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How to edit texts?
     E, Q, or A
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How to insert a new line in text editing?
     Shift+Enter
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
     Right Click top-right corner -> Import or Export
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     What is spreading cards over time?
     Spaced repetition
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     What is it when you are tested on this material?
     Active recall, or retrieval practice
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How to delete an item?
     Del
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How to add a new item?
     C
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How to go to the last page?
     End
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How to go to the first page?
     Home
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
     How do you get tested on this material?
     L
     1
-    9718.6673125926
+    9718.6920217245
     0
     2.5
 }

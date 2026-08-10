@@ -935,7 +935,7 @@ Define Key(string s) (warp=false)
     {
         If (Not ((((Data[List.IndexOf(Name, "C:\registry\controlkey")] == s) Or (Data[List.IndexOf(Name, "C:\registry\enterkey")] == s)) Or ((Data[List.IndexOf(Name, "C:\registry\shiftkey")] == s) Or (Data[List.IndexOf(Name, "C:\registry\backspacekey")] == s)))))
         {
-            If (Variable.Length(TextEdit) < 100)
+            If (Variable.Length(TextEdit) < 1000)
             {
                 If (Not (Sensing.KeyPressed(s)))
                 {
