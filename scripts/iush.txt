@@ -71,20 +71,14 @@ WhenGreenFlagClicked()
 {
     Forever
     {
-        If (cursor location > (Variable.Length(TextEdit) + 1))
-        {
-            cursor location += -1;
-        }
-        If (cursor location == 0)
-        {
-            cursor location = 1;
-        }
+        Call mvv;
     }
 }
 
 WhenGreenFlagClicked()
 {
     List.Hide(Name);
+    List.Hide(Right Click me to Import/Export learning data);
     List.Hide(Data);
     If ((Not (is compiled?)) And (Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")] == "emH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4torJHk"))
     {
@@ -124,63 +118,89 @@ WhenKeyPressed(left arrow)
 
 WhenKeyPressed(right arrow)
 {
-    If ((EDITMODE < 3) Or (EDITMODE == 6))
+    If (domemory.exe == 0)
     {
-        cursor location += 1;
-        If (cursor location > (Variable.Length(TextEdit) + 1))
+        If ((EDITMODE < 3) Or (EDITMODE == 6))
         {
-            cursor location += -1;
+            cursor location += 1;
+            If (cursor location > (Variable.Length(TextEdit) + 1))
+            {
+                cursor location += -1;
+            }
         }
     }
 }
 
 WhenKeyPressed(up arrow)
 {
-    If Sensing.KeyPressed(up arrow)
+    If (domemory.exe == 0)
     {
-        If (counta > 1)
+        If Sensing.KeyPressed(up arrow)
         {
-            counta += -1;
-            TextEdit = recents[counta];
-            cursor location = (Variable.Length(recents[counta]) + 1);
-        }
-    }
-    Else
-    {
-        If (scroll > 0)
-        {
-            scroll += -1;
+            If (counta > 1)
+            {
+                counta += -1;
+                TextEdit = recents[counta];
+                cursor location = (Variable.Length(recents[counta]) + 1);
+            }
         }
         Else
         {
+            If (scroll > 0)
+            {
+                scroll += -1;
+            }
+            Else
+            {
+            }
         }
     }
 }
 
 WhenKeyPressed(v)
 {
-    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
+    If (domemory.exe == 0)
     {
-        Event.Broadcast("PASTE");
+        If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
+        {
+            Event.Broadcast("PASTE");
+        }
     }
 }
 
 WhenKeyPressed(down arrow)
 {
-    If Sensing.KeyPressed(down arrow)
+    If (domemory.exe == 0)
     {
-        If ((counta - 1) < List.Length(recents))
+        If Sensing.KeyPressed(down arrow)
         {
-            counta += 1;
-            TextEdit = recents[counta];
-            cursor location = (Variable.Length(recents[counta]) + 1);
+            If ((counta - 1) < List.Length(recents))
+            {
+                counta += 1;
+                TextEdit = recents[counta];
+                cursor location = (Variable.Length(recents[counta]) + 1);
+            }
+        }
+        Else
+        {
+            If (scroll < List.Length(cm))
+            {
+                scroll += 1;
+            }
+            Else
+            {
+            }
         }
     }
-    Else
+}
+
+WhenKeyPressed(page up)
+{
+    If (domemory.exe == 0)
     {
-        If (scroll < List.Length(cm))
+        If is compiled?
         {
-            scroll += 1;
+            Call pgup;
         }
         Else
         {
@@ -188,25 +208,17 @@ WhenKeyPressed(down arrow)
     }
 }
 
-WhenKeyPressed(page up)
-{
-    If is TurboWarp?
-    {
-        Call pgup;
-    }
-    Else
-    {
-    }
-}
-
 WhenKeyPressed(page down)
 {
-    If is TurboWarp?
+    If (domemory.exe == 0)
     {
-        Call pgd;
-    }
-    Else
-    {
+        If is TurboWarp?
+        {
+            Call pgd;
+        }
+        Else
+        {
+        }
     }
 }
 
@@ -215,9 +227,12 @@ WhenKeyPressed(page down)
 
 WhenBroadcastReceived(PASTE)
 {
-    Call INSERT at character(cursor location) string(Data[List.IndexOf(Name, "C:\registry\clipboard")]) oldstring(TextEdit);
-    TextEdit = instring;
-    cursor location += Variable.Length(Data[List.IndexOf(Name, "C:\registry\clipboard")]);
+    If (domemory.exe == 0)
+    {
+        Call INSERT at character(cursor location) string(Data[List.IndexOf(Name, "C:\registry\clipboard")]) oldstring(TextEdit);
+        TextEdit = instring;
+        cursor location += Variable.Length(Data[List.IndexOf(Name, "C:\registry\clipboard")]);
+    }
 }
 
 
@@ -799,14 +814,23 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                 }
                                                                                                                 Else
                                                                                                                 {
-                                                                                                                    If (((List.ContainsItem(Name, JOINSTRING STRING) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)]))) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)])))) And (tryex == 0))
+                                                                                                                    If ((JOINSTRING STRING == "domemory") Or (JOINSTRING STRING == "domemory"))
                                                                                                                     {
-                                                                                                                        tryex = 1;
-                                                                                                                        Call execute(Data[List.IndexOf(Name, TextEdit)]) skip new("") SIGINT("");
+                                                                                                                        Stop(other scripts in sprite);
+                                                                                                                        Event.BroadcastAndWait("Domemory.exe");
+                                                                                                                        Stop(this script);
                                                                                                                     }
                                                                                                                     Else
                                                                                                                     {
-                                                                                                                        List.Add(cm, Operator.Join(Operator.Join("iush: fatal: ", JOINSTRING STRING), ": command not found"));
+                                                                                                                        If (((List.ContainsItem(Name, JOINSTRING STRING) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)]))) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)])))) And (tryex == 0))
+                                                                                                                        {
+                                                                                                                            tryex = 1;
+                                                                                                                            Call execute(Data[List.IndexOf(Name, TextEdit)]) skip new("") SIGINT("");
+                                                                                                                        }
+                                                                                                                        Else
+                                                                                                                        {
+                                                                                                                            List.Add(cm, Operator.Join(Operator.Join("iush: fatal: ", JOINSTRING STRING), ": command not found"));
+                                                                                                                        }
                                                                                                                     }
                                                                                                                 }
                                                                                                             }
@@ -985,7 +1009,7 @@ Define ls(string skip) rd(string y) cnt(string nn) (warp=false)
         Count += 1;
         If (nn == "find")
         {
-            If Operator.Contains(Name[Count], TextEdit)
+            If (Operator.Contains(Name[Count], TextEdit) And (Not ((Name[Count] == "c:"))))
             {
                 List.Add(cm, Name[Count]);
             }
@@ -1252,6 +1276,18 @@ Define Megakey (warp=false)
             Control.Wait(0.1);
         }
         cursor location = (1 + Variable.Length(TextEdit));
+    }
+}
+
+Define mvv (warp=true)
+{
+    Repeat Until (Not ((cursor location > (Variable.Length(TextEdit) + 1))))
+    {
+        cursor location += -1;
+    }
+    If (cursor location == 0)
+    {
+        cursor location = 1;
     }
 }
 

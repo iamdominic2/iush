@@ -1,20 +1,22 @@
 //----- Variables -----------------------------------------------------------------------------------------------------
 
-A-text = 8
+A-text = 0
 aa = 1
 aaa = 7
 ab = 
 ac = random.exe
 ad = copy C:\registry\backspacekey c:\tester
-andfinder = 5
-arrc = 7
+andfinder = 3
+arrc = 2
 backspace = down arrow
 bedit = c:\bin\scratchfallback.e
+Bold = 0
+CARDID = 1
 cc = 0
 cccccc = 1
 Command? = 0
-Count = 15
-counta = 4
+Count = 14
+counta = 0
 Counter = 40
 Counting = 0
 ctletterc = 0
@@ -22,35 +24,42 @@ CURITEM = 1
 cursor location = 1
 cvalue = #Use X to exit Regedit.exe 
 dd1 = 0
-dd2 = 116
-dd3 = 15
+dd2 = 20
+dd3 = 14
+domemory.exe = 0
+Down = 0
 dte = hhC:\Program\matrixrain.exe
 EDITMODE = 0
+EDITQONLY = 0
 emacs = 12
-exenow = cd b:
+exenow = dir
 fcc = 511
+Finaltext = DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset   S)uspend   I)nterval-Algorithm: SM-5 ^C)Leave------------------------------------------------------------------------------   █ █
 firstclick = 
+Gotodialog = 0
 hideANS = 0
 INSMODE = 0
-instring = c:\bin\scratchfallback.e
-JOINSTRING NO = 5
-JOINSTRING STRING = b:
-jssb = c:\test
+instring = 
+Italics = 0
+JOINSTRING NO = 4
+JOINSTRING STRING = 
+jssb = d:
 lastclick = 
 LearnMode = 0
-lettr = 120
+lettr = 112
 lsct = 0
 max = 0
 maxscroll = 0
 nextexe = 
 olddir = c:\
-org = cd b:
-orgmode = cd
-Q-text = ☙c:\>b:☙iush: is a directory☙☙c:\>rd b:☙☙c:\>cd b:☙iush: fatal: file or directory non-existent☙
+org = dir
+orgmode = dir
+Q-text = 
 Scanner-CT = 1
 scroll = 0
+SECONDBAR = 
 shift = up arrow
-STATUS BAR = [PRESENT]   Day=9708.66  ID=1  Int=9  Due=9 (9699.67)  Streak=11  AF=12 
+STATUS BAR = [PRESENT]   Day=0  ID=1  Int=1  Due=0 (0.01)  Streak=0  AF=2.5 
 tcp = backspace
 TextEdit = 
 tmdir = c:\
@@ -106,17 +115,11 @@ atmpt = {
     C:\Program
     C:\registry\random.exe
     c:\iush\help\find.txt
+    C:\Program\Domemory.exe
+    d:
 }
-cm = { 
-    c:\>b:
-    iush: is a directory
-    
-    c:\>rd b:
-    
-    c:\>cd b:
-    iush: fatal: file or directory non-existent
-    
-}
+Change = { }
+cm = { }
 cmdlist = { }
 Data = { 
     ##Use X to exit Regedit.exe             &regedit 
@@ -162,8 +165,10 @@ Data = {
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    16765
+    22363
     find [string]: find files or directory containing a string
+    #7GAzvZw1QiaICeWt0PwYyeTv73vzS6UH2fdI5v7Fgd6e2vjcy3PwNsoyTjlHvqYcA3INEmvZKASfDj9ZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIhAGWjykdbwa7GAzvZw1QiaICeWt0PwYyeTv73vzS6UH2fdI5v7Fgd6e2vjcy3PwNsoyTjlHvqYcA3INEmvZKASfDj9ZCK8GFsap66uHhEOpW0oTees4dInYFk8p1BSMIhAGWjykdbwaxq2qi9XAAo1mRECbypMDOR7e3Ma1VvEsbTLboWTftaM2MT6nOVKdIxmKh2GjR37QML&dOmemORy.eXE
+    iush: is a directory
 }
 dcaps = { 
     0111010001100011111110001100011000100000
@@ -194,8 +199,6 @@ dcaps = {
     1111100001000100010001000100001111100000
 }
 Dueness = { 
-    1
-    2
     3
     4
     5
@@ -206,7 +209,6 @@ Dueness = {
     10
     11
     12
-    13
 }
 font = { 
     0000000000011100000101111100010111100000
@@ -416,11 +418,90 @@ Name = {
     C:\Program
     C:\registry\random.exe
     c:\iush\help\find.txt
+    C:\Program\Domemory.exe
+    d:
 }
-recents = { 
-    b:
-    rd b:
-    cd b:
+OF MATRIX = { }
+recents = { }
+Right Click me to Import/Export learning data = { 
+    9718.6673125926
+    0.01
+    player0764
+    1.781
+    9.456
+    0
+    How to go to the next page?
+    N or PageDown
+    1
+    9718.6673125926
+    0
+    2.5
+    How to go to the previous page?
+    P or PageUp
+    1
+    9718.6673125926
+    0
+    2.5
+    How to edit texts?
+    E, Q, or A
+    1
+    9718.6673125926
+    0
+    2.5
+    How to insert a new line in text editing?
+    Shift+Enter
+    1
+    9718.6673125926
+    0
+    2.5
+    REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
+    Right Click top-right corner -> Import or Export
+    1
+    9718.6673125926
+    0
+    2.5
+    What is spreading cards over time?
+    Spaced repetition
+    1
+    9718.6673125926
+    0
+    2.5
+    What is it when you are tested on this material?
+    Active recall, or retrieval practice
+    1
+    9718.6673125926
+    0
+    2.5
+    How to delete an item?
+    Del
+    1
+    9718.6673125926
+    0
+    2.5
+    How to add a new item?
+    C
+    1
+    9718.6673125926
+    0
+    2.5
+    How to go to the last page?
+    End
+    1
+    9718.6673125926
+    0
+    2.5
+    How to go to the first page?
+    Home
+    1
+    9718.6673125926
+    0
+    2.5
+    How do you get tested on this material?
+    L
+    1
+    9718.6673125926
+    0
+    2.5
 }
 
 
