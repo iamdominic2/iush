@@ -1,20 +1,20 @@
 //----- Variables -----------------------------------------------------------------------------------------------------
 
-A-text = 0
+A-text = 8
 aa = 1
-aaa = 26
+aaa = 7
 ab = 
 ac = random.exe
 ad = copy C:\registry\backspacekey c:\tester
-andfinder = 2
-arrc = 10
+andfinder = 5
+arrc = 7
 backspace = down arrow
-bedit =   
+bedit = c:\bin\scratchfallback.e
 cc = 0
-cccccc = 6
+cccccc = 1
 Command? = 0
-Count = 14
-counta = 0
+Count = 15
+counta = 4
 Counter = 40
 Counting = 0
 ctletterc = 0
@@ -22,31 +22,31 @@ CURITEM = 1
 cursor location = 1
 cvalue = #Use X to exit Regedit.exe 
 dd1 = 0
-dd2 = 20
-dd3 = 14
+dd2 = 116
+dd3 = 15
 dte = hhC:\Program\matrixrain.exe
 EDITMODE = 0
 emacs = 12
-exenow = ^C
-fcc = 40
+exenow = cd b:
+fcc = 511
 firstclick = 
 hideANS = 0
 INSMODE = 0
-instring = ascacs
-JOINSTRING NO = 3
-JOINSTRING STRING = 
-jssb = C:\Program
+instring = c:\bin\scratchfallback.e
+JOINSTRING NO = 5
+JOINSTRING STRING = b:
+jssb = c:\test
 lastclick = 
 LearnMode = 0
-lettr = 112
-lsct = 43
+lettr = 120
+lsct = 0
 max = 0
 maxscroll = 0
 nextexe = 
 olddir = c:\
-org = ^C
-orgmode = ^C
-Q-text = 
+org = cd b:
+orgmode = cd
+Q-text = ☙c:\>b:☙iush: is a directory☙☙c:\>rd b:☙☙c:\>cd b:☙iush: fatal: file or directory non-existent☙
 Scanner-CT = 1
 scroll = 0
 shift = up arrow
@@ -60,7 +60,63 @@ tryex = 0
 
 //----- Lists ---------------------------------------------------------------------------------------------------------
 
-cm = { }
+atmpt = { 
+    C:\Program\Regedit.exe
+    C:\registry\backspacekey
+    C:\registry\shiftkey
+    C:\registry\enterkey
+    C:\registry\workingdirectory
+    C:\registry\catchphrase
+    C:\registry\firstclick
+    C:\registry\clipboard
+    C:\bin\keepcalmandrmrf
+    C:\registry\color
+    C:\bin\dayofweek1
+    C:\bin\dayofweek2
+    C:\bin\dayofweek3
+    C:\bin\dayofweek4
+    C:\bin\dayofweek5
+    C:\bin\dayofweek6
+    C:\bin\dayofweek7
+    c:\bin
+    c:\registry
+    c:\
+    C:\registry\controlkey
+    c:\iush\help\.txt
+    c:\iush\help\cls.txt
+    c:\iush\help\pwd.txt
+    c:\iush\help\cd.txt
+    c:\iush
+    c:\iush\help
+    c:\iush\help\rd.txt
+    c:
+    c:\iush\help\set.txt
+    c:\iush\help\cd ...txt
+    c:\iush\help\rd /s.txt
+    c:\iush\help\del.txt
+    c:\iush\help\echo.txt
+    c:\iush\help\date.txt
+    c:\iush\help\time.txt
+    c:\iush\help\color.txt
+    c:\iush\help\help.txt
+    c:\bin\scratchfallback.exe
+    c:\iush\help\scratchkeys.txt
+    c:\README.txt
+    C:\Program\matrixrain.exe
+    C:\Program
+    C:\registry\random.exe
+    c:\iush\help\find.txt
+}
+cm = { 
+    c:\>b:
+    iush: is a directory
+    
+    c:\>rd b:
+    
+    c:\>cd b:
+    iush: fatal: file or directory non-existent
+    
+}
 cmdlist = { }
 Data = { 
     ##Use X to exit Regedit.exe             &regedit 
@@ -84,7 +140,7 @@ Data = {
     iush: is a directory
     iush: is a directory
     control
-    supported commands: cd pwd c: dir md rd set write copy move del echo cls date time color help exit
+    supported commands: cd pwd c: dir find md rd set write copy move del echo cls date time color help exit
     cls: Clear all output text from screen
     pwd: Print the current working directory path
     cd [path]: change the current working directory, syntax: cd [path] (cd .. to go to parent)
@@ -106,7 +162,8 @@ Data = {
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    9146
+    16765
+    find [string]: find files or directory containing a string
 }
 dcaps = { 
     0111010001100011111110001100011000100000
@@ -358,8 +415,13 @@ Name = {
     C:\Program\matrixrain.exe
     C:\Program
     C:\registry\random.exe
+    c:\iush\help\find.txt
 }
-recents = { }
+recents = { 
+    b:
+    rd b:
+    cd b:
+}
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
