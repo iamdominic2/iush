@@ -3,18 +3,36 @@
 **LINK: https://iamdominic2.github.io/iush/**
 
 It stands for ***i***nteractive ***u***ser ***sh***ell, in honor of my best friend at school Aayush.
-
-Supported commands: `cd pwd c: dir md rd set write copy del echo cls date time color help exit find`
-
-Built-in programs:
-c:\program\matrixrain.exe
-c:\program\notepad.exe (Command: `Notepad \[optimal: file\]` )
-c:\program\paint.exe (Command: `Paint \[optimal: file\]` )
-c:\program\regedit.exe (Command: `Regedit`)
-
 Command-line emulator built from scratch in Scratch - stretching it to the limits, and scratching my head on why anyone would actually (*except me*) bother to do this.
 
-*(Note that alternative drives are not supported for now. Experiment with it at your own risk.)*
+Supported commands:
+`cd \[directory\]`: Change your working directory
+`pwd`: Output your working directory
+`c:`: Change your working directory to the `c:` root
+`dir [directory]`: List **all** files and subdirectories in the directory
+`md [name]`: Makes a new directory with your selected name.
+`del [file]`: Deletes a file (not a directory)
+`rd [directory]`: Removes an empty directory. Use `rd /s \[directory\]` to remove a non-empty directory (**and all files and subdirectories in the directory**)
+`set [file] [text]`: Changes the file's data to the text string you inputted
+`echo [text]`: Outputs the text back at you
+`write [text or file]`: Outputs text back at you, however if you inputted an existing file path, it outputs the file's contents back at you
+`copy [file] [new path]`: Copies a file to the new path (the original will not be erased)
+`cls`: Clears the screen - especially useful when it's too bloated or laggy!
+`date`: Outputs the date in *\[DayOfWeek\]* DD/MM/YYYY format. E.g. Monday 17/8/2026.
+`time`: Outputs the 24-hour current time in HH:MM:SS. For instance, 20:25:19.
+`color [hex]`: Change the color of the text. Will not accept black (`000000`).
+`help`: Gives a list of commands, from `c:\iush\help\.txt]`
+`help [command]`: Gives help with the command, from `c:\iush\help\[COMMANDNAME].txt]`
+`find [string]`: Find a file or directory with a string in its name.
+`exit`: Exits the terminal.
+
+Built-in programs or scripts (you can write your own with `set` or Notepad, and type the full path in *iush* to execute it!):
+c:\program\matrixrain.exe
+c:\program\notepad.exe (Command: `Notepad [optional: file]` )
+c:\program\paint.exe (Command: `Paint [optional: file]` )
+c:\program\regedit.exe (Command: `Regedit`)
+
+*Alternative drives are not supported (for now)*
  
 ### Command line basics
 1. No news is good news! Rather, it's like a teacher - if the shell starts talking back to you, you know you done something wrong.
@@ -23,17 +41,21 @@ Command-line emulator built from scratch in Scratch - stretching it to the limit
 4. (*Unique to iush*) However, if you want to **literally** have "&", for instance when using `set` in a file to execute as a batch later, add `#LITERAL&` (**exact phrasing**) to the end of your command.
 5. *Hint*: To avoid re-inputting previous commands, use the *Up Arrow* to pre-input previous commands (and the *Down Arrow* if you overshoot)! It even works multiple times!
 
+#### Command line bug fixes
+1. I prohibitted `color 000000` and invalid "null" `color` because it would cause the text to output as black - the same as the terminal background color!
+2. After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though sucessfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.
+
 ## Domemory
 Classic spaced repetition active recall - Maybe the first of its kind on Scratch! For students and learners alike, if you are too lazy to install Anki, you can do it straight from the Browser!
 
-* Pre-trained SuperMemo 5 algorithm (SuperMemo 2 was too boring to code!)
+* Pre-trained SuperMemo 5 spaced repetition algorithm (SuperMemo 2 was too boring to code!)
 * No modern corporate "gamification" bloat - focus purely on the pragmatism of self-testing!
-* With just 1.8MB of code (plus the size of the text files you will export), cherish the wisdom of your new knowledge! This is one of the most important inventions of all time, and the possibilities are nearly endless, so have fun!<BR>
+* Cherish the wisdom of your new knowledge! <BR>
 ![Presentation](screenshots/presentation.png)
 * SM-5 optimal factor matrix derived from about 19,000 repetitions: of me using SuperMemo itself:<BR>
 ![OF-Matrix](screenshots/12406.jpg)
 
-### Bug fixes of Domemory
+#### Bug fixes of Domemory
 1.1: Wrong linear interpolation bug fixed, freeze on G + Item #0 (underflow bug) fixed
 1.2: Undesirible registeration of "q" and "a" into text fields when using them as quick triggers to edit fixed.
 1.3: Integration into iush, with a command to exit,  remapped some keybinds like Delete to "-" to account for the fact that some keyboards don't have such physical keys, fixed broken Optimal-factor matrix
@@ -58,7 +80,7 @@ A program allowing you to edit the name and data of registry members. In other o
 Opening text files in Paint will result in some weird colors due to the bitmap conversion, and vice versa.
 
 ## Importing & Exporting
-I cannot force-download files to your computer, so if you want to save, type in `regedit`, and right click -> Export **BOTH** the `Name` and `Data` lists. When you re-load, type in `regedit` again and right click -> Import **BOTH** the lists correspondingly.
+I cannot force the browser to download files into your computer, so if you want to save, type in `regedit`, and right click -> Export **BOTH** the `Name` and `Data` lists. When you re-load, type in `regedit` again and right click -> Import **BOTH** the lists correspondingly.
 Again, **NOTE THAT** Domemory save data is **seperate**. It originally was a *seperate program* of mine, but I realized it had the terminal-type vibe so I re-added it here, so that you can do your repetitions with an operating-system emulator.
 
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
