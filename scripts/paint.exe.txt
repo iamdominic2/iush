@@ -1,0 +1,956 @@
+//----- Broadcast received events -------------------------------------------------------------------------------------
+
+WhenBroadcastReceived(paint.exe)
+{
+    Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+    paintram = "";
+    NotepadScroll = 0;
+    paintSEL = 21;
+    TextEdit = "";
+    cursor location = 1;
+    Command? = 0;
+    LearnMode = 0;
+    CURITEM = 1;
+    Q-text = "";
+    JOINSTRING STRING = "";
+    A-text = "";
+    hideANS = 0;
+    firstclick = "";
+    INSMODE = 0;
+    counta = 0;
+    maxscroll = 0;
+    Notepad = 0;
+    If ((Not (List.ContainsItem(Name, notepaddir))) Or (Data[List.IndexOf(Name, notepaddir)] == "iush: is a directory"))
+    {
+        notepaddir = "NEW FILE";
+    }
+    Else
+    {
+        paintram = Data[List.IndexOf(Name, notepaddir)];
+    }
+    Control.Wait(0);
+    Repeat (2)
+    {
+        Pen.Clear();
+        dd2 = 0;
+        Call Render("")("s");
+    }
+    Forever
+    {
+        Pen.Clear();
+        TextEdit = "";
+        If (paintram == Data[List.IndexOf(Name, notepaddir)])
+        {
+            npbar = Operator.Join(Operator.Join(Operator.Join("", "O)Open S)Save A)Save As X)Exit W)White background "), notepaddir), "");
+        }
+        Else
+        {
+            npbar = Operator.Join(Operator.Join(Operator.Join("", "O)Open S)Save A)Save As X)Exit W)White background "), notepaddir), " (UNSAVED)");
+        }
+        Call Render("")("s");
+        If Sensing.KeyPressed(o)
+        {
+            npbar = "Open what file? Enter the absolute path";
+            Wait Until (Not (Sensing.KeyPressed(o)));
+            oldTextedit = TextEdit;
+            TextEdit = "";
+            Repeat Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])
+            {
+                Call Megakey;
+                Call Render("")("s");
+            }
+            If (List.ContainsItem(Name, TextEdit) And (Not ((Data[List.IndexOf(Name, TextEdit)] == "iush: is a directory"))))
+            {
+                notepaddir = TextEdit;
+                paintram = Data[List.IndexOf(Name, TextEdit)];
+            }
+            Else
+            {
+                TextEdit = "";
+            }
+            Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+        }
+        Call Render("")("s");
+        If Sensing.KeyPressed(s)
+        {
+            Wait Until (Not (Sensing.KeyPressed(s)));
+            If List.ContainsItem(Name, notepaddir)
+            {
+                List.ReplaceItem(Data, List.IndexOf(Name, notepaddir), paintram);
+            }
+            Else
+            {
+                Call NotepadSaveas(1);
+            }
+        }
+        If Sensing.KeyPressed(x)
+        {
+            If (Not ((paintram == Data[List.IndexOf(Name, notepaddir)])))
+            {
+                npbar = "Quit without saving? Y/N";
+                Call Render("")("s");
+                Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+                Wait Until (Sensing.KeyPressed(y) Or Sensing.KeyPressed(n));
+                If Sensing.KeyPressed(y)
+                {
+                    Stop(other scripts in sprite);
+                    domemory.exe = 0;
+                    Stop(this script);
+                }
+                Else
+                {
+                    Wait Until (Not (Sensing.KeyPressed(n)));
+                }
+            }
+            Else
+            {
+                Stop(other scripts in sprite);
+                domemory.exe = 0;
+                Stop(this script);
+            }
+        }
+        If Sensing.KeyPressed(a)
+        {
+            Wait Until (Not (Sensing.KeyPressed(a)));
+            Call NotepadSaveas("");
+        }
+        If Sensing.KeyPressed(w)
+        {
+            Wait Until (Not (Sensing.KeyPressed(w)));
+            Call Paint-Render WB(50);
+        }
+    }
+}
+
+
+//----- Custom blocks -------------------------------------------------------------------------------------------------
+
+Define INSERT at character(string chr) string(string NEW) oldstring(string OLD) (warp=true)
+{
+    cccccc = 0;
+    instring = "";
+    Repeat (chr)
+    {
+        cccccc += 1;
+        instring = Operator.Join(instring, Operator.LetterOf(OLD, cccccc));
+    }
+    instring = Operator.Join(instring, NEW);
+    Repeat ((Variable.Length(OLD) - chr))
+    {
+        cccccc += 1;
+        instring = Operator.Join(instring, Operator.LetterOf(OLD, cccccc));
+    }
+}
+
+Define Joinstring B(string nw) (warp=false)
+{
+    JOINSTRING STRING = "";
+    JOINSTRING NO = 0;
+    Repeat ((Variable.Length(TextEdit) - 1))
+    {
+        JOINSTRING NO += 1;
+        JOINSTRING STRING = Operator.Join(JOINSTRING STRING, Operator.LetterOf(TextEdit, JOINSTRING NO));
+    }
+    JOINSTRING STRING = Operator.Join(JOINSTRING STRING, nw);
+}
+
+Define Key(string s) (warp=false)
+{
+    If (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])))
+    {
+        If (Not ((((Data[List.IndexOf(Name, "C:\registry\controlkey")] == s) Or ) Or ((Data[List.IndexOf(Name, "C:\registry\shiftkey")] == s) Or (Data[List.IndexOf(Name, "C:\registry\backspacekey")] == s)))))
+        {
+            If (Data[List.IndexOf(Name, "C:\registry\enterkey")] == s)
+            {
+                Call INSERT at character(cursor location) string("☙") oldstring(TextEdit);
+                cursor location += 1;
+                TextEdit = instring;
+                JOINSTRING STRING = instring;
+                Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\enterkey")])));
+            }
+            Else
+            {
+                If (Not (Sensing.KeyPressed(s)))
+                {
+                    List.DeleteItem(Keys, List.IndexOf(Keys, s));
+                }
+                If (Sensing.KeyPressed(s) And (Not (List.ContainsItem(Keys, s))))
+                {
+                    Sensing.ResetTimer();
+                    If 
+                    {
+                    }
+                    Else
+                    {
+                        If ((INSMODE == 33) And (cursor location < Variable.Length(TextEdit)))
+                        {
+                            Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new(s) terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv");
+                            cursor location += 1;
+                        }
+                        Else
+                        {
+                            If (cursor location == Variable.Length(TextEdit))
+                            {
+                                Call Joinstring B(s);
+                            }
+                            Else
+                            {
+                                Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment("") new(s) terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv");
+                            }
+                        }
+                    }
+                    Call Typer color("");
+                    List.Add(Keys, s);
+                    cursor location += 1;
+                    TextEdit = JOINSTRING STRING;
+                }
+            }
+        }
+    }
+}
+
+Define kill first(string n) chars from string(string string) or at chr(string ccc) (warp=false)
+{
+    JOINSTRING STRING = "";
+    JOINSTRING NO = n;
+    Repeat ((Variable.Length(string) - n))
+    {
+        JOINSTRING NO += 1;
+        If ((ccc == "") Or (Operator.LetterOf(string, JOINSTRING NO) == ccc))
+        {
+            JOINSTRING STRING = Operator.Join(JOINSTRING STRING, Operator.LetterOf(string, JOINSTRING NO));
+        }
+    }
+}
+
+Define Megakey (warp=false)
+{
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\shiftkey")])
+    {
+        Call Key("A");
+        Call Key("B");
+        Call Key("C");
+        Call Key("D");
+        Call Key("E");
+        Call Key("F");
+        Call Key("G");
+        Call Key("H");
+        Call Key("I");
+        Call Key("J");
+        Call Key("K");
+        Call Key("L");
+        Call Key("M");
+        Call Key("N");
+        Call Key("O");
+        Call Key("P");
+        Call Key("Q");
+        Call Key("R");
+        Call Key("S");
+        Call Key("T");
+        Call Key("U");
+        Call Key("V");
+        Call Key("W");
+        Call Key("X");
+        Call Key("Y");
+        Call Key("Z");
+    }
+    Else
+    {
+        Call Key("a");
+        Call Key("b");
+        Call Key("c");
+        Call Key("d");
+        Call Key("e");
+        Call Key("f");
+        Call Key("g");
+        Call Key("h");
+        Call Key("i");
+        Call Key("j");
+        Call Key("k");
+        Call Key("l");
+        Call Key("m");
+        Call Key("n");
+        Call Key("o");
+        Call Key("p");
+        Call Key("q");
+        Call Key("r");
+        Call Key("s");
+        Call Key("t");
+        Call Key("u");
+        Call Key("v");
+        Call Key("w");
+        Call Key("x");
+        Call Key("y");
+        Call Key("z");
+    }
+    Call Key(1);
+    Call Key(2);
+    Call Key(3);
+    Call Key(4);
+    Call Key(5);
+    Call Key(6);
+    Call Key(7);
+    Call Key(8);
+    Call Key(9);
+    Call Key(0);
+    Call Key("~");
+    Call Key("!");
+    Call Key("@");
+    Call Key("#");
+    Call Key("$");
+    Call Key("%");
+    Call Key("^");
+    Call Key("&");
+    Call Key("*");
+    Call Key("(");
+    Call Key(")");
+    Call Key("-");
+    Call Key("_");
+    Call Key("+");
+    Call Key("=");
+    Call Key("{");
+    Call Key("}");
+    Call Key("[");
+    Call Key("]");
+    Call Key("|");
+    Call Key("\");
+    Call Key(";");
+    Call Key(":");
+    Call Key("'");
+    Call Key(""");
+    Call Key("<");
+    Call Key(">");
+    Call Key(",");
+    Call Key(".");
+    Call Key("?");
+    Call Key("/");
+    Call Key("`");
+    Call Key(" ");
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])
+    {
+        Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
+        TextEdit = JOINSTRING STRING;
+        Call Render("")("");
+        Sensing.ResetTimer();
+        Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.4));
+        Repeat Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])))
+        {
+            Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
+            TextEdit = JOINSTRING STRING;
+            Call Render("")("");
+            Sensing.ResetTimer();
+            Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.05));
+        }
+    }
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\enterkey")])
+    {
+        Call Key("enter");
+    }
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])
+    {
+    }
+}
+
+Define mvv (warp=true)
+{
+    Repeat Until (Not ((cursor location > (Variable.Length(TextEdit) + 1))))
+    {
+        cursor location += -1;
+    }
+    If (cursor location == 0)
+    {
+        cursor location = 1;
+    }
+}
+
+Define notepadkill@(string kill) string(string string) (warp=false)
+{
+    JOINSTRING STRING = "";
+    JOINSTRING NO = n;
+    Repeat (Variable.Length(string))
+    {
+        JOINSTRING NO += 1;
+        JOINSTRING STRING = Operator.Join(JOINSTRING STRING, Operator.LetterOf(string, JOINSTRING NO));
+        If (Operator.LetterOf(string, JOINSTRING NO) == kill)
+        {
+            Stop(this script);
+        }
+    }
+}
+
+Define NotepadSaveas(string sp) (warp=false)
+{
+    oldcurspos = cursor location;
+    npbar = "Save as what file? Enter the absolute path";
+    oldTextedit = TextEdit;
+    TextEdit = "";
+    Repeat Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])
+    {
+        Call Megakey;
+        Call Render("")("s");
+    }
+    If (Variable.Length(TextEdit) > 0)
+    {
+        If (Data[List.IndexOf(Name, TextEdit)] == "iush: is a directory")
+        {
+            npbar = "Error: Was a directory❤️";
+            TextEdit = oldTextedit;
+            Call Render("")("s");
+            Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+            Wait Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]);
+        }
+        Else
+        {
+            If List.ContainsItem(Name, TextEdit)
+            {
+                cursor location = 0;
+                npbar = "File already exists. Replace? Y/N";
+                TextEdit = oldTextedit;
+                Call Render("")("s");
+                Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+                Wait Until (Sensing.KeyPressed(y) Or Sensing.KeyPressed(n));
+                If Sensing.KeyPressed(y)
+                {
+                    Wait Until (Not (Sensing.KeyPressed(y)));
+                    If (notepaddir == "NEW FILE")
+                    {
+                        notepaddir = TextEdit;
+                    }
+                    cccca = TextEdit;
+                    TextEdit = oldTextedit;
+                    List.ReplaceItem(Data, List.IndexOf(Name, cccca), paintram);
+                }
+                Else
+                {
+                    Wait Until (Not (Sensing.KeyPressed(n)));
+                    TextEdit = oldTextedit;
+                }
+            }
+            Else
+            {
+                If (((Operator.LetterOf(TextEdit, 1) == "c") And (Operator.LetterOf(TextEdit, 2) == ":")) And (Operator.LetterOf(TextEdit, 3) == "\"))
+                {
+                    If (notepaddir == "NEW FILE")
+                    {
+                        notepaddir = TextEdit;
+                    }
+                    List.Add(Name, TextEdit);
+                    TextEdit = oldTextedit;
+                    List.Add(Data, paintram);
+                }
+                Else
+                {
+                    npbar = "Error: No root drive!❤️";
+                    TextEdit = oldTextedit;
+                    Call Render("")("s");
+                }
+            }
+        }
+    }
+    cursor location = oldcurspos;
+    Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+}
+
+Define Paint-Render WB(string number or text) (warp=true)
+{
+    Pen.Clear();
+    Pen.SetPenSizeTo(4);
+    Motion.GoToXY(-240, 180);
+    paintct = 0;
+    paintnew = "";
+    Looks.SwitchCostumeTo(NONE);
+    Looks.Show();
+    Repeat (39)
+    {
+        Repeat (59)
+        {
+            paintct += 1;
+            Pen.SetPenColorToColor((List.IndexOf(Letters, Operator.LetterOf(paintram, paintct)) * 798915));
+            Motion.ChangeXBy(4);
+            Motion.ChangeYBy(-4);
+            If ((Sensing.MouseDown() And Sensing.TouchingObject(cursor.exe)) And (Sensing.MouseY() > -140))
+            {
+                If (paintSEL == 0)
+                {
+                    paintnew = Operator.Join(paintnew, 0);
+                }
+                Else
+                {
+                    paintnew = Operator.Join(paintnew, Letters[paintSEL]);
+                }
+            }
+            Else
+            {
+                If ((Operator.LetterOf(paintram, paintct) == "") Or (Operator.LetterOf(paintram, paintct) == 0))
+                {
+                    If ((number or text == 50) And (Operator.LetterOf(paintram, paintct) == 0))
+                    {
+                        paintnew = Operator.Join(paintnew, "u");
+                    }
+                    Else
+                    {
+                        paintnew = Operator.Join(paintnew, 0);
+                    }
+                }
+                Else
+                {
+                    paintnew = Operator.Join(paintnew, Operator.LetterOf(paintram, paintct));
+                }
+            }
+            Motion.ChangeXBy(-4);
+            Motion.ChangeYBy(4);
+            Repeat (2)
+            {
+                Pen.Down();
+                Motion.ChangeXBy(8);
+                Pen.Clear();
+                Motion.ChangeXBy(-8);
+                Motion.ChangeYBy(-4);
+            }
+            Pen.SetPenColorToColor(#000000);
+            Motion.ChangeXBy(8);
+            Motion.ChangeYBy(8);
+        }
+        Pen.Clear();
+        Motion.ChangeYBy(-8);
+        Motion.SetX(-240);
+    }
+    Pen.SetPenColorToColor(#000000);
+    Motion.GoToXY(-230, -154);
+    Repeat (22)
+    {
+        If Operator.Contains(npbar, "O)Open")
+        {
+            Pen.SetPenColorToColor(#9dffff);
+            Pen.SetPenSizeTo(16);
+            If (paintSEL == ((Motion.XPosition() + 230) / 21))
+            {
+                Pen.Down();
+                Pen.Clear();
+            }
+            Else
+            {
+                If (Sensing.DistanceTo(_mouse_) < 8)
+                {
+                    Pen.SetPenColorToColor(#00fff2);
+                    Pen.SetPenSizeTo(14);
+                    Pen.Down();
+                    Pen.Clear();
+                    If Sensing.MouseDown()
+                    {
+                        paintSEL = ((Motion.XPosition() + 230) / 21);
+                    }
+                }
+            }
+            Pen.SetPenSizeTo(12);
+            Pen.SetPenColorToColor(#e0e0e0);
+            If (paintSEL == ((Motion.XPosition() + 230) / 21))
+            {
+                Pen.SetPenColorToColor(Operator.Round((((Motion.XPosition() + 230) / 21) * 798915)));
+            }
+            Pen.Down();
+            Pen.Clear();
+            Pen.SetPenSizeTo(8);
+            Pen.SetPenColorToColor(Operator.Round((((Motion.XPosition() + 230) / 21) * 798915)));
+            Pen.Down();
+            Pen.Clear();
+            Motion.ChangeXBy(21);
+        }
+    }
+    Pen.SetPenSizeTo(1);
+    paintram = paintnew;
+    Looks.Hide();
+}
+
+Define Render(string d)(string s) (warp=true)
+{
+    Pen.Clear();
+    Motion.GoToXY(-235, -170);
+    Call Text(npbar) italics("") bold("") cursor(n) curspos("");
+    Motion.GoToXY(-235, -155);
+    Call Text(TextEdit) italics("") bold("") cursor(n) curspos("");
+    Call Paint-Render WB("");
+}
+
+Define rls (warp=true)
+{
+    Count = 0;
+    lsct = 0;
+    tmdir = "c:\";
+    tmdirl = 0;
+    Repeat (List.Length(Name))
+    {
+        Count += 1;
+        If Operator.Contains(Operator.Join(Operator.Join("ungja!&@Eibvoznobodywillusethistext`~", Name[Count]), ""), Operator.Join(Operator.Join("ungja!&@Eibvoznobodywillusethistext`~", Data[List.IndexOf(Name, "C:\registry\workingdirectory")]), "\"))
+        {
+            If (Not ((Name[Count] == Data[List.IndexOf(Name, "C:\registry\workingdirectory")])))
+            {
+                lsct += 1;
+                If (Variable.Length(Name[Count]) > tmdirl)
+                {
+                    tmdir = Name[Count];
+                    tmdirl = Variable.Length(Name[Count]);
+                }
+            }
+        }
+    }
+}
+
+Define Scan DUE (warp=true)
+{
+    Scanner-CT = ( / 6);
+    List.DeleteAll(Dueness);
+    Repeat ((( / 6) - 1))
+    {
+        Scanner-CT += -1;
+        If ((floor((100 * ((((Scanner-CT * 6) + 4) - 0) - Sensing.DaysSince2000()))) / -100) > -0.00001)
+        {
+            List.InsertItem(Dueness, 1, Scanner-CT);
+        }
+    }
+}
+
+Define subrender(string d)(string s) (warp=true)
+{
+    If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:")
+    {
+        Call attempt cd("c:\") dry("");
+    }
+    If (cursor location < 1)
+    {
+        cursor location = 1;
+    }
+    Looks.SwitchCostumeTo(NONE);
+    Pen.Clear();
+    Motion.GoToXY(-230, 172);
+    Call Typer color((1 - d));
+}
+
+Define terminal: Joinstring text(string st) Location(string ct) Increment(string inc) new(string nw) terminate(string end) or(string e2n) (warp=false)
+{
+    JOINSTRING STRING = "";
+    JOINSTRING NO = 0;
+    Repeat (ct)
+    {
+        JOINSTRING NO += 1;
+        If ((Operator.LetterOf(st, JOINSTRING NO) == end) Or (Operator.LetterOf(st, JOINSTRING NO) == e2n))
+        {
+            Stop(this script);
+        }
+        Else
+        {
+            JOINSTRING STRING = Operator.Join(JOINSTRING STRING, Operator.LetterOf(st, JOINSTRING NO));
+        }
+    }
+    JOINSTRING STRING = Operator.Join(JOINSTRING STRING, nw);
+    JOINSTRING NO += inc;
+    Repeat (((Variable.Length(st) - ct) - inc))
+    {
+        JOINSTRING NO += 1;
+        JOINSTRING STRING = Operator.Join(JOINSTRING STRING, Operator.LetterOf(st, JOINSTRING NO));
+    }
+    cursor location += (0 - (inc + back));
+}
+
+Define Text(string text) italics(string italics) bold(string bold) cursor(string curse) curspos(string cup) (warp=true)
+{
+    Pen.SetPenSizeTo(1);
+    Count = 0;
+    lettr = 0;
+    dd3 = 0;
+    nlct = 0;
+    Repeat (Variable.Length(text))
+    {
+        Count += 1;
+        dd2 += 1;
+        dd3 += 1;
+        Counter = 0;
+        dd1 = 0;
+        If (bold == 50)
+        {
+            If (Operator.LetterOf(text, Count) == "☙")
+            {
+                nlct += 1;
+                Motion.SetX(-235);
+                If (nlct > NotepadScroll)
+                {
+                    Motion.ChangeYBy(-8);
+                }
+            }
+            Else
+            {
+            }
+            If ((((Sensing.MouseX() < (Motion.XPosition() + 8)) And (Sensing.MouseY() > (Motion.YPosition() - 8))) And Sensing.MouseDown()) And (dd2 > 0))
+            {
+                If (firstclick < 1)
+                {
+                    firstclick = dd2;
+                }
+                lastclick = dd3;
+                dd2 = -99999999999;
+            }
+            If ((lastclick > firstclick) And (firstclick > 0))
+            {
+                If (((firstclick - 1) < dd3) And (dd3 < (lastclick + 1)))
+                {
+                    dd1 = 1;
+                }
+                Else
+                {
+                }
+            }
+            Else
+            {
+                If (((lastclick - 1) < dd3) And (dd3 < (firstclick + 1)))
+                {
+                    dd1 = 1;
+                }
+                Else
+                {
+                }
+            }
+        }
+        If (Operator.LetterOf(text, Count) == "█")
+        {
+        }
+        Else
+        {
+            If (Operator.LetterOf(text, Count) == "☙")
+            {
+            }
+            Else
+            {
+                If (Operator.LetterOf(text, Count) == "⣦")
+                {
+                    Motion.ChangeXBy(-2);
+                }
+                If ((nlct < NotepadScroll) And (bold == 50))
+                {
+                    Pen.SetPenColorToColor(#000000);
+                }
+                Else
+                {
+                    Pen.SetPenColorToColor(Operator.Join("0x", Data[List.IndexOf(Name, "c:\registry\color")]));
+                }
+                Repeat (8)
+                {
+                    Repeat (5)
+                    {
+                        Counter += 1;
+                        Motion.ChangeXBy(1);
+                        Looks.SwitchCostumeTo(NONE);
+                        Looks.SwitchCostumeTo(Operator.LetterOf(text, Count));
+                        If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
+                        {
+                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                            {
+                                If (Not ((Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                            Else
+                            {
+                                If (Not ((Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                        }
+                        Else
+                        {
+                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                            {
+                                If (Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                            Else
+                            {
+                                If (Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                        }
+                        Looks.SwitchCostumeTo(NONE);
+                    }
+                    Repeat (1)
+                    {
+                        Motion.ChangeXBy(1);
+                        Looks.SwitchCostumeTo(NONE);
+                        If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
+                        {
+                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                            {
+                                If (Not (("" == 1)))
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                            Else
+                            {
+                                If (Not (("" == 1)))
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                        }
+                        Else
+                        {
+                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                            {
+                                If ("" == 1)
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                            Else
+                            {
+                                If ("" == 1)
+                                {
+                                    Pen.Down();
+                                    Pen.Clear();
+                                }
+                            }
+                        }
+                        Looks.SwitchCostumeTo(NONE);
+                    }
+                    lettr += 1;
+                    Motion.ChangeXBy(-6);
+                    Motion.ChangeYBy(-1);
+                }
+                Motion.ChangeYBy(8);
+                Motion.ChangeXBy(6);
+                If (Motion.XPosition() > 232)
+                {
+                    Motion.ChangeYBy(-9);
+                    Motion.SetX(-235);
+                }
+            }
+        }
+        If (bold == 50)
+        {
+            realnl = nlct;
+        }
+        If ((Motion.YPosition() < -120) And (bold == 50))
+        {
+            Stop(this script);
+        }
+    }
+}
+
+Define Typer color(string n) (warp=true)
+{
+    Pen.SetPenColorToColor(Operator.Join("0x", Data[List.IndexOf(Name, "C:\registry\color")]));
+    Motion.GoToXY(-235, 170);
+    Call Text(Operator.Join(TextEdit, "   ")) italics("") bold(50) cursor(n) curspos(cursor location);
+    If (cursor location > (Variable.Length(TextEdit) + 1))
+    {
+        cursor location = (Variable.Length(TextEdit) + 1);
+    }
+}
+
+
+//----- Orphaned blocks -----------------------------------------------------------------------------------------------
+
+Call mvv;
+
+Forever
+{
+}
+
+If (domemory.exe == 0)
+{
+}
+
+EDITMODE = 0;
+CURITEM += -1;
+
+If (CURITEM > 1)
+{
+}
+
+Sensing.Ask("What's your name?");
+
+Stop(this script);
+
+TNLLoopct = 0;
+
+Call Text(Operator.Join(notepaddisp, "  ")) italics("") bold("") cursor(n) curspos("");
+If ("::" == oldnotepadir)
+{
+}
+Else
+{
+}
+
+Data[List.IndexOf(Name, "C:\registry\backspacekey")];
+
+Data[List.IndexOf(Name, "c:\registry\controlkey")];
+
+Data[List.IndexOf(Name, "c:\registry\controlkey")];
+
+Data[List.IndexOf(Name, "c:\registry\controlkey")];
+
+Data[List.IndexOf(Name, "c:\registry\controlkey")];
+
+notepaddir = 0;
+
+((domemory.exe == 2) And (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")]) And ));
+
+(Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")]) And );
+
+List.ContainsItem(Name, notepaddir);
+
+List.ContainsItem(Name, "");
+
+
+//----- Costumes ------------------------------------------------------------------------------------------------------
+
+ .svg
+0.svg
+1.svg
+2.svg
+3.svg
+4.svg
+5.png
+6.svg
+7.svg
+8.svg
+9.svg
+A.svg
+B.svg
+C.svg
+D.svg
+E.svg
+F.svg
+G.svg
+H.svg
+I.svg
+J.svg
+K.svg
+L.svg
+M.svg
+N.svg
+NONE.png
+O.svg
+P.svg
+Q.svg
+R.svg
+S.svg
+T.svg
+U.svg
+V.svg
+W.svg
+X.svg
+Y.svg
+Z.svg

@@ -54,7 +54,7 @@ WhenGreenFlagClicked()
         List.Add(Right Click me to Import/Export learning data, 0);
         List.Add(Right Click me to Import/Export learning data, 2.5);
         List.Add(Right Click me to Import/Export learning data, "How to delete an item?");
-        List.Add(Right Click me to Import/Export learning data, "Del");
+        List.Add(Right Click me to Import/Export learning data, "Minus (-)");
         List.Add(Right Click me to Import/Export learning data, 1);
         List.Add(Right Click me to Import/Export learning data, Sensing.DaysSince2000());
         List.Add(Right Click me to Import/Export learning data, 0);
@@ -77,6 +77,18 @@ WhenGreenFlagClicked()
         List.Add(Right Click me to Import/Export learning data, Sensing.DaysSince2000());
         List.Add(Right Click me to Import/Export learning data, 0);
         List.Add(Right Click me to Import/Export learning data, 2.5);
+        List.Add(Right Click me to Import/Export learning data, "How to exit the program?");
+        List.Add(Right Click me to Import/Export learning data, "Ctrl+C");
+        List.Add(Right Click me to Import/Export learning data, 1);
+        List.Add(Right Click me to Import/Export learning data, Sensing.DaysSince2000());
+        List.Add(Right Click me to Import/Export learning data, 0);
+        List.Add(Right Click me to Import/Export learning data, 2.5);
+        List.Add(Right Click me to Import/Export learning data, "How to exit text editing?");
+        List.Add(Right Click me to Import/Export learning data, "Ctrl+X");
+        List.Add(Right Click me to Import/Export learning data, 1);
+        List.Add(Right Click me to Import/Export learning data, Sensing.DaysSince2000());
+        List.Add(Right Click me to Import/Export learning data, 0);
+        List.Add(Right Click me to Import/Export learning data, 2.5);
         List.Add(Right Click me to Import/Export learning data, "How do you get tested on this material?");
         List.Add(Right Click me to Import/Export learning data, "L");
         List.Add(Right Click me to Import/Export learning data, 1);
@@ -88,25 +100,6 @@ WhenGreenFlagClicked()
 
 
 //----- Key pressed events --------------------------------------------------------------------------------------------
-
-WhenKeyPressed(home)
-{
-    If is compiled?
-    {
-        If (domemory.exe == 1)
-        {
-            If (EDITMODE == 0)
-            {
-                EDITMODE = 0;
-                CURITEM = 1;
-                Call Q-A-Match;
-            }
-            Else
-            {
-            }
-        }
-    }
-}
 
 WhenKeyPressed(page down)
 {
@@ -148,7 +141,7 @@ WhenKeyPressed(enter)
 {
     If (domemory.exe == 1)
     {
-        If (Not (Sensing.KeyPressed(shift)))
+        If (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\shiftkey")])))
         {
             If (EDITMODE == 1)
             {
@@ -333,31 +326,6 @@ WhenKeyPressed(c)
     }
 }
 
-WhenKeyPressed(x)
-{
-    If (domemory.exe == 1)
-    {
-        If (LearnMode == 1)
-        {
-            LearnMode = 0;
-        }
-    }
-    If (domemory.exe == 1)
-    {
-        If (EDITMODE == 1)
-        {
-            Sensing.ResetTimer();
-            EDITMODE = 0;
-        }
-        Else
-        {
-            Sensing.ResetTimer();
-            EDITMODE = 0;
-        }
-        EDITQONLY = 0;
-    }
-}
-
 WhenKeyPressed(d)
 {
     If (domemory.exe == 1)
@@ -393,13 +361,42 @@ WhenKeyPressed(t)
     }
 }
 
-WhenKeyPressed(i)
+WhenKeyPressed(x)
 {
     If (domemory.exe == 1)
     {
-        If (EDITMODE == 0)
+        If (LearnMode == 1)
         {
-            List.ReplaceItem(Right Click me to Import/Export learning data, 6, (1 - Right Click me to Import/Export learning data[6]));
+            LearnMode = 0;
+        }
+    }
+    If (domemory.exe == 1)
+    {
+        If Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\controlkey")])
+        {
+            If (EDITMODE > 0)
+            {
+                EDITMODE = 0;
+            }
+        }
+    }
+}
+
+WhenKeyPressed(home)
+{
+    If is compiled?
+    {
+        If (domemory.exe == 1)
+        {
+            If (EDITMODE == 0)
+            {
+                EDITMODE = 0;
+                CURITEM = 1;
+                Call Q-A-Match;
+            }
+            Else
+            {
+            }
         }
     }
 }
@@ -463,7 +460,7 @@ WhenBroadcastReceived(Domemory.exe)
                 {
                     Call Key(0);
                 }
-                If (Sensing.KeyPressed(backspace) Or Sensing.KeyPressed(backspace))
+                If (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\backspacekey")]) Or Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\backspacekey")]))
                 {
                     Call Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("");
                     If (EDITMODE == 1)
@@ -498,7 +495,7 @@ WhenBroadcastReceived(Domemory.exe)
         {
             CURITEM += -1;
         }
-        If (Not ((Sensing.KeyPressed(enter) And (Not (Sensing.KeyPressed(shift))))))
+        If (Not ((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) And (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\shiftkey")]))))))
         {
             If (Sensing.KeyPressed(-) And (EDITMODE == 0))
             {
@@ -507,7 +504,7 @@ WhenBroadcastReceived(Domemory.exe)
                     SECONDBAR = Operator.Join(Operator.Join("Delete item #", CURITEM), "? Y/n");
                     EDITMODE = 4;
                     Call Render;
-                    Wait Until ((Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )));
+                    Wait Until ((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )));
                     If (Not ((Sensing.KeyPressed(n) Or )))
                     {
                         List.DeleteItem(Right Click me to Import/Export learning data, ((CURITEM * 6) + 1));
@@ -528,10 +525,10 @@ WhenBroadcastReceived(Domemory.exe)
                     SECONDBAR = "Fatal: cannot delete the last member ❤";
                     EDITMODE = 4;
                     Call Render;
-                    Wait Until (Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space));
-                    Wait Until (Not ((Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space))));
+                    Wait Until (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space));
+                    Wait Until (Not ((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space))));
                 }
-                Wait Until (Not (((Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )))));
+                Wait Until (Not (((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )))));
                 EDITMODE = 0;
                 SECONDBAR = "";
             }
@@ -549,8 +546,8 @@ WhenBroadcastReceived(Domemory.exe)
                     }
                     EDITMODE = 4;
                     Call Render;
-                    Wait Until ((Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )));
-                    If (Not ((Sensing.KeyPressed(n) Or Sensing.KeyPressed(escape))))
+                    Wait Until ((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )));
+                    If (Not ((Sensing.KeyPressed(n) Or Sensing.KeyPressed(x))))
                     {
                         List.ReplaceItem(Right Click me to Import/Export learning data, ((CURITEM * 6) + 4), Sensing.DaysSince2000());
                         If (Right Click me to Import/Export learning data[((CURITEM * 6) + 4)] == "Infinity")
@@ -564,7 +561,7 @@ WhenBroadcastReceived(Domemory.exe)
                         }
                     }
                     SECONDBAR = "";
-                    Wait Until (Not (((Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )))));
+                    Wait Until (Not (((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )))));
                     EDITMODE = 0;
                 }
                 Else
@@ -574,13 +571,13 @@ WhenBroadcastReceived(Domemory.exe)
                         SECONDBAR = Operator.Join(Operator.Join("Suspend item #", CURITEM), "? Y/n (R to reset & re-introduce)");
                         EDITMODE = 4;
                         Call Render;
-                        Wait Until ((Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )));
+                        Wait Until ((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )));
                         If (Not ((Sensing.KeyPressed(n) Or )))
                         {
                             List.ReplaceItem(Right Click me to Import/Export learning data, ((CURITEM * 6) + 4), "Infinity");
                         }
                         SECONDBAR = "";
-                        Wait Until (Not (((Sensing.KeyPressed(enter) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )))));
+                        Wait Until (Not (((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(space)) Or (Sensing.KeyPressed(y) Or (Sensing.KeyPressed(n) Or )))));
                         EDITMODE = 0;
                     }
                     Else
@@ -618,24 +615,6 @@ WhenBroadcastReceived(Domemory.exe)
 
 WhenBroadcastReceived(Domemory.exe)
 {
-    EDITQONLY = 0;
-    CARDID = 1;
-    SECONDBAR = "";
-    Forever
-    {
-        If (LearnMode == 0)
-        {
-            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset", Operator.Join("   S)uspend   I)nterval-Algorithm: SM-", (5 - (Right Click me to Import/Export learning data[6] * 3)))), " ^C)Leave------------------------------------------------------------------------------   █ █");
-        }
-        Else
-        {
-            Finaltext = "DOMEMORY v1.3 [Learning Mode]";
-        }
-    }
-}
-
-WhenBroadcastReceived(Domemory.exe)
-{
     Forever
     {
         If (cursor location > (Variable.Length(TextEdit) + 1))
@@ -645,6 +624,24 @@ WhenBroadcastReceived(Domemory.exe)
         If (cursor location == 0)
         {
             cursor location += 1;
+        }
+    }
+}
+
+WhenBroadcastReceived(Domemory.exe)
+{
+    EDITQONLY = 0;
+    CARDID = 1;
+    SECONDBAR = "";
+    Forever
+    {
+        If (LearnMode == 0)
+        {
+            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset", "  S)uspend  "), "Ctrl+C)Leave  Ctrl+X)Exit edit mode ------------------------------------------------------------------------------   █ █");
+        }
+        Else
+        {
+            Finaltext = "DOMEMORY v1.3 [Learning Mode]";
         }
     }
 }
@@ -753,13 +750,13 @@ Define Learn (warp=false)
         Call TyperB;
         TextEdit = "";
         cursor location = Variable.Length("");
-        Repeat Until Sensing.KeyPressed(enter)
+        Repeat Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])
         {
             EDITMODE = 6;
             SECONDBAR = TextEdit;
             Call TyperB;
             Call Megakey;
-            If ((Sensing.KeyPressed(backspace) Or Sensing.KeyPressed(backspace)) And (Variable.Length(TextEdit) > Variable.Length("")))
+            If ((Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\backspace")]) Or Sensing.KeyPressed(backspace)) And (Variable.Length(TextEdit) > Variable.Length("")))
             {
                 Call Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("");
                 If (EDITMODE == 1)
@@ -825,14 +822,14 @@ Define Learn (warp=false)
             List.ReplaceItem(Right Click me to Import/Export learning data, ((CURITEM * 6) + 5), (Right Click me to Import/Export learning data[((CURITEM * 6) + 5)] + (Right Click me to Import/Export learning data[((CURITEM * 6) + 5)] < 20)));
         }
         List.DeleteItem(Dueness, List.IndexOf(Dueness, CURITEM));
-        Wait Until (Not (((((Sensing.KeyPressed(1) Or Sensing.KeyPressed(2)) Or (Sensing.KeyPressed(3) Or Sensing.KeyPressed(4))) Or Sensing.KeyPressed(enter)) Or (EDITMODE == 99))));
+        Wait Until (Not (((((Sensing.KeyPressed(1) Or Sensing.KeyPressed(2)) Or (Sensing.KeyPressed(3) Or Sensing.KeyPressed(4))) Or Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])) Or (EDITMODE == 99))));
         If (List.Length(Dueness) > 0)
         {
             Call statusbar;
             SECONDBAR = Operator.Join(Operator.Join(List.Length(Dueness), " items left"), ", Next Repetition:❤️; Exit learning: X");
             Call Render;
-            Wait Until (Sensing.KeyPressed(enter) Or Sensing.KeyPressed(x));
-            Wait Until (Not (Sensing.KeyPressed(enter)));
+            Wait Until (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]) Or Sensing.KeyPressed(x));
+            Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
         }
     }
     If Sensing.KeyPressed(x)
@@ -849,7 +846,7 @@ Define Learn (warp=false)
         EDITMODE = 14;
         SECONDBAR = "[REVIEW] Nothing more to learn❤️";
         Call Render;
-        Wait Until Sensing.KeyPressed(enter);
+        Wait Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]);
         EDITMODE = 0;
         LearnMode = 0;
     }
@@ -859,7 +856,7 @@ Define Learn (warp=false)
 
 Define Megakey (warp=false)
 {
-    If Sensing.KeyPressed(shift)
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\shiftkey")])
     {
         Call Key("A");
         Call Key("B");
@@ -963,7 +960,7 @@ Define Megakey (warp=false)
     Call Key(""");
     Call Key("@");
     Call Key(0);
-    If Sensing.KeyPressed(delete)
+    If (Sensing.KeyPressed(delete) And is compiled?)
     {
         Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
         If (EDITMODE == 1)
@@ -984,7 +981,7 @@ Define Megakey (warp=false)
         TextEdit = JOINSTRING STRING;
         Control.Wait(0.06);
     }
-    If (Sensing.KeyPressed(backspace) And (cursor location > 1))
+    If (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\backspacekey")]) And (cursor location > 1))
     {
         Call Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("");
         If (EDITMODE == 1)
@@ -1217,7 +1214,7 @@ Define TyperB (warp=true)
 
 Define Typer color (warp=true)
 {
-    Pen.SetPenColorToColor(#ffffff);
+    Pen.SetPenColorToColor(Operator.Join("0x", Data[List.IndexOf(Name, "c:\registry\color")]));
     Counting = 0;
     Motion.GoToXY(-235, 155);
     Repeat ((Variable.Length(Operator.Join(Finaltext, "")) + 2))
@@ -1259,6 +1256,20 @@ Define Typer color (warp=true)
 
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
+
+shift;
+
+enter;
+
+backspace;
+
+enter;
+
+enter;
+
+shift;
+
+backspace;
 
 c;
 

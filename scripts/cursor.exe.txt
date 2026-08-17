@@ -1,0 +1,41 @@
+//----- Green flag events ---------------------------------------------------------------------------------------------
+
+WhenGreenFlagClicked()
+{
+    Looks.SetEffectTo(GHOST, 100);
+    Looks.SetSizeTo(155);
+    Forever
+    {
+        If (domemory.exe == 3)
+        {
+            Call Megac;
+            Motion.GoTo(_mouse_);
+        }
+    }
+}
+
+
+//----- Start as clone ------------------------------------------------------------------------------------------------
+
+Control.WhenIStartAsClone()
+{
+    Control.DeleteThisClone();
+}
+
+
+//----- Custom blocks -------------------------------------------------------------------------------------------------
+
+Define Megac (warp=true)
+{
+    Motion.PointTowards(_mouse_);
+    Repeat (ceiling(((Sensing.DistanceTo(_mouse_) + 0.0001) / 4.0001)))
+    {
+        Control.CreateCloneOf(_myself_);
+        Motion.Move(4);
+    }
+}
+
+
+//----- Costumes ------------------------------------------------------------------------------------------------------
+
+costume1.svg

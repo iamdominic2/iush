@@ -11,6 +11,7 @@ WhenGreenFlagClicked()
     Looks.SetEffectTo(GHOST, 100);
     Pen.Clear();
     List.DeleteAll(recents);
+    domemory.exe = 0;
     TextEdit = "";
     cursor location = 1;
     Command? = 0;
@@ -41,7 +42,7 @@ WhenGreenFlagClicked()
             Call Render("")("s");
             If ((Not (Sensing.MouseDown())) And (firstclick > ""))
             {
-                If (Sensing.Timer() > 0.12)
+                If (Sensing.Timer() > 0.25)
                 {
                     If (firstclick > lastclick)
                     {
@@ -77,27 +78,16 @@ WhenGreenFlagClicked()
 
 WhenGreenFlagClicked()
 {
+    Looks.SetEffectTo(GHOST, 100);
     List.Hide(Name);
     List.Hide(Right Click me to Import/Export learning data);
     List.Hide(Data);
-    If ((Not (is compiled?)) And (Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")] == "emH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4torJHk"))
+    If ((Not (is compiled?)) And (Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")] == "#emH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4torJHk"))
     {
-        List.ReplaceItem(Data, Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")], "remH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4tor925");
+        List.ReplaceItem(Data, Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")], "#remH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4tor925");
         List.ReplaceItem(Data, Data[List.IndexOf(Name, "C:\registry\shiftkey")], "]");
         List.ReplaceItem(Data, Data[List.IndexOf(Name, "C:\registry\backspace")], "<");
         List.ReplaceItem(Data, Data[List.IndexOf(Name, "C:\registry\controlkey")], "^");
-    }
-    Forever
-    {
-        If Sensing.MouseDown()
-        {
-            Sensing.ResetTimer();
-            Wait Until (Not (Sensing.MouseDown()));
-            If ((Sensing.Timer() < 0.15) And (abs((firstclick - lastclick)) < 1))
-            {
-                Event.Broadcast("PASTE");
-            }
-        }
     }
 }
 
@@ -106,12 +96,15 @@ WhenGreenFlagClicked()
 
 WhenKeyPressed(left arrow)
 {
-    If ((EDITMODE < 3) Or (EDITMODE == 6))
+    If (domemory.exe == 0)
     {
-        cursor location += -1;
-        If (cursor location == 0)
+        If ((EDITMODE < 3) Or (EDITMODE == 6))
         {
-            cursor location += 1;
+            cursor location += -1;
+            If (cursor location == 0)
+            {
+                cursor location += 1;
+            }
         }
     }
 }
@@ -127,6 +120,45 @@ WhenKeyPressed(right arrow)
             {
                 cursor location += -1;
             }
+        }
+    }
+}
+
+WhenKeyPressed(v)
+{
+    If (domemory.exe == 0)
+    {
+        If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
+        {
+            Event.Broadcast("PASTE");
+        }
+    }
+}
+
+WhenKeyPressed(page up)
+{
+    If (domemory.exe == 0)
+    {
+        If is compiled?
+        {
+            Call pgup;
+        }
+        Else
+        {
+        }
+    }
+}
+
+WhenKeyPressed(page down)
+{
+    If (domemory.exe == 0)
+    {
+        If is compiled?
+        {
+            Call pgd;
+        }
+        Else
+        {
         }
     }
 }
@@ -157,17 +189,6 @@ WhenKeyPressed(up arrow)
     }
 }
 
-WhenKeyPressed(v)
-{
-    If (domemory.exe == 0)
-    {
-        If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
-        {
-            Event.Broadcast("PASTE");
-        }
-    }
-}
-
 WhenKeyPressed(down arrow)
 {
     If (domemory.exe == 0)
@@ -194,34 +215,6 @@ WhenKeyPressed(down arrow)
     }
 }
 
-WhenKeyPressed(page up)
-{
-    If (domemory.exe == 0)
-    {
-        If is compiled?
-        {
-            Call pgup;
-        }
-        Else
-        {
-        }
-    }
-}
-
-WhenKeyPressed(page down)
-{
-    If (domemory.exe == 0)
-    {
-        If is TurboWarp?
-        {
-            Call pgd;
-        }
-        Else
-        {
-        }
-    }
-}
-
 
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
@@ -238,7 +231,7 @@ WhenBroadcastReceived(PASTE)
 
 //----- Custom blocks -------------------------------------------------------------------------------------------------
 
-Define attempt cd(string number or text) dry(string d) (warp=false)
+Define attempt cd(string number or text) dry(string d) er(string r) (warp=false)
 {
     If List.ContainsItem(Name, number or text)
     {
@@ -251,7 +244,10 @@ Define attempt cd(string number or text) dry(string d) (warp=false)
     Else
     {
         aa = 0;
-        List.Add(cm, "iush: fatal: file or directory non-existent");
+        If (r == 1)
+        {
+            List.Add(cm, "iush: fatal: directory non-existent");
+        }
     }
 }
 
@@ -309,7 +305,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
         exenow = TextEdit;
         If (ac == "c:")
         {
-            Call attempt cd("c:") dry("");
+            Call attempt cd("c:") dry("") er("");
             List.Add(cm, "");
         }
         Else
@@ -336,7 +332,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                     }
                     Else
                     {
-                        If (((TextEdit == "iush: is a directory") Or (Data[List.IndexOf(Name, TextEdit)] == "iush: is a directory")) And (Not ((TextEdit == "c:"))))
+                        If (((TextEdit == "iush: is a directory") Or ) And (Not ((TextEdit == "c:"))))
                         {
                             List.Add(cm, "iush: is a directory");
                             List.Add(cm, "");
@@ -425,44 +421,20 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                 Call first(999) chars from string(TextEdit) terminateelse("%%");
                                                 Looks.Say("");
                                                 Control.Wait(0);
-                                                If (Operator.LetterOf(JOINSTRING STRING, 1) == "%")
-                                                {
-                                                    TextEdit = JOINSTRING STRING;
-                                                    Call first(Variable.Length(TextEdit)) chars from string(TextEdit) terminateelse("%%");
-                                                    Looks.Say("");
-                                                    Control.Wait(0);
-                                                    TextEdit = JOINSTRING STRING;
-                                                    Call kill first(1) chars from string(TextEdit) or at chr("");
-                                                    Control.Wait(0);
-                                                    TextEdit = JOINSTRING STRING;
-                                                    Call first((Variable.Length(TextEdit) - 1)) chars from string(TextEdit) terminateelse("%%");
-                                                    Looks.Say("");
-                                                    If (Data[List.IndexOf(Name, Operator.Join("c:\registry\", JOINSTRING STRING))] == "")
-                                                    {
-                                                        List.Add(cm, Data[List.IndexOf(Name, Operator.Join("", JOINSTRING STRING))]);
-                                                    }
-                                                    Else
-                                                    {
-                                                        List.Add(cm, Data[List.IndexOf(Name, Operator.Join("c:\registry\", JOINSTRING STRING))]);
-                                                    }
-                                                }
-                                                Else
-                                                {
-                                                    List.Add(cm, JOINSTRING STRING);
-                                                }
+                                                List.Add(cm, JOINSTRING STRING);
                                             }
                                             Else
                                             {
                                                 If (JOINSTRING STRING == "easteregg")
                                                 {
-                                                    List.Add(cm, "not for you");
+                                                    List.Add(cm, "GOD HAS NOT BEEN PROVEN TO EXIST, NEITHER HAS JESUS BEEN PROVEN TO EXIST, SO  NEITHER HAS EASTER BEEN PROVEN TO EXIST");
                                                 }
                                                 Else
                                                 {
                                                     If (JOINSTRING STRING == "dir")
                                                     {
                                                         Call kill first(4) chars from string(TextEdit) or at chr("");
-                                                        Call ls("") rd("") cnt("");
+                                                        Call ls("") rd("") cnt("") s("");
                                                     }
                                                     Else
                                                     {
@@ -478,53 +450,45 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                             {
                                                                 Call kill first(3) chars from string(TextEdit) or at chr("");
                                                                 olddir = Data[List.IndexOf(Name, "C:\registry\workingdirectory")];
-                                                                If ((JOINSTRING STRING == "..") And (Not ((Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\"))))
+                                                                If (Not ((JOINSTRING STRING == "")))
                                                                 {
-                                                                    Call rls;
-                                                                    Call attempt cd(tmdir) dry("");
-                                                                }
-                                                                Else
-                                                                {
-                                                                    If (Not ((JOINSTRING STRING == "")))
+                                                                    If (List.IndexOf(Name, "C:\registry\workingdirectory") == "c:\")
                                                                     {
-                                                                        If (List.IndexOf(Name, "C:\registry\workingdirectory") == "c:\")
+                                                                        Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), JOINSTRING STRING)) dry("") er(1);
+                                                                    }
+                                                                    Else
+                                                                    {
+                                                                        If Operator.Contains(TextEdit, ":")
                                                                         {
-                                                                            Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), JOINSTRING STRING)) dry("");
+                                                                            Call attempt cd(JOINSTRING STRING) dry("") er("");
                                                                         }
                                                                         Else
                                                                         {
-                                                                            If Operator.Contains(TextEdit, ":")
-                                                                            {
-                                                                                Call attempt cd(JOINSTRING STRING) dry("");
-                                                                            }
-                                                                            Else
-                                                                            {
-                                                                                Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), JOINSTRING STRING)) dry("");
-                                                                            }
-                                                                            If (Operator.LetterOf(TextEdit, Variable.Length(TextEdit)) == "\")
-                                                                            {
-                                                                                Call first((Variable.Length(Data[List.IndexOf(Name, "C:\registry\workingdirectory")]) - 1)) chars from string(Data[List.IndexOf(Name, "C:\registry\workingdirectory")]) terminateelse("");
-                                                                                Call attempt cd(JOINSTRING STRING) dry("");
-                                                                            }
-                                                                            If (Operator.LetterOf(TextEdit, Variable.Length(TextEdit)) == ":")
-                                                                            {
-                                                                                List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\workingdirectory"), Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"));
-                                                                            }
-                                                                            If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:")
-                                                                            {
-                                                                                List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\workingdirectory"), "c:\");
-                                                                            }
-                                                                            If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\\")
-                                                                            {
-                                                                                List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\workingdirectory"), "c:\");
-                                                                            }
+                                                                            Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), JOINSTRING STRING)) dry("") er(1);
+                                                                        }
+                                                                        If (Operator.LetterOf(TextEdit, Variable.Length(TextEdit)) == "\")
+                                                                        {
+                                                                            Call first((Variable.Length(Data[List.IndexOf(Name, "C:\registry\workingdirectory")]) - 1)) chars from string(Data[List.IndexOf(Name, "C:\registry\workingdirectory")]) terminateelse("");
+                                                                            Call attempt cd(JOINSTRING STRING) dry("") er(1);
+                                                                        }
+                                                                        If (Operator.LetterOf(TextEdit, Variable.Length(TextEdit)) == ":")
+                                                                        {
+                                                                            List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\workingdirectory"), Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"));
+                                                                        }
+                                                                        If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:")
+                                                                        {
+                                                                            List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\workingdirectory"), "c:\");
+                                                                        }
+                                                                        If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\\")
+                                                                        {
+                                                                            List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\workingdirectory"), "c:\");
                                                                         }
                                                                     }
                                                                 }
                                                                 If (Not ((Data[List.IndexOf(Name, Data[List.IndexOf(Name, "C:\registry\workingdirectory")])] == "iush: is a directory")))
                                                                 {
                                                                     List.Add(cm, "fatal: not a directory");
-                                                                    Call attempt cd(olddir) dry("");
+                                                                    Call attempt cd(olddir) dry("") er("");
                                                                 }
                                                                 Else
                                                                 {
@@ -535,7 +499,14 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                 If (JOINSTRING STRING == "color")
                                                                 {
                                                                     Call kill first(6) chars from string(TextEdit) or at chr("");
-                                                                    List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\color"), JOINSTRING STRING);
+                                                                    If ((Not ((JOINSTRING STRING > 0))) And (Variable.Length(JOINSTRING STRING) == 6))
+                                                                    {
+                                                                        List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\color"), JOINSTRING STRING);
+                                                                    }
+                                                                    Else
+                                                                    {
+                                                                        List.Add(cm, "fatal: display output or hexcode error");
+                                                                    }
                                                                 }
                                                                 Else
                                                                 {
@@ -545,25 +516,8 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                     }
                                                                     Else
                                                                     {
-                                                                        If (JOINSTRING STRING == "move")
+                                                                        If 
                                                                         {
-                                                                            Call kill first(5) chars from string(TextEdit) or at chr("");
-                                                                            TextEdit = JOINSTRING STRING;
-                                                                            Call first(999) chars from string(TextEdit) terminateelse("");
-                                                                            emacs = (JOINSTRING NO + 1);
-                                                                            TextEdit = JOINSTRING STRING;
-                                                                            aa = TextEdit;
-                                                                            Call kill first(emacs) chars from string(TextEdit) or at chr("");
-                                                                            ab = JOINSTRING STRING;
-                                                                            If (List.IndexOf(Name, aa) == 0)
-                                                                            {
-                                                                                List.ReplaceItem(Name, Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"), List.IndexOf(Name, aa)), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"), List.IndexOf(Name, ab)));
-                                                                                List.ReplaceItem(Name, Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), List.IndexOf(Name, aa)), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), List.IndexOf(Name, ab)));
-                                                                            }
-                                                                            Else
-                                                                            {
-                                                                                List.ReplaceItem(Name, List.IndexOf(Name, aa), ab);
-                                                                            }
                                                                         }
                                                                         Else
                                                                         {
@@ -616,41 +570,18 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                     Call first(9999) chars from string(TextEdit) terminateelse("");
                                                                                     aaa = (Variable.Length(JOINSTRING STRING) + 1);
                                                                                     TextEdit = JOINSTRING STRING;
-                                                                                    If Operator.Contains(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ":")
+                                                                                    Call Real_full_dirfind TEXT(TextEdit);
+                                                                                    If List.ContainsItem(Name, actPATH)
                                                                                     {
-                                                                                        If List.ContainsItem(Name, TextEdit)
-                                                                                        {
-                                                                                            List.DeleteItem(Data, List.IndexOf(Name, Operator.Join("", Operator.Join("", TextEdit))));
-                                                                                            List.DeleteItem(Name, List.IndexOf(Name, TextEdit));
-                                                                                        }
-                                                                                        List.Add(Name, TextEdit);
-                                                                                        Call MDONctsletter("\") from(TextEdit) md("\");
+                                                                                        Call kill first(aaa) chars from string(aa) or at chr("");
+                                                                                        List.ReplaceItem(Data, List.IndexOf(Name, actPATH), JOINSTRING STRING);
                                                                                     }
                                                                                     Else
                                                                                     {
-                                                                                        If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\")
-                                                                                        {
-                                                                                            If List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], TextEdit))
-                                                                                            {
-                                                                                                List.DeleteItem(Data, List.IndexOf(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("", TextEdit))));
-                                                                                                List.DeleteItem(Name, List.IndexOf(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], TextEdit)));
-                                                                                            }
-                                                                                            List.Add(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], TextEdit));
-                                                                                            Call MDONctsletter("\") from(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], TextEdit)) md("\");
-                                                                                        }
-                                                                                        Else
-                                                                                        {
-                                                                                            If List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", TextEdit)))
-                                                                                            {
-                                                                                                List.DeleteItem(Data, List.IndexOf(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", TextEdit))));
-                                                                                                List.DeleteItem(Name, List.IndexOf(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", TextEdit))));
-                                                                                            }
-                                                                                            List.Add(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", TextEdit)));
-                                                                                            Call MDONctsletter("\") from(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", TextEdit))) md("\");
-                                                                                        }
+                                                                                        List.Add(Name, actPATH);
+                                                                                        Call kill first(aaa) chars from string(aa) or at chr("");
+                                                                                        List.Add(Data, JOINSTRING STRING);
                                                                                     }
-                                                                                    Call kill first(aaa) chars from string(aa) or at chr("");
-                                                                                    List.Add(Data, JOINSTRING STRING);
                                                                                 }
                                                                                 Else
                                                                                 {
@@ -658,7 +589,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                     {
                                                                                         Call kill first(5) chars from string(TextEdit) or at chr("");
                                                                                         TextEdit = JOINSTRING STRING;
-                                                                                        Call ls("") rd("") cnt("find");
+                                                                                        Call ls("") rd("") cnt("find") s("");
                                                                                     }
                                                                                     Else
                                                                                     {
@@ -667,14 +598,16 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                             Call kill first(6) chars from string(TextEdit) or at chr("");
                                                                                             TextEdit = JOINSTRING STRING;
                                                                                             olddir = Data[List.IndexOf(Name, "C:\registry\workingdirectory")];
-                                                                                            Call attempt cd(TextEdit) dry(64);
+                                                                                            Call Real_full_dirfind TEXT(TextEdit);
+                                                                                            TextEdit = actPATH;
+                                                                                            Call attempt cd(TextEdit) dry(64) er("");
                                                                                             If (aa == 1)
                                                                                             {
-                                                                                                Call attempt cd(TextEdit) dry("");
-                                                                                                Call ls(2) rd("rd") cnt("");
+                                                                                                Call attempt cd(TextEdit) dry("") er("");
+                                                                                                Call ls(2) rd("rds") cnt("rds") s("");
                                                                                             }
-                                                                                            Call attempt cd("c:") dry("");
-                                                                                            Call attempt cd(olddir) dry("");
+                                                                                            Call attempt cd("c:") dry("") er("");
+                                                                                            Call attempt cd(olddir) dry("") er("");
                                                                                         }
                                                                                         Else
                                                                                         {
@@ -683,11 +616,13 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                 Call kill first(3) chars from string(TextEdit) or at chr("");
                                                                                                 TextEdit = JOINSTRING STRING;
                                                                                                 olddir = Data[List.IndexOf(Name, "C:\registry\workingdirectory")];
-                                                                                                Call attempt cd(TextEdit) dry(64);
+                                                                                                Call Real_full_dirfind TEXT(TextEdit);
+                                                                                                TextEdit = actPATH;
+                                                                                                Call attempt cd(actPATH) dry(64) er("");
                                                                                                 If (aa == 1)
                                                                                                 {
-                                                                                                    Call attempt cd(TextEdit) dry("");
-                                                                                                    Call ls(2) rd("") cnt("");
+                                                                                                    Call attempt cd(TextEdit) dry("") er("");
+                                                                                                    Call ls(2) rd("") cnt("") s("");
                                                                                                     If (lsct > 0)
                                                                                                     {
                                                                                                         List.Add(cm, Operator.Join("iush: fatal: ", "non-empty directory"));
@@ -705,8 +640,8 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                         }
                                                                                                     }
                                                                                                 }
-                                                                                                Call attempt cd("c:") dry("");
-                                                                                                Call attempt cd(olddir) dry("");
+                                                                                                Call attempt cd("c:") dry("") er("");
+                                                                                                Call attempt cd(olddir) dry("") er("");
                                                                                             }
                                                                                             Else
                                                                                             {
@@ -715,7 +650,9 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                     Call kill first(4) chars from string(TextEdit) or at chr("");
                                                                                                     TextEdit = JOINSTRING STRING;
                                                                                                     olddir = Data[List.IndexOf(Name, "C:\registry\workingdirectory")];
-                                                                                                    Call attempt cd(TextEdit) dry(64);
+                                                                                                    Call Real_full_dirfind TEXT(TextEdit);
+                                                                                                    TextEdit = actPATH;
+                                                                                                    Call attempt cd(TextEdit) dry(64) er("");
                                                                                                     If (aa == 1)
                                                                                                     {
                                                                                                         If (Data[List.IndexOf(Name, TextEdit)] == "iush: is a directory")
@@ -724,12 +661,23 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                         }
                                                                                                         Else
                                                                                                         {
-                                                                                                            List.DeleteItem(Data, List.IndexOf(Name, TextEdit));
-                                                                                                            List.DeleteItem(Name, List.IndexOf(Name, TextEdit));
+                                                                                                            If List.ContainsItem(Name, TextEdit)
+                                                                                                            {
+                                                                                                                List.DeleteItem(Data, List.IndexOf(Name, TextEdit));
+                                                                                                                List.DeleteItem(Name, List.IndexOf(Name, TextEdit));
+                                                                                                            }
+                                                                                                            Else
+                                                                                                            {
+                                                                                                                List.Add(cm, Operator.Join(Operator.Join("iush: ", TextEdit), ": no such file"));
+                                                                                                            }
                                                                                                         }
                                                                                                     }
-                                                                                                    Call attempt cd("c:") dry("");
-                                                                                                    Call attempt cd(olddir) dry("");
+                                                                                                    Else
+                                                                                                    {
+                                                                                                        List.Add(cm, Operator.Join(Operator.Join("iush: ", TextEdit), ": no such file"));
+                                                                                                    }
+                                                                                                    Call attempt cd("c:") dry("") er("");
+                                                                                                    Call attempt cd(olddir) dry("") er("");
                                                                                                 }
                                                                                                 Else
                                                                                                 {
@@ -738,14 +686,18 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                         Call kill first(6) chars from string(TextEdit) or at chr("");
                                                                                                         TextEdit = JOINSTRING STRING;
                                                                                                         olddir = Data[List.IndexOf(Name, "C:\registry\workingdirectory")];
-                                                                                                        Call attempt cd(TextEdit) dry(64);
+                                                                                                        Call attempt cd(TextEdit) dry(64) er("");
                                                                                                         If (aa == 1)
                                                                                                         {
-                                                                                                            Call attempt cd(TextEdit) dry("");
+                                                                                                            Call attempt cd(TextEdit) dry("") er("");
                                                                                                             List.Add(cm, Data[List.IndexOf(Name, Data[List.IndexOf(Name, "C:\registry\workingdirectory")])]);
                                                                                                         }
-                                                                                                        Call attempt cd("c:") dry("");
-                                                                                                        Call attempt cd(olddir) dry("");
+                                                                                                        Else
+                                                                                                        {
+                                                                                                            List.Add(cm, TextEdit);
+                                                                                                        }
+                                                                                                        Call attempt cd("c:") dry("") er("");
+                                                                                                        Call attempt cd(olddir) dry("") er("");
                                                                                                     }
                                                                                                     Else
                                                                                                     {
@@ -758,7 +710,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                             Call first(9999) chars from string(TextEdit) terminateelse("");
                                                                                                             TextEdit = JOINSTRING STRING;
                                                                                                             olddir = Data[List.IndexOf(Name, "C:\registry\workingdirectory")];
-                                                                                                            Call attempt cd(TextEdit) dry(64);
+                                                                                                            Call attempt cd(TextEdit) dry(64) er("");
                                                                                                             If (aa == 1)
                                                                                                             {
                                                                                                                 If (Data[List.IndexOf(Name, TextEdit)] == "iush: is a directory")
@@ -783,8 +735,12 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                     }
                                                                                                                 }
                                                                                                             }
-                                                                                                            Call attempt cd("c:") dry("");
-                                                                                                            Call attempt cd(olddir) dry("");
+                                                                                                            Else
+                                                                                                            {
+                                                                                                                List.Add(cm, Operator.Join(Operator.Join("iush: ", TextEdit), ": no such file"));
+                                                                                                            }
+                                                                                                            Call attempt cd("c:") dry("") er("");
+                                                                                                            Call attempt cd(olddir) dry("") er("");
                                                                                                         }
                                                                                                         Else
                                                                                                         {
@@ -814,7 +770,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                 }
                                                                                                                 Else
                                                                                                                 {
-                                                                                                                    If ((JOINSTRING STRING == "domemory") Or (JOINSTRING STRING == "domemory"))
+                                                                                                                    If ((JOINSTRING STRING == "domemory") Or (JOINSTRING STRING == "domemory.exe"))
                                                                                                                     {
                                                                                                                         Stop(other scripts in sprite);
                                                                                                                         Event.BroadcastAndWait("Domemory.exe");
@@ -822,14 +778,52 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                     }
                                                                                                                     Else
                                                                                                                     {
-                                                                                                                        If (((List.ContainsItem(Name, JOINSTRING STRING) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)]))) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)])))) And (tryex == 0))
+                                                                                                                        If ((JOINSTRING STRING == "paint.exe") Or (JOINSTRING STRING == "paint"))
                                                                                                                         {
-                                                                                                                            tryex = 1;
-                                                                                                                            Call execute(Data[List.IndexOf(Name, TextEdit)]) skip new("") SIGINT("");
+                                                                                                                            Call kill first((Variable.Length(JOINSTRING STRING) + 1)) chars from string(TextEdit) or at chr("");
+                                                                                                                            notepaddir = JOINSTRING STRING;
+                                                                                                                            domemory.exe = 3;
+                                                                                                                            Stop(other scripts in sprite);
+                                                                                                                            Event.BroadcastAndWait("paint.exe");
+                                                                                                                            Stop(this script);
                                                                                                                         }
                                                                                                                         Else
                                                                                                                         {
-                                                                                                                            List.Add(cm, Operator.Join(Operator.Join("iush: fatal: ", JOINSTRING STRING), ": command not found"));
+                                                                                                                            If ((JOINSTRING STRING == "notepad.exe") Or (JOINSTRING STRING == "notepad"))
+                                                                                                                            {
+                                                                                                                                Call kill first((Variable.Length(JOINSTRING STRING) + 1)) chars from string(TextEdit) or at chr("");
+                                                                                                                                notepaddir = JOINSTRING STRING;
+                                                                                                                                domemory.exe = 2;
+                                                                                                                                Stop(other scripts in sprite);
+                                                                                                                                Event.BroadcastAndWait("Notepad.exe");
+                                                                                                                                Stop(this script);
+                                                                                                                            }
+                                                                                                                            Else
+                                                                                                                            {
+                                                                                                                                If (((List.ContainsItem(Name, JOINSTRING STRING) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)]))) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)])))) And (tryex == 0))
+                                                                                                                                {
+                                                                                                                                    tryex = 1;
+                                                                                                                                    If Operator.Contains(JOINSTRING STRING, ":")
+                                                                                                                                    {
+                                                                                                                                        Call execute(Data[List.IndexOf(Name, TextEdit)]) skip new("") SIGINT("");
+                                                                                                                                    }
+                                                                                                                                    Else
+                                                                                                                                    {
+                                                                                                                                        If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\")
+                                                                                                                                        {
+                                                                                                                                            Call execute(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)])) skip new("") SIGINT("");
+                                                                                                                                        }
+                                                                                                                                        Else
+                                                                                                                                        {
+                                                                                                                                            Call execute(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)]))) skip new("") SIGINT("");
+                                                                                                                                        }
+                                                                                                                                    }
+                                                                                                                                }
+                                                                                                                                Else
+                                                                                                                                {
+                                                                                                                                    List.Add(cm, "ERROR: Command not found. To see a list of commands, type Help.");
+                                                                                                                                }
+                                                                                                                            }
                                                                                                                         }
                                                                                                                     }
                                                                                                                 }
@@ -860,7 +854,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                 }
             }
         }
-        Call ls("") rd("") cnt("dup");
+        Call ls("") rd("") cnt("dup") s("");
         If (nextexe == "")
         {
             Stop(this script);
@@ -979,6 +973,10 @@ Define Key(string s) (warp=false)
             }
         }
     }
+    If (cursor location > (Variable.Length(TextEdit) + 1))
+    {
+        cursor location = (Variable.Length(TextEdit) + 1);
+    }
 }
 
 Define kill first(string n) chars from string(string string) or at chr(string ccc) (warp=false)
@@ -995,11 +993,11 @@ Define kill first(string n) chars from string(string string) or at chr(string cc
     }
 }
 
-Define ls(string skip) rd(string y) cnt(string nn) (warp=false)
+Define ls(string skip) rd(string y) cnt(string nn) s(string d) (warp=false)
 {
     If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\")
     {
-        Call attempt cd("c:") dry("");
+        Call attempt cd("c:") dry("") er("");
     }
     Count = 0;
     List.DeleteAll(atmpt);
@@ -1007,26 +1005,29 @@ Define ls(string skip) rd(string y) cnt(string nn) (warp=false)
     Repeat (List.Length(Name))
     {
         Count += 1;
-        If (nn == "find")
+        If ((nn == "find") Or (nn == "rds"))
         {
             If (Operator.Contains(Name[Count], TextEdit) And (Not ((Name[Count] == "c:"))))
             {
-                List.Add(cm, Name[Count]);
+                If (y == "rds")
+                {
+                    If Operator.Contains(Name[Count], Data[List.IndexOf(Name, "C:\registry\workingdirectory")])
+                    {
+                        List.DeleteItem(Data, Count);
+                        List.DeleteItem(Name, Count);
+                        Count += -1;
+                    }
+                }
+                Else
+                {
+                    List.Add(cm, Name[Count]);
+                }
             }
         }
         Else
         {
             If (nn == "dup")
             {
-                If List.ContainsItem(atmpt, Name[Count])
-                {
-                    List.DeleteItem(Data, List.IndexOf(Name, Name[Count]));
-                    List.DeleteItem(Name, List.IndexOf(Name, Name[Count]));
-                }
-                Else
-                {
-                    List.Add(atmpt, Name[Count]);
-                }
             }
             Else
             {
@@ -1045,6 +1046,7 @@ Define ls(string skip) rd(string y) cnt(string nn) (warp=false)
                             {
                                 List.DeleteItem(Data, Count);
                                 List.DeleteItem(Name, Count);
+                                Count += -1;
                             }
                         }
                     }
@@ -1064,6 +1066,7 @@ Define ls(string skip) rd(string y) cnt(string nn) (warp=false)
                             {
                                 List.DeleteItem(Data, Count);
                                 List.DeleteItem(Name, Count);
+                                Count += -1;
                             }
                         }
                     }
@@ -1073,7 +1076,7 @@ Define ls(string skip) rd(string y) cnt(string nn) (warp=false)
     }
     If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:")
     {
-        Call attempt cd("c:\") dry("");
+        Call attempt cd("c:\") dry("") er("");
     }
 }
 
@@ -1125,6 +1128,7 @@ Define MDONctsletter(string letter) from(string string) md(string md) (warp=fals
 
 Define Megakey (warp=false)
 {
+    nonexistwar = 0;
     If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\shiftkey")])
     {
         Call Key("A");
@@ -1235,13 +1239,29 @@ Define Megakey (warp=false)
         Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
         TextEdit = JOINSTRING STRING;
         Call Render("")("");
-        Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])));
+        Sensing.ResetTimer();
+        Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.4));
+        Repeat Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])))
+        {
+            Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
+            TextEdit = JOINSTRING STRING;
+            Call Render("")("");
+            Sensing.ResetTimer();
+            Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.05));
+        }
     }
     If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\enterkey")])
     {
         List.Add(recents, TextEdit);
         List.Add(cm, Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ">"), TextEdit));
-        Call execute(TextEdit) skip new("") SIGINT("");
+        If (TextEdit == "iush: is a directory")
+        {
+            List.Add(cm, "command not found");
+        }
+        Else
+        {
+            Call execute(TextEdit) skip new("") SIGINT("");
+        }
         TextEdit = "";
         Call Render(1)("");
         counta = (List.Length(recents) + 1);
@@ -1266,16 +1286,22 @@ Define Megakey (warp=false)
     {
         Repeat Until (Not (Operator.Contains(TextEdit, "☙")))
         {
+            orgt = TextEdit;
             Call first(Variable.Length(TextEdit)) chars from string(TextEdit) terminateelse("☙");
-            List.Add(cm, Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ">"), dte));
             dte = JOINSTRING STRING;
+            dtl = Variable.Length(JOINSTRING STRING);
+            List.Add(cm, Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ">"), dte));
+            TextEdit = dte;
             Call execute(dte) skip new("") SIGINT("");
-            Call kill first((Variable.Length(dte) + 1)) chars from string(TextEdit) or at chr("");
+            TextEdit = orgt;
+            Call kill first((dtl + 1)) chars from string(TextEdit) or at chr("");
             TextEdit = JOINSTRING STRING;
-            Call Render("")("");
-            Control.Wait(0.1);
         }
         cursor location = (1 + Variable.Length(TextEdit));
+        If (scroll < (List.Length(cm) - 41))
+        {
+            scroll = (List.Length(cm) - 41);
+        }
     }
 }
 
@@ -1328,6 +1354,25 @@ Define pgup (warp=true)
     }
 }
 
+Define Real_full_dirfind TEXT(string text) (warp=false)
+{
+    If ((Operator.LetterOf(text, 1) == "c") And (Operator.LetterOf(text, 2) == ":"))
+    {
+        actPATH = text;
+    }
+    Else
+    {
+        If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\")
+        {
+            actPATH = Operator.Join("c:\", text);
+        }
+        Else
+        {
+            actPATH = Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", text));
+        }
+    }
+}
+
 Define Render(string d)(string s) (warp=true)
 {
     Call subrender(d)(s);
@@ -1340,7 +1385,21 @@ Define Render(string d)(string s) (warp=true)
         }
     }
     Motion.GoToXY(-235, -170);
-    Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join("iush: @", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")")) italics("") bold("") cursor(n) curspos("");
+    Call Text(Operator.Join("", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("iush: @", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), Operator.Join(" [", Operator.Join(Data[List.IndexOf(Name, "c:\registry\clipboard")], "]"))))) italics("") bold("") cursor(n) curspos("");
+    If (List.Length(Name) > List.Length(Data))
+    {
+        List.DeleteItem(Name, List.Length(Name));
+    }
+    Else
+    {
+        If (List.Length(Name) < List.Length(Data))
+        {
+            List.DeleteItem(Data, List.Length(Data));
+        }
+        Else
+        {
+        }
+    }
 }
 
 Define rls (warp=true)
@@ -1418,7 +1477,7 @@ Define subrender(string d)(string s) (warp=true)
 {
     If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:")
     {
-        Call attempt cd("c:\") dry("");
+        Call attempt cd("c:\") dry("") er("");
     }
     If (cursor location < 1)
     {
@@ -1628,7 +1687,7 @@ Define Text(string text) italics(string italics) bold(string bold) cursor(string
                 }
             }
         }
-        If ((Motion.YPosition() < -160) And (bold == 50))
+        If (Motion.YPosition() < (-179 + (bold * 0.38)))
         {
             Stop(this script);
         }
@@ -1647,139 +1706,23 @@ Define Typer color(string n) (warp=true)
         A-text += 1;
         Q-text = Operator.Join(Q-text, Operator.Join("☙", cm[A-text]));
     }
-    Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), " "))) italics("") bold(50) cursor(n) curspos((cursor location + Variable.Length(Operator.Join(Operator.Join(Q-text, "☙"), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), "")))));
+    If (cursor location > Variable.Length(TextEdit))
+    {
+        Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), " "))) italics("") bold(50) cursor(n) curspos((cursor location + Variable.Length(Operator.Join(Operator.Join(Q-text, "☙"), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), "")))));
+    }
+    Else
+    {
+        Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), ""))) italics("") bold(50) cursor(n) curspos((cursor location + Variable.Length(Operator.Join(Operator.Join(Q-text, "☙"), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), "")))));
+    }
 }
 
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
 
-Call execute(nextexe) skip new("") SIGINT("");
+(50 == 50);
 
-If (nextexe == "")
-{
-    Stop(this script);
-}
-Call execute(nextexe) skip new("") SIGINT("");
+(JOINSTRING STRING == "move");
 
-If (Operator.LetterOf(text, Count) == "█")
-{
-}
-Else
-{
-    If (Operator.LetterOf(text, Count) == "☙")
-    {
-    }
-    Else
-    {
-        If (Operator.LetterOf(text, Count) == "⣦")
-        {
-            Motion.ChangeXBy(-2);
-        }
-        Repeat (8)
-        {
-            Repeat (5)
-            {
-                Counter += 1;
-                Motion.ChangeXBy(1);
-                Looks.SwitchCostumeTo(NONE);
-                Looks.SwitchCostumeTo(Operator.LetterOf(text, Count));
-                If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Not ((Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Not ((Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Else
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Looks.SwitchCostumeTo(NONE);
-            }
-            Repeat (1)
-            {
-                Motion.ChangeXBy(1);
-                Looks.SwitchCostumeTo(NONE);
-                If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Not (("" == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Not (("" == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Else
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If ("" == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If ("" == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Looks.SwitchCostumeTo(NONE);
-            }
-            lettr += 1;
-            Motion.ChangeXBy(-6);
-            Motion.ChangeYBy(-1);
-        }
-        Motion.ChangeYBy(8);
-        Motion.ChangeXBy(6);
-        If (Motion.XPosition() > 232)
-        {
-            Motion.ChangeYBy(-9);
-            Motion.SetX(-235);
-        }
-    }
-}
 If ((Motion.YPosition() < -160) And (bold == 50))
 {
     Stop(this script);
@@ -2042,6 +1985,12 @@ If (scroll > (List.Length(cm) - 41))
 {
     scroll = (List.Length(cm) - 41);
 }
+
+List.ReplaceItem(Data, 46, "#31FEATDrQDB4dMImhfHU31FEATDrQDB4dMImhfHU31FEATDrQDB4dMImhfHU&notepad.exe");
+
+text;
+
+Call Real_full_dirfind TEXT(TextEdit);
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
