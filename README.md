@@ -58,7 +58,7 @@ A program allowing you to edit the name and data of registry members. In other o
 Opening text files in Paint will result in some weird colors due to the bitmap conversion, and vice versa.
 
 ## Importing & Exporting
-I cannot force-download files to your computer, so if you want to save, Type in `regedit`, and right click -> Export **BOTH** the `Name` and `Data` lists. When you re-load, type in `regedit` again and right click -> Import **BOTH** the lists correspondingly.
+I cannot force-download files to your computer, so if you want to save, type in `regedit`, and right click -> Export **BOTH** the `Name` and `Data` lists. When you re-load, type in `regedit` again and right click -> Import **BOTH** the lists correspondingly.
 Again, **NOTE THAT** Domemory save data is **seperate**. It originally was a *seperate program* of mine, but I realized it had the terminal-type vibe so I re-added it here, so that you can do your repetitions with an operating-system emulator.
 
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
