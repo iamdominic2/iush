@@ -68,7 +68,7 @@ Classic spaced repetition active recall - Maybe the first of its kind on Scratch
 ## Notepad
 ![Notepad](screenshots/notepad.png)
 A text editor. The good thing about this is that you can make new lines, unlike the terminal's "set" command. Theoretically, this would allow for multiple `set` commands with `#LITERAL&` (since, for now, you can't have both literal and seperator & in the same line) <BR>
-Try this command: *notepad c:\readme.txt<BR>
+Try this command: `notepad c:\readme.txt`<BR>
 The keyboard shortcuts are chosen specifically to not clash with the browser. I originally planned *Ctrl+Shift+A* for **Save As**, however Chrome recently added a "Search tabs" option that has this exact shortcut, so I remapped it to Ctrl+A. Sorry if it breaks your muscle memory, please forgive me *lol*
 
 ## Paint
