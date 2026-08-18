@@ -79,7 +79,7 @@ A painting program with 22 different colors. I learned how to convert color data
 ## Regedit
 ![Regedit](screenshots/regedit.png)
 A program allowing you to edit the name and data of registry members. In other operating systems, the file system is quite abstracted from the registry, however in this one it is combined into one: the **`Name`s** and the **`Data`s**.<BR>
-***WARNING***: There is no "Undo" if you mess up a Name or a Value. Better to `Export` the Registry Member Lists just to be on the safe side. (More on that later.)
+***WARNING***: There is no telling what would happen if you mess up a Name or a Value. (You might have to reload the page.) Better to `Export` the Registry Member Lists just to be on the safe side. (More on that later.)
 
 ### Experiment!
 Opening text files in Paint will result in some weird colors due to the bitmap conversion, and vice versa.
