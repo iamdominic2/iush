@@ -499,7 +499,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                 If (JOINSTRING STRING == "color")
                                                                 {
                                                                     Call kill first(6) chars from string(TextEdit) or at chr("");
-                                                                    If ((JOINSTRING STRING > 0) And (Variable.Length(JOINSTRING STRING) == 6))
+                                                                    If (Variable.Length(JOINSTRING STRING) == 6)
                                                                     {
                                                                         List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\color"), JOINSTRING STRING);
                                                                     }

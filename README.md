@@ -2,17 +2,19 @@
 
 **LINK: https://iamdominic2.github.io/iush/**
 
+Scratch link: https://scratch.mit.edu/projects/1369594616/editor/ (Due to technical limitations, use `[` for Backspace, `]` for Shift, and `^` for Ctrl on Scratch.)
+
 It stands for ***i***nteractive ***u***ser ***sh***ell, in honor of my best friend at school Aayush.<BR>
 Command-line emulator built from scratch in Scratch - stretching it to the limits, and scratching my head on why anyone would actually (*except me*) bother to do this.
 
-Supported commands:
+Supported commands:<BR>
 `cd [directory]`: Change your working directory<BR>
 `pwd`: Output your working directory<BR>
 `c:`: Change your working directory to the `c:` root<BR>
 `dir [directory]`: List **all** files and subdirectories in the directory<BR>
 `md [name]`: Makes a new directory with your selected name.<BR>
 `del [file]`: Deletes a file (not a directory)<BR>
-`rd [directory]`: Removes an empty directory. Use `rd /s \[directory\]` to remove a non-empty directory (**and all files and subdirectories in the directory**)<BR>
+`rd [directory]`: Removes an empty directory. Use `rd /s [directory]` to remove a non-empty directory (**and all files and subdirectories in the directory**)<BR>
 `set [file] [text]`: Changes the file's data to the text string you inputted<BR>
 `echo [text]`: Outputs the text back at you<BR>
 `write [text or file]`: Outputs text back at you, however if you inputted an existing file path, it outputs the file's contents back at you<BR>
@@ -20,14 +22,15 @@ Supported commands:
 `cls`: Clears the screen - especially useful when it's too bloated or laggy!<BR>
 `date`: Outputs the date in DAYOFWEEK DD/MM/YYYY format. E.g. Monday 17/8/2026.<BR>
 `time`: Outputs the 24-hour current time in HH:MM:SS. For instance, 20:25:19.<BR>
-`color [hex]`: Change the color of the text. Will not accept black (`000000`).<BR>
-`help`: Gives a list of commands, from `c:\iush\help\.txt]`<BR>
-`help [command]`: Gives help with the command, from `c:\iush\help\[COMMANDNAME].txt]`<BR>
+`color [hex]`: Change the color of the text. As a safety mechanism, will not accept pure black (`000000`).<BR>
+`help`: Gives a list of commands, from `c:\iush\help\.txt`<BR>
+`help [command]`: Gives help with the command, from `c:\iush\help\[COMMANDNAME].txt`<BR>
 `find [string]`: Find a file or directory with a string in its name.<BR>
 `exit`: Exits the terminal.<BR>
 
-Built-in programs or scripts (you can write your own with `set` or Notepad, and type the full path in *iush* to execute it!):<BR>
+Built-in programs or scripts (Type the full path in the terminal to execute it! You can even write your own with `set` or `Notepad.exe`. <BR>
 c:\program\matrixrain.exe<BR>
+![MatrixRain](screenshots/matrixrain.png)
 c:\program\notepad.exe (Command: `Notepad [optional: file]` )<BR>
 c:\program\paint.exe (Command: `Paint [optional: file]` )<BR>
 c:\program\regedit.exe (Command: `Regedit`)<BR>
@@ -36,7 +39,7 @@ c:\program\regedit.exe (Command: `Regedit`)<BR>
  
 ### Command line basics
 1. No news is good news! Rather, it's like a teacher - if the shell starts talking back to you, you know you done something wrong.
-2. Use the mouse to copy text (your clipboard will be shown in the square brackets \[\] at the bottom of the page), and Ctrl+V to paste it back! (*Note that Ctrl+C **aborts** the currently running command)
+2. Use the mouse to copy text (your clipboard will be shown in the square brackets \[\] at the bottom of the page), and Ctrl+V to paste it back! (*Note that Ctrl+C **aborts** the currently running command, and the mouse does NOT move the cursor position)
 3. Use `&` to chain commands together!
 4. (*Unique to iush*) However, if you want to **literally** have "&", for instance when using `set` in a file to execute as a batch later, add `#LITERAL&` (**exact phrasing**) to the end of your command.
 5. *Hint*: To avoid re-inputting previous commands, use the *Up Arrow* to pre-input previous commands (and the *Down Arrow* if you overshoot)! It even works multiple times!
@@ -46,12 +49,12 @@ c:\program\regedit.exe (Command: `Regedit`)<BR>
 2. After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though sucessfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.
 
 ## Domemory
+![Presentation](screenshots/presentation.png)
 Classic spaced repetition active recall - Maybe the first of its kind on Scratch! For students and learners alike, if you are too lazy to install Anki, you can do it straight from the Browser!
 
 * Pre-trained SuperMemo 5 spaced repetition algorithm (SuperMemo 2 was too boring to code!)
 * No modern corporate "gamification" bloat - focus purely on the pragmatism of self-testing!
 * Cherish the wisdom of your new knowledge! <BR>
-![Presentation](screenshots/presentation.png)
 * SM-5 optimal factor matrix derived from about 19,000 repetitions: of me using SuperMemo itself:<BR>
 ![OF-Matrix](screenshots/12406.jpg)
 
@@ -63,16 +66,18 @@ Classic spaced repetition active recall - Maybe the first of its kind on Scratch
 ***Note: Domemory save data is stored seperately to the file system, and only lost on Reload.***
 
 ## Notepad
-A text editor. The good thing about this is that you can make newline, unlike the terminal's "set" command.<BR>
+![Notepad](screenshots/notepad.png)
+A text editor. The good thing about this is that you can make new lines, unlike the terminal's "set" command. Theoretically, this would allow for multiple `set` commands with `#LITERAL&` (since, for now, you can't have both literal and seperator & in the same line) <BR>
 Try this command: *notepad c:\readme.txt<BR>
 The keyboard shortcuts are chosen specifically to not clash with the browser. I originally planned *Ctrl+Shift+A* for **Save As**, however Chrome recently added a "Search tabs" option that has this exact shortcut, so I remapped it to Ctrl+A. Sorry if it breaks your muscle memory, please forgive me *lol*
 
 ## Paint
-A painting program with 22 different colors. Note that to prevent massive file sizes and extreme lag, I had to make the pixels somewhat big, however it is still usable to an extent. <BR>
-***HINT***: If you hate the fact that it's in `terminal black`, and would like it to look more "light mode" paper candy, a single keystroke of W will do the trick!<BR>
-**FUN FACT**: It saves as english letters: `0` for black, `a`-`u` for colors.
+![Paint](screenshots/paint.png)
+A painting program with 22 different colors. I learned how to convert color data to text, as it  It saves as english letters: `0` for black, `a`-`u` for colors! Note that to prevent massive file sizes and extreme lag, I had to make the pixels somewhat big, however it is still usable to an extent. <BR>
+***AHA! Moment***: If you hate the fact that it's in `terminal black`, and would like it to look more "light mode" paper candy, a single keystroke of W will do the trick!<BR>
 
 ## Regedit
+![Regedit](screenshots/regedit.png)
 A program allowing you to edit the name and data of registry members. In other operating systems, the file system is quite abstracted from the registry, however in this one it is combined into one: the **`Name`s** and the **`Data`s**.<BR>
 ***WARNING***: There is no "Undo" if you mess up a Name or a Value. Better to `Export` the Registry Member Lists just to be on the safe side. (More on that later.)
 
