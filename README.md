@@ -85,7 +85,7 @@ Opening text files in Paint will result in some weird colors due to the bitmap c
 
 ## Importing & Exporting
 I cannot force the browser to download files to your computer, so if you want to save, type in `regedit`, and right click -> Export **BOTH** the `Name` and `Data` lists. When you reload, type in `regedit` again and right-click -> Import **BOTH** the lists correspondingly.<BR>
-Again, **NOTE THAT** Domemory save data is **seperate**. It originally was a *seperate program* of mine, but I realized it had the terminal-type vibe, so I re-added it here so that you can do your repetitions with an operating-system emulator.
+Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a separate program of mine, but I realized it had a terminal-type vibe, so I re-added it here so you can do your repetitions with an operating system emulator.
 
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
 
