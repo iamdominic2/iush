@@ -82,12 +82,13 @@ WhenGreenFlagClicked()
     List.Hide(Name);
     List.Hide(Right Click me to Import/Export learning data);
     List.Hide(Data);
-    If ((Not (is compiled?)) And (Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")] == "#emH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4torJHk"))
+    Control.Wait(0);
+    If ((Not (is compiled?)) And (Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")] == "#emh3iscanjIHKBcsiaubobuCBUXCBJK"))
     {
-        List.ReplaceItem(Data, Data[List.IndexOf(Name, "c:\bin\scratchfallback.exe")], "#remH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4tor925");
-        List.ReplaceItem(Data, Data[List.IndexOf(Name, "C:\registry\shiftkey")], "]");
-        List.ReplaceItem(Data, Data[List.IndexOf(Name, "C:\registry\backspace")], "<");
-        List.ReplaceItem(Data, Data[List.IndexOf(Name, "C:\registry\controlkey")], "^");
+        List.ReplaceItem(Data, List.IndexOf(Name, "c:\bin\scratchfallback.exe"), "#REM#emh3iscanjIHKBcsiaubobuCBUXCBJK#emh3iscanjIHKBcsiaubobuCBUXCBJK");
+        List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\shiftkey"), "]");
+        List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\backspacekey"), "[");
+        List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\controlkey"), "^");
     }
 }
 
@@ -1719,276 +1720,15 @@ Define Typer color(string n) (warp=true)
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
 
-(50 == 50);
-
-(JOINSTRING STRING == "move");
-
 If ((Motion.YPosition() < -160) And (bold == 50))
 {
     Stop(this script);
 }
 
-If (Operator.LetterOf(text, Count) == "█")
-{
-}
-Else
-{
-    If (Operator.LetterOf(text, Count) == "☙")
-    {
-    }
-    Else
-    {
-        If (Operator.LetterOf(text, Count) == "⣦")
-        {
-            Motion.ChangeXBy(-2);
-        }
-        Repeat (8)
-        {
-            Repeat (5)
-            {
-                Counter += 1;
-                Motion.ChangeXBy(1);
-                Looks.SwitchCostumeTo(NONE);
-                Looks.SwitchCostumeTo(Operator.LetterOf(text, Count));
-                If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Not ((Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Not ((Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Else
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Looks.SwitchCostumeTo(NONE);
-            }
-            Repeat (1)
-            {
-                Motion.ChangeXBy(1);
-                Looks.SwitchCostumeTo(NONE);
-                If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Not (("" == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Not (("" == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Else
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If ("" == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If ("" == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Looks.SwitchCostumeTo(NONE);
-            }
-            lettr += 1;
-            Motion.ChangeXBy(-6);
-            Motion.ChangeYBy(-1);
-        }
-        Motion.ChangeYBy(8);
-        Motion.ChangeXBy(6);
-        If (Motion.XPosition() > 232)
-        {
-            Motion.ChangeYBy(-9);
-            Motion.SetX(-235);
-        }
-    }
-}
 If ((Motion.YPosition() < -160) And (bold == 50))
 {
     Stop(this script);
 }
-
-If (Operator.LetterOf(text, Count) == "█")
-{
-}
-Else
-{
-    If (Operator.LetterOf(text, Count) == "☙")
-    {
-    }
-    Else
-    {
-        If (Operator.LetterOf(text, Count) == "⣦")
-        {
-            Motion.ChangeXBy(-2);
-        }
-        Repeat (8)
-        {
-            Repeat (5)
-            {
-                Counter += 1;
-                Motion.ChangeXBy(1);
-                Looks.SwitchCostumeTo(NONE);
-                Looks.SwitchCostumeTo(Operator.LetterOf(text, Count));
-                If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Not ((Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Not ((Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Else
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Looks.SwitchCostumeTo(NONE);
-            }
-            Repeat (1)
-            {
-                Motion.ChangeXBy(1);
-                Looks.SwitchCostumeTo(NONE);
-                If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If (Not (("" == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If (Not (("" == 1)))
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Else
-                {
-                    If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                    {
-                        If ("" == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                    Else
-                    {
-                        If ("" == 1)
-                        {
-                            Pen.Down();
-                            Pen.Clear();
-                        }
-                    }
-                }
-                Looks.SwitchCostumeTo(NONE);
-            }
-            lettr += 1;
-            Motion.ChangeXBy(-6);
-            Motion.ChangeYBy(-1);
-        }
-        Motion.ChangeYBy(8);
-        Motion.ChangeXBy(6);
-        If (Motion.XPosition() > 232)
-        {
-            Motion.ChangeYBy(-9);
-            Motion.SetX(-235);
-        }
-    }
-}
-If ((Motion.YPosition() < -160) And (bold == 50))
-{
-    Stop(this script);
-}
-
-If (scroll > (List.Length(cm) - 41))
-{
-    scroll = (List.Length(cm) - 41);
-}
-
-If (scroll > (List.Length(cm) - 41))
-{
-    scroll = (List.Length(cm) - 41);
-}
-
-List.ReplaceItem(Data, 46, "#31FEATDrQDB4dMImhfHU31FEATDrQDB4dMImhfHU31FEATDrQDB4dMImhfHU&notepad.exe");
-
-text;
 
 Call Real_full_dirfind TEXT(TextEdit);
 

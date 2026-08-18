@@ -17,13 +17,13 @@ cc = 0
 cccca = csacasacs
 cccccc = 1
 Command? = 0
-Count = 48
+Count = 17
 counta = 0
 Counter = 40
 Counting = 0
 ctletterc = 0
 CURITEM = 1
-cursor location = 1995
+cursor location = 1
 cvalue = #Use X to exit Regedit.exe 
 dd1 = 0
 dd2 = 23
@@ -45,8 +45,8 @@ hideANS = 0
 INSMODE = 0
 instring = 
 Italics = 0
-JOINSTRING NO = 4
-JOINSTRING STRING = c:\
+JOINSTRING NO = 5
+JOINSTRING STRING = 
 jssb = hi
 lastclick = 
 LearnMode = 0
@@ -82,23 +82,19 @@ SECONDBAR =
 shift = up arrow
 STATUS BAR = [PRESENT]   Day=0  ID=1  Int=1  Due=0 (0.01)  Streak=0  AF=2.5 
 tcp = 000000000000000000000000000000000000000000000000000000000000000000a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a0000dddd000e0000f00000000000000000000000000000000000000aaaa000dd00dd00e0000f0000kk00000000000000000000000000000000a00a000d00dd000e0000f000k00k0000000000000000000000000000000a00aa00ddd00000e0000f000k000k000000000000000000000000000000a000a000ddd0000e0000f00k0000k000000000000000000000000000000a000a00000ddd0000000f00kk000k0000000000000000000000000000000000000000000000000000000kkkk00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000t00000000l000000c00000000000000000000000000p000000000000000t00000000l000000c0000000000000p00000000000p0000000000000000t00000000l000000c00000000000000p000000000p00000000000000000t00000000l000000c00000000000000p000000000p0rrrr000000000000t000000l0l000000c00000000000000p00000000pp0r00r000s0ssss000t0000ll0ll000000c000000000000000p000p000p00r00r000sss000000t0000l000l000000c000000000000000p00ppp0p000r00r000s00000000t0000l000l000000c000000000000000p00p0p0p000r00r000s00000000t0000ll00l00000000000000000000000pp000pp0000rr0000s00000000t00000ll0l00000000000000000000000pp000000000000000s00000000t0000000ll00000000000000000000000p0000000000000000s000000000000000000000000c0000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-TextEdit = c:\
+TextEdit = 
 tmdir = c:\bin\scratchfallback.exe
 tmdirl = 26
 TNLctr = 0
 TNLLoopct = 0
-tryex = 1
+tryex = 0
 
 
 //----- Lists ---------------------------------------------------------------------------------------------------------
 
 atmpt = { }
 Change = { }
-cm = { 
-    ERROR: Command not found. To see a list of commands, type Help.
-    
-    
-}
+cm = { }
 cmdlist = { }
 Data = { 
     #Use X to exit Regedit&#0LzfzdSXazbZWtXPZT9Reh4LTzPjhRAgDhAV10A1n2dX3fknqJKyMCy4zCXa4F2qtXSqHDLp98QShXE801aQ2QGSJvQb1FYkFYwvbejbGKh6dgHKhgrDCJmN8g5Qv9v8Hvap5SHmYvPPaTV5dXeUZPSiNk6LLtHNwK1mNp1SxCGY72mxhHqD22daCC9rPWhJPx1KdwGWqc7HRRRMWcqxqpx7iUMBPMe13W0bSAacRuabYpqQCrdVWuZFhQVMBx8WSi6eJWKthUmSWhR74erSB7hEd79L0VJvbRBBnzfXVbXQ&regedit.EXE
@@ -136,11 +132,11 @@ Data = {
     time: Outputs the current time formatted as HH:MM:SS.
     color [hex code]: change the color of the text
     help [command]: Looks up and displays help files located in c:\iush\[topic].txt.
-    emH31FEATDrQDB4dMImhfHUySu241sPI vaeClYAhtblSnLvvhvkpLWwdrtP7YPWY gU1SoivX4eKpy9bldQpxYDwe22TEUsRb mviIsc8ix7AeD5FmSI0NHMSUD0uiNgiz ehT99dWiwOifmUXm1WyGfnbaDxHMaYql P9u9cK1BmbWMtY9WbmnBWxDyqayMPJUM XAUTO7QOBrUQsppTYTwB4JlMOTzrh8Ro im9IBEfEPeCQw22eNa3ztYgYRdgFlbzL j1a4f6WHY9diXYjVrP5cS8uwc4torJHk
+    #emh3iscanjIHKBcsiaubobuCBUXCBJK
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color 00ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    16907
+    20351
     find [string]: find files or directory containing a string
     #J6ZuEuAmXWx0RuS5Tz9Tz54kKAgdQTNbrnnUiDXjAQKvdDhM7avkXCPaZfSpkqwxyjQjh8GpFurCDbqnmD8hFPqDcpT60SJSt84AbHb92XChyP1yRXccRAJNZWNEer2VMfBb651tN9NLa0tdAc0w4KaPkVi4N8w2pVcG83Mt70S3p9rZN9Xr87v9AAA3fgcGrr4dNXUZptYQCAKKXmRnBqYaQzB1yn40zQHMDSTMafg9aWPt0eR8iPgW04SZJZzWNCVzMyw5RC9q14GFTtqdX0HJMfXWudpceaFURffRiDFY&nOtePaD.exE
     On Scratch, by default, use ] for Shift, use < for Backspace, and ^ for Control
@@ -608,94 +604,94 @@ OF MATRIX = {
 }
 recents = { }
 Right Click me to Import/Export learning data = { 
-    9725.4584196759
+    9726.5847390625
     0.01
-    player0764
+    iamdominic
     1.781
     9.456
     0
     How to go to the next page?
     N or PageDown
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     How to go to the previous page?
     P or PageUp
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     How to edit texts?
     E, Q, or A
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     How to insert a new line in text editing?
     Shift+Enter
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
     Right Click top-right corner -> Import or Export
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     What is spreading cards over time?
     Spaced repetition
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     What is it when you are tested on this material?
     Active recall, or retrieval practice
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     How to delete an item?
     Minus (-)
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     How to add a new item?
     C
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     How to go to the last page?
     End
     1
-    9725.4584196759
+    9726.5847390625
     0
     2.5
     How to go to the first page?
     Home
     1
-    9725.4584196759
+    9726.5847390741
     0
     2.5
     How to exit the program?
     Ctrl+C
     1
-    9725.4584196759
+    9726.5847390741
     0
     2.5
     How to exit text editing?
     Ctrl+X
     1
-    9725.4584196759
+    9726.5847390741
     0
     2.5
     How do you get tested on this material?
     L
     1
-    9725.4584196759
+    9726.5847390741
     0
     2.5
 }

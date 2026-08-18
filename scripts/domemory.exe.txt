@@ -384,7 +384,7 @@ WhenKeyPressed(x)
 
 WhenKeyPressed(home)
 {
-    If is compiled?
+    If 
     {
         If (domemory.exe == 1)
         {
@@ -701,7 +701,7 @@ Define Key(string s) (warp=false)
         {
             List.DeleteItem(Keys, List.IndexOf(Keys, s));
         }
-        If (Sensing.KeyPressed(s) And (Not (List.ContainsItem(Keys, s))))
+        If (Sensing.KeyPressed(s) And ((Not (List.ContainsItem(Keys, s))) And (Not ((((Data[List.IndexOf(Name, "C:\registry\controlkey")] == s) Or ) Or ((Data[List.IndexOf(Name, "C:\registry\shiftkey")] == s) Or (Data[List.IndexOf(Name, "C:\registry\backspacekey")] == s)))))))
         {
             Sensing.ResetTimer();
             If (s == "enter")

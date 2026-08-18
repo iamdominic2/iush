@@ -351,18 +351,6 @@ Define Megakey (warp=false)
     }
 }
 
-Define mvv (warp=true)
-{
-    Repeat Until (Not ((cursor location > (Variable.Length(TextEdit) + 1))))
-    {
-        cursor location += -1;
-    }
-    If (cursor location == 0)
-    {
-        cursor location = 1;
-    }
-}
-
 Define notepadkill@(string kill) string(string string) (warp=false)
 {
     JOINSTRING STRING = "";
@@ -862,25 +850,6 @@ Define Typer color(string n) (warp=true)
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
 
-Call mvv;
-
-Forever
-{
-}
-
-If (domemory.exe == 0)
-{
-}
-
-EDITMODE = 0;
-CURITEM += -1;
-
-If (CURITEM > 1)
-{
-}
-
-Sensing.Ask("What's your name?");
-
 Stop(this script);
 
 TNLLoopct = 0;
@@ -893,25 +862,7 @@ Else
 {
 }
 
-Data[List.IndexOf(Name, "C:\registry\backspacekey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
 notepaddir = 0;
-
-((domemory.exe == 2) And (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")]) And ));
-
-(Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")]) And );
-
-List.ContainsItem(Name, notepaddir);
-
-List.ContainsItem(Name, "");
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------

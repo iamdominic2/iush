@@ -88,10 +88,6 @@ WhenKeyPressed(home)
     cursor location = 1;
 }
 
-WhenKeyPressed(x)
-{
-}
-
 
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
@@ -477,18 +473,6 @@ Define Megakey (warp=false)
     }
     If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])
     {
-    }
-}
-
-Define mvv (warp=true)
-{
-    Repeat Until (Not ((cursor location > (Variable.Length(TextEdit) + 1))))
-    {
-        cursor location += -1;
-    }
-    If (cursor location == 0)
-    {
-        cursor location = 1;
     }
 }
 
@@ -900,56 +884,6 @@ Define Typer color(string n) (warp=true)
         cursor location = (Variable.Length(TextEdit) + 1);
     }
 }
-
-
-//----- Orphaned blocks -----------------------------------------------------------------------------------------------
-
-Call mvv;
-
-Forever
-{
-}
-
-If (domemory.exe == 0)
-{
-}
-
-EDITMODE = 0;
-CURITEM += -1;
-
-If (CURITEM > 1)
-{
-}
-
-Sensing.Ask("What's your name?");
-
-Stop(this script);
-
-TNLLoopct = 0;
-
-Call Text(Operator.Join(notepaddisp, "  ")) italics("") bold("") cursor(n) curspos("");
-If ("::" == oldnotepadir)
-{
-}
-Else
-{
-}
-
-Data[List.IndexOf(Name, "C:\registry\backspacekey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
-Data[List.IndexOf(Name, "c:\registry\controlkey")];
-
-(Not ());
-
-notepaddir = 0;
-
-List.Add(cm, Operator.Join(Operator.Join("iush: ", TextEdit), ": no such file"));
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
