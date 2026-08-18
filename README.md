@@ -22,7 +22,7 @@ Supported commands:<BR>
 `cls`: Clears the screen - especially useful when it's too bloated or laggy!<BR>
 `date`: Outputs the date in DAYOFWEEK DD/MM/YYYY format. E.g. Monday 17/8/2026.<BR>
 `time`: Outputs the 24-hour current time in HH:MM:SS. For instance, 20:25:19.<BR>
-`color [hex]`: Change the color of the text. As a safety mechanism, will not accept pure black (`000000`).<BR>
+`color [hex]`: Change the color of the text (6 digit hex, if it becomes black due to a typo of invalid command, blind-type something like `color ffffff` and it would fix itself) <BR>
 `help`: Gives a list of commands, from `c:\iush\help\.txt`<BR>
 `help [command]`: Gives help with the command, from `c:\iush\help\[COMMANDNAME].txt`<BR>
 `find [string]`: Find a file or directory with a string in its name.<BR>
@@ -44,9 +44,8 @@ c:\program\regedit.exe (Command: `Regedit`)<BR>
 4. (*Unique to iush*) However, if you want to **literally** have "&", for instance when using `set` in a file to execute as a batch later, add `#LITERAL&` (**exact phrasing**) to the end of your command.
 5. *Hint*: To avoid re-inputting previous commands, use the *Up Arrow* to pre-input previous commands (and the *Down Arrow* if you overshoot)! It even works multiple times!
 
-#### Command line bug fixes
-1. I prohibitted `color 000000` and invalid "null" `color` because it would cause the text to output as black - the same as the terminal background color! And then I accidentally added a NOT to color=0, so I fixed it yet again!
-2. After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though sucessfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.
+#### A catastrophic? bug
+After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though sucessfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.
 
 ## Domemory
 ![Presentation](screenshots/presentation.png)
