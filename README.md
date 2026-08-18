@@ -2,7 +2,7 @@
 
 **LINK: https://iamdominic2.github.io/iush/**
 
-Scratch link: https://scratch.mit.edu/projects/1369594616/editor/ (Due to technical limitations, use `[` for Backspace, `]` for Shift, and `^` for Ctrl on Scratch.)
+Scratch link: https://scratch.mit.edu/projects/1369594616/ (Due to technical limitations, use `[` for Backspace, `]` for Shift, and `^` for Ctrl on Scratch.)
 
 It stands for ***i***nteractive ***u***ser ***sh***ell, in honor of my best friend at school Aayush.<BR>
 Command-line emulator built from scratch in Scratch - stretching it to the limits and scratching my head over why anyone would actually (*except me*) bother to do this.
