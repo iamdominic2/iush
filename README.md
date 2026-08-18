@@ -18,7 +18,7 @@ Supported commands:
 `write [text or file]`: Outputs text back at you, however if you inputted an existing file path, it outputs the file's contents back at you<BR>
 `copy [file] [new path]`: Copies a file to the new path (the original will not be erased)<BR>
 `cls`: Clears the screen - especially useful when it's too bloated or laggy!<BR>
-`date`: Outputs the date in *\[DayOfWeek\]* DD/MM/YYYY format. E.g. Monday 17/8/2026.<BR>
+`date`: Outputs the date in DAYOFWEEK DD/MM/YYYY format. E.g. Monday 17/8/2026.<BR>
 `time`: Outputs the 24-hour current time in HH:MM:SS. For instance, 20:25:19.<BR>
 `color [hex]`: Change the color of the text. Will not accept black (`000000`).<BR>
 `help`: Gives a list of commands, from `c:\iush\help\.txt]`<BR>
