@@ -42,7 +42,7 @@ c:\program\regedit.exe (Command: `Regedit`)<BR>
 5. *Hint*: To avoid re-inputting previous commands, use the *Up Arrow* to pre-input previous commands (and the *Down Arrow* if you overshoot)! It even works multiple times!
 
 #### Command line bug fixes
-1. I prohibitted `color 000000` and invalid "null" `color` because it would cause the text to output as black - the same as the terminal background color!
+1. I prohibitted `color 000000` and invalid "null" `color` because it would cause the text to output as black - the same as the terminal background color! And then I accidentally added a NOT to color=0, so I fixed it yet again!
 2. After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though sucessfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.
 
 ## Domemory

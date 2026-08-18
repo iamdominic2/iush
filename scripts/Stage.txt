@@ -7,7 +7,7 @@ ab =
 ac = random.exe
 actPATH = c:\registry\workingdirectory
 ad = copy c:\hello.bmp c:\s.bmp
-andfinder = 7
+andfinder = 3
 arrc = 2
 backspace = down arrow
 bedit = y
@@ -17,13 +17,13 @@ cc = 0
 cccca = csacasacs
 cccccc = 1
 Command? = 0
-Count = 17
+Count = 48
 counta = 0
 Counter = 40
 Counting = 0
 ctletterc = 0
 CURITEM = 1
-cursor location = 1
+cursor location = 1995
 cvalue = #Use X to exit Regedit.exe 
 dd1 = 0
 dd2 = 23
@@ -35,7 +35,7 @@ dtl = 21
 EDITMODE = 0
 EDITQONLY = 0
 emacs = 1
-exenow = regedit
+exenow = c:\
 factor_b = 21
 fcc = 722
 Finaltext = DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset  S)uspend  Ctrl+C)Leave  Ctrl+X)Exit edit mode ------------------------------------------------------------------------------   █ █
@@ -45,8 +45,8 @@ hideANS = 0
 INSMODE = 0
 instring = 
 Italics = 0
-JOINSTRING NO = 8
-JOINSTRING STRING = 
+JOINSTRING NO = 4
+JOINSTRING STRING = c:\
 jssb = hi
 lastclick = 
 LearnMode = 0
@@ -67,8 +67,8 @@ oldcurspos = 1
 olddir = c:\
 oldnotepadir = ::
 oldTextedit = 
-org = regedit
-orgmode = regedit
+org = c:\
+orgmode = c:\
 orgt = c:\iush\help\help.txt☙c:\bin\scratchfallback
 paintct = 2301
 paintnew = uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
@@ -82,22 +82,26 @@ SECONDBAR =
 shift = up arrow
 STATUS BAR = [PRESENT]   Day=0  ID=1  Int=1  Due=0 (0.01)  Streak=0  AF=2.5 
 tcp = 000000000000000000000000000000000000000000000000000000000000000000a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a0000dddd000e0000f00000000000000000000000000000000000000aaaa000dd00dd00e0000f0000kk00000000000000000000000000000000a00a000d00dd000e0000f000k00k0000000000000000000000000000000a00aa00ddd00000e0000f000k000k000000000000000000000000000000a000a000ddd0000e0000f00k0000k000000000000000000000000000000a000a00000ddd0000000f00kk000k0000000000000000000000000000000000000000000000000000000kkkk00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000t00000000l000000c00000000000000000000000000p000000000000000t00000000l000000c0000000000000p00000000000p0000000000000000t00000000l000000c00000000000000p000000000p00000000000000000t00000000l000000c00000000000000p000000000p0rrrr000000000000t000000l0l000000c00000000000000p00000000pp0r00r000s0ssss000t0000ll0ll000000c000000000000000p000p000p00r00r000sss000000t0000l000l000000c000000000000000p00ppp0p000r00r000s00000000t0000l000l000000c000000000000000p00p0p0p000r00r000s00000000t0000ll00l00000000000000000000000pp000pp0000rr0000s00000000t00000ll0l00000000000000000000000pp000000000000000s00000000t0000000ll00000000000000000000000p0000000000000000s000000000000000000000000c0000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-TextEdit = 
+TextEdit = c:\
 tmdir = c:\bin\scratchfallback.exe
 tmdirl = 26
 TNLctr = 0
 TNLLoopct = 0
-tryex = 0
+tryex = 1
 
 
 //----- Lists ---------------------------------------------------------------------------------------------------------
 
 atmpt = { }
 Change = { }
-cm = { }
+cm = { 
+    ERROR: Command not found. To see a list of commands, type Help.
+    
+    
+}
 cmdlist = { }
 Data = { 
-    thing
+    #Use X to exit Regedit&#0LzfzdSXazbZWtXPZT9Reh4LTzPjhRAgDhAV10A1n2dX3fknqJKyMCy4zCXa4F2qtXSqHDLp98QShXE801aQ2QGSJvQb1FYkFYwvbejbGKh6dgHKhgrDCJmN8g5Qv9v8Hvap5SHmYvPPaTV5dXeUZPSiNk6LLtHNwK1mNp1SxCGY72mxhHqD22daCC9rPWhJPx1KdwGWqc7HRRRMWcqxqpx7iUMBPMe13W0bSAacRuabYpqQCrdVWuZFhQVMBx8WSi6eJWKthUmSWhR74erSB7hEd79L0VJvbRBBnzfXVbXQ&regedit.EXE
     backspace
     shift
     enter
@@ -136,7 +140,7 @@ Data = {
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color 00ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    23906
+    16907
     find [string]: find files or directory containing a string
     #J6ZuEuAmXWx0RuS5Tz9Tz54kKAgdQTNbrnnUiDXjAQKvdDhM7avkXCPaZfSpkqwxyjQjh8GpFurCDbqnmD8hFPqDcpT60SJSt84AbHb92XChyP1yRXccRAJNZWNEer2VMfBb651tN9NLa0tdAc0w4KaPkVi4N8w2pVcG83Mt70S3p9rZN9Xr87v9AAA3fgcGrr4dNXUZptYQCAKKXmRnBqYaQzB1yn40zQHMDSTMafg9aWPt0eR8iPgW04SZJZzWNCVzMyw5RC9q14GFTtqdX0HJMfXWudpceaFURffRiDFY&nOtePaD.exE
     On Scratch, by default, use ] for Shift, use < for Backspace, and ^ for Control
