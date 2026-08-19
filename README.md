@@ -1,6 +1,6 @@
 # iush
 
-**LINK: https://iamdominic2.github.io/iush/**
+**"VIRTUALIZE" IN YOUR BROWSER! https://iamdominic2.github.io/iush/**
 
 Scratch link: https://scratch.mit.edu/projects/1369594616/ (Due to technical limitations, use `[` for Backspace, `]` for Shift, and `^` for Ctrl on Scratch.)
 
