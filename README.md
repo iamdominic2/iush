@@ -66,18 +66,24 @@ Classic spaced repetition active recall - Maybe the first of its kind on Scratch
 
 ## Notepad
 ![Notepad](screenshots/notepad.png)
-A text editor. The good thing about this is that you can make new lines, unlike the terminal's "set" command. Theoretically, this would allow for multiple `set` commands with `#LITERAL&` (since, for now, you can't have both literal and separator & on the same line) <BR>
-Try this command: `notepad c:\readme.txt`<BR>
+A text editor. The good thing about this is that you can make new lines, unlike the terminal's "set" command. Theoretically, this would allow for multiple `set` commands with `#LITERAL&` (since, for now, you can't have both literal and separator & on the same line)
+
+Try this command to see the example text file: `notepad c:\readme.txt`
+
 The keyboard shortcuts are chosen specifically to not clash with the browser. I originally planned *Ctrl+Shift+A* for **Save As**; however, Chrome recently added a "Search tabs" option that has this exact shortcut, so I remapped it to Ctrl+A. Sorry if it breaks your muscle memory; please forgive me *lol*
 
 ## Paint
 ![Paint](screenshots/paint.png)
-A painting program with 22 different colors. I learned how to convert color data to text, as it saves as English letters: `0` for black, `a`-`u` for colors! Note that to prevent massive file sizes and extreme lag, I had to make the pixels somewhat big; however, it is still usable to an extent. <BR>
-***AHA! Moment***: If you hate the fact that it's in `terminal black`, and would like it to look more "light mode" paper candy, a single keystroke of W will do the trick!<BR>
+A painting program with 22 different colors. I learned how to convert color data to text, as it saves as English letters: `0` for black, `a`-`u` for colors! 
+
+Note that to prevent massive file sizes and extreme lag (Scratch engine has to re-render it every frame!), I had to make the pixels somewhat big; however, it is still usable to an extent. 
+
+***AHA! Moment***: If you hate the fact that it's in `terminal black`, and would like it to look more "light mode" paper candy, a single keystroke of W will do the trick!
 
 ## Regedit
 ![Regedit](screenshots/regedit.png)
-A program allowing you to edit the name and data of registry members. In other operating systems, the file system is quite abstracted from the registry; however, in this one, it is combined into one: the **`Name`s** and the **`Data`**.<BR>
+A program allowing you to edit the name and data of registry members. In other operating systems, the file system is quite abstracted from the registry; however, in this one, it is combined into one: the **`Name`** and the **`Data`**.
+
 ***WARNING***: There is no telling what would happen if you mess up a Name or a Value. (You might have to reload the page.) Better to `Export` the Registry Member Lists just to be on the safe side. (More on that later.)
 
 ### Experiment!
