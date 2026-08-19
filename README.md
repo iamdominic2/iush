@@ -51,7 +51,7 @@ After executing `rd /s c:\`, I discovered something horrifying: only half of all
 ![Presentation](screenshots/presentation.png)
 Classic spaced repetition active recall - Maybe the first of its kind on Scratch! For students and learners alike, if you are too lazy to install Anki, you can do it straight from the Browser!
 
-* Pre-trained SuperMemo 5 spaced repetition algorithm (SuperMemo 2 was too boring to code!) - with bilinear interpolation of the factors
+* Pre-trained SuperMemo 5 spaced repetition algorithm (SuperMemo 2 was too boring to code!) - with bilinear interpolation of the Absolute Factors (`AF`) (also known as Ease Factor or Ease in some other spaced repeititon apps)
 * No modern corporate "gamification" bloat - focus purely on the pragmatism of self-testing!
 * Cherish the wisdom of your new knowledge! <BR>
 * SM-5 optimal factor matrix derived from about 19,000 repetitions of me using SuperMemo itself:<BR>
