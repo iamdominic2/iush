@@ -43,6 +43,11 @@ WhenKeyPressed(end)
     cursor location = (Variable.Length(TextEdit) + 1);
 }
 
+WhenKeyPressed(home)
+{
+    cursor location = 1;
+}
+
 WhenKeyPressed(up arrow)
 {
     If (domemory.exe == 2)
@@ -81,11 +86,6 @@ WhenKeyPressed(down arrow)
             }
         }
     }
-}
-
-WhenKeyPressed(home)
-{
-    cursor location = 1;
 }
 
 
@@ -165,7 +165,7 @@ WhenBroadcastReceived(Notepad.exe)
         Call Render("")("s");
         If ((Not (Sensing.MouseDown())) And (firstclick > ""))
         {
-            If (Sensing.Timer() > 0.25)
+            If (Sensing.Timer() > 0.05)
             {
                 If (firstclick > lastclick)
                 {
@@ -576,7 +576,6 @@ Define Render(string d)(string s) (warp=true)
         }
     }
     Motion.GoToXY(-235, -150);
-    Call Text(Operator.Join(Operator.Join("[", Data[List.IndexOf(Name, "c:\registry\clipboard")]), "]")) italics("") bold("") cursor(n) curspos("");
     If Operator.Contains(npbar, ")PASTE")
     {
         Motion.GoToXY(-235, -160);

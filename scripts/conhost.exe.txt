@@ -42,7 +42,7 @@ WhenGreenFlagClicked()
             Call Render("")("s");
             If ((Not (Sensing.MouseDown())) And (firstclick > ""))
             {
-                If (Sensing.Timer() > 0.25)
+                If (Sensing.Timer() > 0.05)
                 {
                     If (firstclick > lastclick)
                     {
@@ -168,25 +168,7 @@ WhenKeyPressed(up arrow)
 {
     If (domemory.exe == 0)
     {
-        If Sensing.KeyPressed(up arrow)
-        {
-            If (counta > 1)
-            {
-                counta += -1;
-                TextEdit = recents[counta];
-                cursor location = (Variable.Length(recents[counta]) + 1);
-            }
-        }
-        Else
-        {
-            If (scroll > 0)
-            {
-                scroll += -1;
-            }
-            Else
-            {
-            }
-        }
+        ((Variable.Length(Name[Count]) == 1) Or (tmdirl = Variable.Length(Name[Count]) > 27));
     }
 }
 
@@ -194,25 +176,10 @@ WhenKeyPressed(down arrow)
 {
     If (domemory.exe == 0)
     {
-        If Sensing.KeyPressed(down arrow)
+        (If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:")
         {
-            If ((counta - 1) < List.Length(recents))
-            {
-                counta += 1;
-                TextEdit = recents[counta];
-                cursor location = (Variable.Length(recents[counta]) + 1);
-            }
-        }
-        Else
-        {
-            If (scroll < List.Length(cm))
-            {
-                scroll += 1;
-            }
-            Else
-            {
-            }
-        }
+            Call attempt cd("c:\") dry("") er("");
+        } And (Looks.SetEffectTo(GHOST, 100) And (Not ((((Data[List.IndexOf(Name, "C:\registry\controlkey")] == s) Or ) Or ((Data[List.IndexOf(Name, "C:\registry\shiftkey")] == s) Or (Data[List.IndexOf(Name, "C:\registry\backspacekey")] == s)))))));
     }
 }
 
@@ -1386,7 +1353,7 @@ Define Render(string d)(string s) (warp=true)
         }
     }
     Motion.GoToXY(-235, -170);
-    Call Text(Operator.Join("", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("iush: @", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), Operator.Join(" [", Operator.Join(Data[List.IndexOf(Name, "c:\registry\clipboard")], "]"))))) italics("") bold("") cursor(n) curspos("");
+    Call Text(Operator.Join("", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("iush: @", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), " "))) italics("") bold("") cursor(n) curspos("");
     If (List.Length(Name) > List.Length(Data))
     {
         List.DeleteItem(Name, List.Length(Name));

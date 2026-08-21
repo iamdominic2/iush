@@ -406,6 +406,24 @@ WhenKeyPressed(home)
 
 WhenBroadcastReceived(Domemory.exe)
 {
+    EDITQONLY = 0;
+    CARDID = 1;
+    SECONDBAR = "";
+    Forever
+    {
+        If (LearnMode == 0)
+        {
+            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset", "  S)uspend  "), "Ctrl+C)Leave  Ctrl+X)Exit edit mode ------------------------------------------------------------------------------   █ █");
+        }
+        Else
+        {
+            Finaltext = "DOMEMORY v1.3 [Learning Mode]";
+        }
+    }
+}
+
+WhenBroadcastReceived(Domemory.exe)
+{
     List.DeleteAll(Keys);
     List.Show(Right Click me to Import/Export learning data);
     Pen.SetPenColorToColor(#d1d1d1);
@@ -624,24 +642,6 @@ WhenBroadcastReceived(Domemory.exe)
         If (cursor location == 0)
         {
             cursor location += 1;
-        }
-    }
-}
-
-WhenBroadcastReceived(Domemory.exe)
-{
-    EDITQONLY = 0;
-    CARDID = 1;
-    SECONDBAR = "";
-    Forever
-    {
-        If (LearnMode == 0)
-        {
-            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset", "  S)uspend  "), "Ctrl+C)Leave  Ctrl+X)Exit edit mode ------------------------------------------------------------------------------   █ █");
-        }
-        Else
-        {
-            Finaltext = "DOMEMORY v1.3 [Learning Mode]";
         }
     }
 }
