@@ -42,7 +42,6 @@ c:\program\regedit.exe (Command: `Regedit`)<BR>
 2. Use the mouse to copy text (your clipboard will be shown in the square brackets \[\] at the bottom of the page), and Ctrl+V to paste it back! (*Note that Ctrl+C **aborts** the currently running command, and the mouse does NOT move the cursor position)
 3. Use `&` to chain commands together!
 4. (*Unique to iush*) However, if you want to **literally** have "&", for instance, when using `set` in a file to execute as a batch later, add `#LITERAL&` (**exact phrasing**) to the end of your command.
-5. *Hint*: To avoid re-inputting previous commands, use the *Up Arrow* to pre-input previous commands (and the *Down Arrow* if you overshoot)! It even works multiple times!
 
 #### A catastrophic? bug
 After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though successfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.
