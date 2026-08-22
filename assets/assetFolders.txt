@@ -1,7 +1,0 @@
-"Stage"
-" "
-"conhost.exe"
-"domemory.exe"
-"notepad.exe"
-"paint.exe"
-"cursor.exe"
