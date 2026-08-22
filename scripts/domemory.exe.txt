@@ -65,18 +65,6 @@ WhenGreenFlagClicked()
         List.Add(Right Click me to Import/Export learning data, Sensing.DaysSince2000());
         List.Add(Right Click me to Import/Export learning data, 0);
         List.Add(Right Click me to Import/Export learning data, 2.5);
-        List.Add(Right Click me to Import/Export learning data, "How to go to the last page?");
-        List.Add(Right Click me to Import/Export learning data, "End");
-        List.Add(Right Click me to Import/Export learning data, 1);
-        List.Add(Right Click me to Import/Export learning data, Sensing.DaysSince2000());
-        List.Add(Right Click me to Import/Export learning data, 0);
-        List.Add(Right Click me to Import/Export learning data, 2.5);
-        List.Add(Right Click me to Import/Export learning data, "How to go to the first page?");
-        List.Add(Right Click me to Import/Export learning data, "Home");
-        List.Add(Right Click me to Import/Export learning data, 1);
-        List.Add(Right Click me to Import/Export learning data, Sensing.DaysSince2000());
-        List.Add(Right Click me to Import/Export learning data, 0);
-        List.Add(Right Click me to Import/Export learning data, 2.5);
         List.Add(Right Click me to Import/Export learning data, "How to exit the program?");
         List.Add(Right Click me to Import/Export learning data, "Ctrl+C");
         List.Add(Right Click me to Import/Export learning data, 1);

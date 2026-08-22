@@ -612,7 +612,7 @@ OF MATRIX = {
 }
 recents = { }
 Right Click me to Import/Export learning data = { 
-    9729.2073078588
+    9730.4142225347
     0.01
     player0764
     1.781
@@ -621,85 +621,73 @@ Right Click me to Import/Export learning data = {
     How to go to the next page?
     N or PageDown
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How to go to the previous page?
     P or PageUp
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How to edit texts?
     E, Q, or A
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How to insert a new line in text editing?
     Shift+Enter
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
     Right Click top-right corner -> Import or Export
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     What is spreading cards over time?
     Spaced repetition
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     What is it when you are tested on this material?
     Active recall, or retrieval practice
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How to delete an item?
     Minus (-)
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How to add a new item?
     C
     1
-    9729.2073078588
-    0
-    2.5
-    How to go to the last page?
-    End
-    1
-    9729.2073078588
-    0
-    2.5
-    How to go to the first page?
-    Home
-    1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How to exit the program?
     Ctrl+C
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How to exit text editing?
     Ctrl+X
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
     How do you get tested on this material?
     L
     1
-    9729.2073078588
+    9730.4142225347
     0
     2.5
 }
