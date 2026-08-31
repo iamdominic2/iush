@@ -57,10 +57,11 @@ Classic spaced repetition active recall - Maybe the first of its kind on Scratch
 * SM-5 optimal factor matrix derived from about 19,000 repetitions of me using SuperMemo itself:<BR>
 ![OF-Matrix](screenshots/12406.jpg)
 ### AF changes and grades
-1: -0.15<BR>
-2: -0.06<BR>
-3: +0.03<BR>
-4: +0.15
+**(You evaluate your recall effort after viewing the answer, grading the flashcard from easy to a completely fail.)**<BR>
+1 (Fail): -0.15<BR>
+2 (Hard): -0.06<BR>
+3 (Good): +0.03<BR>
+4 (Easy): +0.15
 
 #### Bug fixes of Domemory
 1.1: Wrong linear interpolation bug fixed, freeze on G + Item #0 (underflow bug) fixed<BR>
