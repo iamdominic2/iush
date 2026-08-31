@@ -1164,7 +1164,7 @@ Define TyperB (warp=true)
 {
     Pen.Clear();
     Motion.GoToXY(-230, 155);
-    Pen.SetPenColorToColor(#ffffff);
+    Pen.SetPenColorToColor(Operator.Join("0x", Data[List.IndexOf(Name, "c:\registry\color")]));
     Counting = 0;
     Motion.GoToXY(-235, 155);
     Repeat ((Variable.Length(Operator.Join(Finaltext, "")) + 2))
@@ -1260,6 +1260,8 @@ shift;
 backspace;
 
 c;
+
+Operator.Join("0x", Data[List.IndexOf(Name, "c:\registry\color")]);
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------

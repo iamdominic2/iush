@@ -1,5 +1,5 @@
 "3d88609fb3e3cb17a3988fd850cb723a.svg" "Stage/Back.svg"
-"576aeb8905e0b5685794e01ca28d417a.svg" " /costume1.svg"
+"576aeb8905e0b5685794e01ca28d417a.svg" " DONTreadme/.svg"
 "cfd2d8386461c97d3478724a8f6b3aeb.svg" "conhost.exe/NONE.svg"
 "87ec29ad216c0074c731d581c7f40c39.svg" "conhost.exe/A.svg"
 "87ec29ad216c0074c731d581c7f40c39.svg" "conhost.exe/B.svg"
