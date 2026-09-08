@@ -1699,6 +1699,10 @@ If ((Motion.YPosition() < -160) And (bold == 50))
 
 Call Real_full_dirfind TEXT(TextEdit);
 
+Data[1];
+
+List.IndexOf(Name, "c:\bin\scratchfallback.exe");
+
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
 

@@ -7,7 +7,7 @@ ab =
 ac = random.exe
 actPATH = c:\iush\help\copy.txt
 ad = copy c:\hello.bmp c:\s.bmp
-andfinder = 3
+andfinder = 7
 arrc = 2
 backspace = down arrow
 bedit = de
@@ -35,7 +35,7 @@ dtl = 21
 EDITMODE = 0
 EDITQONLY = 0
 emacs = 1
-exenow = c:\
+exenow = notepad
 factor_b = 21
 fcc = 722
 Finaltext = DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset  S)uspend  Ctrl+C)Leave  Ctrl+X)Exit edit mode ------------------------------------------------------------------------------   █ █
@@ -45,7 +45,7 @@ hideANS = 0
 INSMODE = 0
 instring = ccccc
 Italics = 0
-JOINSTRING NO = 3
+JOINSTRING NO = 1
 JOINSTRING STRING = 
 jssb = hi
 lastclick = 
@@ -62,13 +62,13 @@ notepaddir = NEW FILE
 notepaddisp = 
 notepadp = 7
 NotepadScroll = 0
-npbar = O)Open S)Save A)Save As X)Exit W)White background NEW FILE (UNSAVED)
+npbar = Open what file? Enter the absolute path
 oldcurspos = 1
 olddir = c:\
 oldnotepadir = ::
 oldTextedit = 
-org = c:\
-orgmode = c:\
+org = notepad
+orgmode = notepad
 orgt = c:\iush\help\help.txt☙c:\bin\scratchfallback
 paintct = 2301
 paintnew = uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
@@ -97,9 +97,9 @@ Change = { }
 cm = { }
 cmdlist = { }
 Data = { 
-    #Use X to exit Regedit&#0LzfzdSXazbZWtXPZT9Reh4LTzPjhRAgDhAV10A1n2dX3fknqJKyMCy4zCXa4F2qtXSqHDLp98QShXE801aQ2QGSJvQb1FYkFYwvbejbGKh6dgHKhgrDCJmN8g5Qv9v8Hvap5SHmYvPPaTV5dXeUZPSiNk6LLtHNwK1mNp1SxCGY72mxhHqD22daCC9rPWhJPx1KdwGWqc7HRRRMWcqxqpx7iUMBPMe13W0bSAacRuabYpqQCrdVWuZFhQVMBx8WSi6eJWKthUmSWhR74erSB7hEd79L0VJvbRBBnzfXVbXQ&regedit.EXE
-    [
-    ]
+    #Use X to exit Regedit&###############U3LkhDFtmMa5fxG0yJ2MyDmV2tKbRxFJMEtdi9WzQTn8Y5gtCR2hiap58YhrEy1Ycuz6ieaYTNMFe nhfxQeZzYD2UqWbeE4hHESt09Q0Epzikc9W3aXUf8vPztLtdrYkBGCdBXZf7cZ1k40eTF7fMT1dhb vNqG3MTuWr2ZHJzfMtRyc9cZawbgWJm3r44L3zWShFiFx3MR27jyvuY7jfjtQg4t6rdXWy7vDiv2p Aw7BvAz7QwUuam5SGBmCQXAtQQ1Dx3eBPwirBXgDLYvLYYgE2f25TCvrh0tcz81UcRfzbFWqJ2Zj3 L8x8YW6MBUgAKd6gw31w7ezY9BYL7H0v8E4Rc5j2duXLdJAWyuyuGxFS682ZjeqVhkmihy7iv3vt8 7kLPgFVG6wik5jARXJ9VPfu5u7wkStPd3fqX6vxXPXcA93M9MXUEhgJhJ4h3MFu2ESPjFLPnp3igm MLiwC0p64EdgCdbHniL5J1mkzaLUw2kdjCVmRrPUJubAqu9gRj7G6NEDKJR7JeY2fnU3D5BCNxpNT Lerugv8LTiZeCTjk5hhjkiDKMXN36ynCb0ZvuQNx0SUxAdc4yju8Ev2Ju4Vm3ZCVxVfcKq1gf78Lz WgHHn6ZrjfUeze5Sxqp1Nd4RwSyNAjbGy2mR7h89Rm51FRN5exJPhDddwnkZyyHR3HPbFd3QiJ6aC BdY2YFgaXTrfDqkQbw3ZD4hYKfJk5fg5uqUDQNa8cmBmZXvyZHL5xe1AaDU3jD6j4wvP0MB733Pdw&reGEdiT.EXE
+    backspace
+    shift
     enter
     In honor of Aayush Gigachadhurry
     
@@ -115,7 +115,7 @@ Data = {
     iush: is a directory
     iush: is a directory
     iush: is a directory
-    ^
+    control
     supported commands: cd pwd c: dir find md rd set write copy del echo cls date time color help exit
     cls: Clear all output text from screen
     pwd: Print the current working directory path
@@ -132,24 +132,24 @@ Data = {
     time: Outputs the current time formatted as HH:MM:SS.
     color [hex code]: change the color of the text
     help [command]: Looks up and displays help files located in c:\iush\[topic].txt.
-    #REM#emh3iscanjIHKBcsiaubobuCBUXCBJK#emh3iscanjIHKBcsiaubobuCBUXCBJK
+    #emh3iscanjIHKBcsiaubobuCBUXCBJK
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color 00ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    18841
+    30751
     find [string]: find files or directory containing a string
-    #J6ZuEuAmXWx0RuS5Tz9Tz54kKAgdQTNbrnnUiDXjAQKvdDhM7avkXCPaZfSpkqwxyjQjh8GpFurCDbqnmD8hFPqDcpT60SJSt84AbHb92XChyP1yRXccRAJNZWNEer2VMfBb651tN9NLa0tdAc0w4KaPkVi4N8w2pVcG83Mt70S3p9rZN9Xr87v9AAA3fgcGrr4dNXUZptYQCAKKXmRnBqYaQzB1yn40zQHMDSTMafg9aWPt0eR8iPgW04SZJZzWNCVzMyw5RC9q14GFTtqdX0HJMfXWudpceaFURffRiDFY&nOtePaD.exE
+    #T0JAExiN2j2wbK3S635cc6Njxd7ZQtTzjNb2uE6TVQnDpPBndQ5MhyqNU3wn8ap4WdgNkxLKzDXiX T43ccri0636Kkkak45rt3GSrAeUvEwAx51R6UnLT1qHm8BQVL3CpSvfucYRWp6hX6i393Uz52K6mK 4ah6zKqUppnVxeq50eTGFr4geF6tjFJAiJz6kXzyf2iSDv52AGHWZCag6iHD6DWgjmFApFBcSb9Rc mXa75XA5yzvTRZHnQqgu2DU2f4RXmk2r79AivC0rQ4pfxhyefD3S7hgBXBnB7jKL06JT4qqMH01wY LA6jYrarXLtbaCq8SJDvezwd4McLqnAeExnTFmQVSCwmdzkR7PmvB8d8VfGVFNJmpG0vwatd9AyR4 8FN98fmtvfW9Ww0tK84QQuURMDnAGy5RMxcF2Gi6mgiYg4QDC9ykaZ9f9LVgi3MqSh31n8RdkqCFN 9JL5CSu7qUCQn2eVWn2GQGCExSncANBH1UJ1nKvErvcWd4p18HMf6Rp8TA3nG7Gac4DrRjUpC2HNH XRtNtfDMpmDauU4c2GfWDmWUhZwMmUDvxRiE2cb2RmXShf7nP3eCdGmYecZjgn4b4icV0KcMapHvA SfT8A2MBR98yYaUhzm2XtKjJhp00ExmJuEgPB8NDebHHJwS49MqM4R9LEf0B4fGxSzqeBcHyuYUeL S1zqSDCKnG1mH2mJWx2an5fMVqfgu5NX8eyQAmvUqruPrxWmRkYX71X6r0PtLxE9GEBTEnjHPXrKB&nOTePad.exE
     On Scratch, by default, use ] for Shift, use < for Backspace, and ^ for Control
     000000000000000000000000000000000000000000000000000000000000000000a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a0000dddd000e0000f00000000000000000000000000000000000000aaaa000dd00dd00e0000f0000kk00000000000000000000000000000000a00a000d00dd000e0000f000k00k0000000000000000000000000000000a00aa00ddd00000e0000f000k000k000000000000000000000000000000a000a000ddd0000e0000f00k0000k000000000000000000000000000000a000a00000ddd0000000f00kk000k0000000000000000000000000000000000000000000000000000000kkkk00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000t00000000l000000c00000000000000000000000000p000000000000000t00000000l000000c0000000000000p00000000000p0000000000000000t00000000l000000c00000000000000p000000000p00000000000000000t00000000l000000c00000000000000p000000000p0rrrr000000000000t000000l0l000000c00000000000000p00000000pp0r00r000s0ssss000t0000ll0ll000000c000000000000000p000p000p00r00r000sss000000t0000l000l000000c000000000000000p00ppp0p000r00r000s00000000t0000l000l000000c000000000000000p00p0p0p000r00r000s00000000t0000ll00l00000000000000000000000pp000pp0000rr0000s00000000t00000ll0l00000000000000000000000pp000000000000000s00000000t0000000ll00000000000000000000000p0000000000000000s000000000000000000000000c0000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     iush: is a directory
-    #J0DQ512961qC4fZTi92VtYBuFq32mzhq8SuffaMzwaaRjieSSx7um2RRFUSy8KLqXDwnhd7Y0ti2y5GWqaVu9pVy8ZdCSXS6j2EW1c8kcLa12P3PyJL1tjujJiLwj5rQh3p0Nf4h3aZEN00nxQM62j3NPkPeTQ2YMFZwnxHL1724f5qXWGXcPHGnKZf9ky9QFX2RgSKUKxte9etnV7uaymiCed62mKmxZMRSyuLpCx6MQH4L12k1xPRFPN9SWh2P2zETQdQXqv65TnAcj9mab883vpr1QdFK0epJeMNFUnvk&paint.exe
+    #Pvg2xQ5129qxwfB3xdNGH0uwt7rpma8v6FtjUHaCbkzgRJuA4pHyPSa7ccHpvBe3gDxxXYEuAkp2F QYVffH7hWMh3FugiXAZV0aAvCf1ew2YnWZuQAmvS246YXtnjnj1rxG3V6JEQH2dT1QjmH0UdSZqBt KTmfzudTYMraUhGum9xAXFGzHPnX7bXQJKMw8Xpf5w6mcXTzh6Kre4D1uuWfA7m4e2W3HqJ4HA44Y 3KSttq58TNq0airzfequB9GtbGnUmHdTDShPDia4cGPtrG2YyGRxGgfUyWx2r8d2pT0cNMx7e5ESh aAezBMV87QfxCWkc54KHTE9b0w3qe91tXdP710cwx0KhhfyRVJRhZhRTLRMh5wPk9upg9PkwVm8mx qNrxfJ7rzbEqvuP2SBUxJYH4uCzEut6nBcgurKVNc2LEFQ28Yi6hi67FpMEDnub2MbzbXthA3ZjEn j4yHUFxC7nCQpZjr2uZSEntJ1bw7feKbtvNBEdbj6JKCEUv6FHFWupdyTzkbEdkmDqYvy63z8EKpb BHz6P87nZ1w4CR5YLFZZGjkaA1HL57Znw0T3uF9Wryxkce7HaUn0aP3jkJjfbeRctDv2xvKvVj4fB 42BBiDaCwVzfeGeK1qxSpHu20F4aWEfPPXciTPgcNCmGqnvZRWA3CYxPygvbRNgTauS414ctfUztV aBvUcy1E9TvDLbgnzuVVQHiUYGyDw14adMBiV3FqfSTdg1m2ZUzN4fQcLz17jCxF4dBLrPTGEALJq&pAiNt.exE
     de
     c:\
     dir: lists the subdirectories and subfiles in the working directory
     md [directory]: Makes an empty directory (folder)
     copy [file] [new]: Copies a file (not a folder)
     exit: terminates the iush terminal (lol)
-    #a6QAmFNnzZECiRcmVfjtE3F7QtaaL1gCru8R2ZzzkAKx4n3jfUJLQ01MCNmzrjMB5xXvrn4JE39tVSgnzetnfxyrGGfiY1nnE85dM7MndqWd61zLKt3WfxrJYQBrU1GCfNB8qqbWkaQb4ZH1rCjKQ1xvjKJMX1QNm77Sh8Yn3R28zqaxMBZqurD0QgCF7X0avYuUMVe2NtH8HkuQdEpTYXXBRrr1egyjLhFk1nvUq2AcW9MHjBAEKmyUkhmD2c2E6f3bL3jaYfhFW0qSWUQnCPPMLScZ4F3XkLQt8N2TKUj3&dOmEmory.exE
+    #zdMUSWduYnqYpS8Rv00EUGtkXP8yFvRZAKY8PymV1gV2btiM616N7NpyYKWJpe73JATVNtxz9M7q1 ewa0YfytSe8Hc21YKBQuktvUyUtEm8AUwEEn5y78MpC19MxGxggpj0jtQjZnDQW60dtqK3ZGwwBYG 13u41RveHHLhtPScf9aJqg8vhJuUHgfrTttSBhaihzB550vQEwGUF8RqajGwziwYSyB8Y7xkPZHZG JNxGJe9cRixgu4ZP8gp0AAUvbz0ecPK2cNbrRKz2FdrL6cWiryfaGrdShEn7DzCnP1jv7qNGPkzKe GTz65edXwBeJnih0F0qjVByv8GxrdSDHTMYreERhyV7LyErTeZde6H03uJjTFg84035t4MXRWte0E FhHJphXign1xJWbZCeYfE8c7iJwUCFL4R7i2FqXTn9QGvVKWUWLLAGQVCSzp53J6XJu76Mn7X9Cum Tc2bytG9tEdfTLZTgd9v1CMbZCzyUYRkkAU8f3idjwefbcMFaYwm0N6pkeHna6mwNN5byk2KjnHB3 muY7e4iT54cduYDkAn2t7kXDbrB06ev90kUc7h9qH7MrNhV91v80UzU94ACKYGzwJQNH917QJAxGH dAJNRyUggfGy4pnrWZVfXTbwVy5xGSRrQYzd5xzUuJZXjk9yg3hwdzgxZJLK4JvTu9MjUmicW7Yzb PRkrGR5YG0JqAq2UMvgwK1FuSribf9zUXfE3ndrF74dHMnBk2Zm4EZhDA4SjYy74QXwNEJFeut1Qf&dOmEmOrY.eXE
 }
 dcaps = { 
     0111010001100011111110001100011000100000
@@ -614,7 +614,7 @@ OF MATRIX = {
 }
 recents = { }
 Right Click me to Import/Export learning data = { 
-    9747.3162996181
+    9747.6520633912
     0.01
     iamdominic
     1.781
@@ -623,73 +623,73 @@ Right Click me to Import/Export learning data = {
     How to go to the next page?
     N or PageDown
     1
-    9747.3162996181
+    9747.6520633912
     0
     2.5
     How to go to the previous page?
     P or PageUp
     1
-    9747.3162996181
+    9747.6520633912
     0
     2.5
     How to edit texts?
     E, Q, or A
     1
-    9747.3162996296
+    9747.6520633912
     0
     2.5
     How to insert a new line in text editing?
     Shift+Enter
     1
-    9747.3162996296
+    9747.6520633912
     0
     2.5
     REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
     Right Click top-right corner -> Import or Export
     1
-    9747.3162996296
+    9747.6520633912
     0
     2.5
     What is spreading cards over time?
     Spaced repetition
     1
-    9747.3162996412
+    9747.6520633912
     0
     2.5
     What is it when you are tested on this material?
     Active recall, or retrieval practice
     1
-    9747.3162996412
+    9747.6520633912
     0
     2.5
     How to delete an item?
     Minus (-)
     1
-    9747.3162996412
+    9747.6520633912
     0
     2.5
     How to add a new item?
     C
     1
-    9747.3162996412
+    9747.6520633912
     0
     2.5
     How to exit the program?
     Ctrl+C
     1
-    9747.3162996412
+    9747.6520633912
     0
     2.5
     How to exit text editing?
     Ctrl+X
     1
-    9747.3162996412
+    9747.6520633912
     0
     2.5
     How do you get tested on this material?
     L
     1
-    9747.3162996528
+    9747.6520633912
     0
     2.5
 }
