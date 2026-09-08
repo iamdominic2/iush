@@ -17,10 +17,10 @@ cc = 0
 cccca = csacasacs
 cccccc = 5
 Command? = 0
-Count = 1
+Count = 15
 counta = 0
 Counter = 40
-Counting = 1
+Counting = 0
 ctletterc = 0
 CURITEM = 1
 cursor location = 1
@@ -50,7 +50,7 @@ JOINSTRING STRING =
 jssb = hi
 lastclick = 
 LearnMode = 0
-lettr = 8
+lettr = 120
 lsct = 0
 max = 0
 maxscroll = 0
@@ -98,8 +98,8 @@ cm = { }
 cmdlist = { }
 Data = { 
     #Use X to exit Regedit&#0LzfzdSXazbZWtXPZT9Reh4LTzPjhRAgDhAV10A1n2dX3fknqJKyMCy4zCXa4F2qtXSqHDLp98QShXE801aQ2QGSJvQb1FYkFYwvbejbGKh6dgHKhgrDCJmN8g5Qv9v8Hvap5SHmYvPPaTV5dXeUZPSiNk6LLtHNwK1mNp1SxCGY72mxhHqD22daCC9rPWhJPx1KdwGWqc7HRRRMWcqxqpx7iUMBPMe13W0bSAacRuabYpqQCrdVWuZFhQVMBx8WSi6eJWKthUmSWhR74erSB7hEd79L0VJvbRBBnzfXVbXQ&regedit.EXE
-    backspace
-    shift
+    [
+    ]
     enter
     In honor of Aayush Gigachadhurry
     
@@ -115,7 +115,7 @@ Data = {
     iush: is a directory
     iush: is a directory
     iush: is a directory
-    control
+    ^
     supported commands: cd pwd c: dir find md rd set write copy del echo cls date time color help exit
     cls: Clear all output text from screen
     pwd: Print the current working directory path
@@ -132,7 +132,7 @@ Data = {
     time: Outputs the current time formatted as HH:MM:SS.
     color [hex code]: change the color of the text
     help [command]: Looks up and displays help files located in c:\iush\[topic].txt.
-    #emh3iscanjIHKBcsiaubobuCBUXCBJK
+    #REM#emh3iscanjIHKBcsiaubobuCBUXCBJK#emh3iscanjIHKBcsiaubobuCBUXCBJK
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     color 00ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
@@ -149,6 +149,7 @@ Data = {
     md [directory]: Makes an empty directory (folder)
     copy [file] [new]: Copies a file (not a folder)
     exit: terminates the iush terminal (lol)
+    #a6QAmFNnzZECiRcmVfjtE3F7QtaaL1gCru8R2ZzzkAKx4n3jfUJLQ01MCNmzrjMB5xXvrn4JE39tVSgnzetnfxyrGGfiY1nnE85dM7MndqWd61zLKt3WfxrJYQBrU1GCfNB8qqbWkaQb4ZH1rCjKQ1xvjKJMX1QNm77Sh8Yn3R28zqaxMBZqurD0QgCF7X0avYuUMVe2NtH8HkuQdEpTYXXBRrr1egyjLhFk1nvUq2AcW9MHjBAEKmyUkhmD2c2E6f3bL3jaYfhFW0qSWUQnCPPMLScZ4F3XkLQt8N2TKUj3&dOmEmory.exE
 }
 dcaps = { 
     0111010001100011111110001100011000100000
@@ -355,25 +356,25 @@ Letters = {
 }
 na = { }
 Name = { 
-    C:\Program\Regedit.exe
-    C:\registry\backspacekey
-    C:\registry\shiftkey
-    C:\registry\enterkey
-    C:\registry\catchphrase
-    C:\registry\firstclick
-    C:\bin\keepcalmandrmrf
-    C:\registry\color
-    C:\bin\dayofweek1
-    C:\bin\dayofweek2
-    C:\bin\dayofweek3
-    C:\bin\dayofweek4
-    C:\bin\dayofweek5
-    C:\bin\dayofweek6
-    C:\bin\dayofweek7
+    c:\program\regedit.exe
+    c:\registry\backspacekey
+    c:\registry\shiftkey
+    c:\registry\enterkey
+    c:\registry\catchphrase
+    c:\registry\firstclick
+    c:\bin\keepcalmandrmrf
+    c:\registry\color
+    c:\bin\dayofweek1
+    c:\bin\dayofweek2
+    c:\bin\dayofweek3
+    c:\bin\dayofweek4
+    c:\bin\dayofweek5
+    c:\bin\dayofweek6
+    c:\bin\dayofweek7
     c:\bin
     c:\registry
     c:\
-    C:\registry\controlkey
+    c:\registry\controlkey
     c:\iush\help\.txt
     c:\iush\help\cls.txt
     c:\iush\help\pwd.txt
@@ -391,22 +392,23 @@ Name = {
     c:\iush\help\color.txt
     c:\iush\help\help.txt
     c:\bin\scratchfallback.exe
-    c:\README.txt
-    C:\Program\matrixrain.exe
-    C:\Program
-    C:\registry\random.exe
+    c:\readme.txt
+    c:\program\matrixrain.exe
+    c:\program
+    c:\registry\random.exe
     c:\iush\help\find.txt
-    c:\Program\Notepad.exe
+    c:\program\notepad.exe
     c:\iush\help\scratchkeys.txt
     c:\hello.bmp
     c:
-    c:\Program\Paint.exe
+    c:\program\paint.exe
     c:\registry\clipboard
     c:\registry\workingdirectory
     c:\iush\help\dir.txt
     c:\iush\help\md.txt
     c:\iush\help\copy.txt
     c:\iush\help\exit.txt
+    c:\program\domemory.exe
 }
 OF MATRIX = { 
     3.96
@@ -612,82 +614,82 @@ OF MATRIX = {
 }
 recents = { }
 Right Click me to Import/Export learning data = { 
-    9730.4142225347
+    9747.3162996181
     0.01
-    player0764
+    iamdominic
     1.781
     9.456
     0
     How to go to the next page?
     N or PageDown
     1
-    9730.4142225347
+    9747.3162996181
     0
     2.5
     How to go to the previous page?
     P or PageUp
     1
-    9730.4142225347
+    9747.3162996181
     0
     2.5
     How to edit texts?
     E, Q, or A
     1
-    9730.4142225347
+    9747.3162996296
     0
     2.5
     How to insert a new line in text editing?
     Shift+Enter
     1
-    9730.4142225347
+    9747.3162996296
     0
     2.5
     REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
     Right Click top-right corner -> Import or Export
     1
-    9730.4142225347
+    9747.3162996296
     0
     2.5
     What is spreading cards over time?
     Spaced repetition
     1
-    9730.4142225347
+    9747.3162996412
     0
     2.5
     What is it when you are tested on this material?
     Active recall, or retrieval practice
     1
-    9730.4142225347
+    9747.3162996412
     0
     2.5
     How to delete an item?
     Minus (-)
     1
-    9730.4142225347
+    9747.3162996412
     0
     2.5
     How to add a new item?
     C
     1
-    9730.4142225347
+    9747.3162996412
     0
     2.5
     How to exit the program?
     Ctrl+C
     1
-    9730.4142225347
+    9747.3162996412
     0
     2.5
     How to exit text editing?
     Ctrl+X
     1
-    9730.4142225347
+    9747.3162996412
     0
     2.5
     How do you get tested on this material?
     L
     1
-    9730.4142225347
+    9747.3162996528
     0
     2.5
 }
