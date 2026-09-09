@@ -768,36 +768,28 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                             }
                                                                                                                             Else
                                                                                                                             {
-                                                                                                                                If ((JOINSTRING STRING == "matrixrain") Or (JOINSTRING STRING == "matrixrain.exe"))
+                                                                                                                                If (((List.ContainsItem(Name, JOINSTRING STRING) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)]))) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)])))) And (tryex == 0))
                                                                                                                                 {
-                                                                                                                                    Call execute("c:\program\matrixrain.exe") skip new("") SIGINT("");
-                                                                                                                                    Stop(this script);
-                                                                                                                                }
-                                                                                                                                Else
-                                                                                                                                {
-                                                                                                                                    If (((List.ContainsItem(Name, JOINSTRING STRING) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)]))) Or List.ContainsItem(Name, Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)])))) And (tryex == 0))
+                                                                                                                                    tryex = 1;
+                                                                                                                                    If Operator.Contains(JOINSTRING STRING, ":")
                                                                                                                                     {
-                                                                                                                                        tryex = 1;
-                                                                                                                                        If Operator.Contains(JOINSTRING STRING, ":")
-                                                                                                                                        {
-                                                                                                                                            Call execute(Data[List.IndexOf(Name, TextEdit)]) skip new("") SIGINT("");
-                                                                                                                                        }
-                                                                                                                                        Else
-                                                                                                                                        {
-                                                                                                                                            If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\")
-                                                                                                                                            {
-                                                                                                                                                Call execute(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)])) skip new("") SIGINT("");
-                                                                                                                                            }
-                                                                                                                                            Else
-                                                                                                                                            {
-                                                                                                                                                Call execute(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)]))) skip new("") SIGINT("");
-                                                                                                                                            }
-                                                                                                                                        }
+                                                                                                                                        Call execute(Data[List.IndexOf(Name, TextEdit)]) skip new("") SIGINT("");
                                                                                                                                     }
                                                                                                                                     Else
                                                                                                                                     {
-                                                                                                                                        List.Add(cm, "ERROR: Command not found. To see a list of commands, type Help.");
+                                                                                                                                        If (Data[List.IndexOf(Name, "C:\registry\workingdirectory")] == "c:\")
+                                                                                                                                        {
+                                                                                                                                            Call execute(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Data[List.IndexOf(Name, TextEdit)])) skip new("") SIGINT("");
+                                                                                                                                        }
+                                                                                                                                        Else
+                                                                                                                                        {
+                                                                                                                                            Call execute(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], Operator.Join("\", Data[List.IndexOf(Name, TextEdit)]))) skip new("") SIGINT("");
+                                                                                                                                        }
                                                                                                                                     }
+                                                                                                                                }
+                                                                                                                                Else
+                                                                                                                                {
+                                                                                                                                    List.Add(cm, "ERROR: Command not found. To see a list of commands, type Help.");
                                                                                                                                 }
                                                                                                                             }
                                                                                                                         }
