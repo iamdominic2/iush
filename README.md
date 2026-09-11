@@ -34,6 +34,7 @@ c:\program\matrixrain.exe<BR>
 c:\program\notepad.exe (Command: `Notepad [optional: file]` )<BR>
 c:\program\paint.exe (Command: `Paint [optional: file]` )<BR>
 c:\program\regedit.exe (Command: `Regedit`)<BR>
+c:\program\bsod.exe
 
 *Alternative drives are not supported (for now)*
  
@@ -95,9 +96,6 @@ Opening text files in Paint will result in some weird colors due to the bitmap c
 ## Importing & Exporting
 I cannot force the browser to download files to your computer, so if you want to save, type in `regedit`, and right click -> Export **BOTH** the `Name` and `Data` lists. When you reload, type in `regedit` again and right-click -> Import **BOTH** the lists correspondingly.<BR>
 Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a separate program of mine, but I realized it had a terminal-type vibe, so I re-added it here so you can do your repetitions with an operating system emulator.
-
-## Example
-<img width="782" height="572" alt="2222" src="https://github.com/user-attachments/assets/fce4f786-534c-4759-8d8e-721acb61115c" />
 
 ## Version history
 1.1: After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though successfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.<br>
