@@ -1,23 +1,26 @@
 //----- Variables -----------------------------------------------------------------------------------------------------
 
 A-text = 0
+A-text start = 412
 aa = 1
 aaa = 22
 ab = 
 ac = random.exe
-actPATH = c:\iush\help\copy.txt
+act = 602
+actPATH = c:\registry\clipboard
 ad = copy c:\hello.bmp c:\s.bmp
-andfinder = 7
+andfinder = 25
 arrc = 2
 backspace = down arrow
-bedit = de
+bedit = domemory
 Bold = 0
 CARDID = 1
 cc = 0
 cccca = csacasacs
-cccccc = 5
+cccccc = 1
+clipb =  
 Command? = 0
-Count = 15
+Count = 26
 counta = 0
 Counter = 40
 Counting = 0
@@ -26,31 +29,31 @@ CURITEM = 1
 cursor location = 1
 cvalue = #Use X to exit Regedit.exe 
 dd1 = 0
-dd2 = 21
-dd3 = 15
+dd2 = 32
+dd3 = 26
 domemory.exe = 0
 Down = 0
 dte = c:\iush\help\help.txt
 dtl = 21
-EDITMODE = 0
+EDITMODE = 1
 EDITQONLY = 0
 emacs = 1
-exenow = notepad
+exenow = set c:\registry\clipboard
 factor_b = 21
-fcc = 722
-Finaltext = DOMEMORY v1.3 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer  G)o To P)rev N)ext  L)earn  -)Delete  C)reate        T)rade Q&A  D)uplicate  R)eset  S)uspend  Ctrl+C)Leave  Ctrl+X)Exit edit mode ------------------------------------------------------------------------------   █ █
+fcc = 1
+Finaltext = DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate L)earn  S)uspend  Ctrl+C)Leave  Ctrl+X)Exit edit mode  ------------------------------------------------------------------------------
 firstclick = 
 Gotodialog = 0
 hideANS = 0
 INSMODE = 0
-instring = ccccc
+instring =  
 Italics = 0
-JOINSTRING NO = 1
+JOINSTRING NO = 22
 JOINSTRING STRING = 
 jssb = hi
 lastclick = 
 LearnMode = 0
-lettr = 120
+lettr = 208
 lsct = 0
 max = 0
 maxscroll = 0
@@ -59,28 +62,30 @@ nlct = 0
 nonexistwar = 0
 Notepad = 0
 notepaddir = NEW FILE
-notepaddisp = 
+notepaddisp =   
 notepadp = 7
 NotepadScroll = 0
-npbar = Open what file? Enter the absolute path
+npbar = Save as what file? Enter the absolute path
 oldcurspos = 1
 olddir = c:\
 oldnotepadir = ::
-oldTextedit = 
-org = notepad
-orgmode = notepad
+oldTextedit = How to go to the next page?
+org = set c:\registry\clipboard
+orgmode = set
 orgt = c:\iush\help\help.txt☙c:\bin\scratchfallback
 paintct = 2301
-paintnew = uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
-paintram = uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu
+paintnew = 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+paintram = 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 paintSEL = 21
 Q-text = 
+Q-text start = 330
 realnl = 0
+rec = 2
 Scanner-CT = 1
 scroll = 0
 SECONDBAR = 
 shift = up arrow
-STATUS BAR = [PRESENT]   Day=0  ID=1  Int=1  Due=0 (0.01)  Streak=0  AF=2.5 
+STATUS BAR = [INSERT]    Day=0  ID=1  Int=1  Due=0 (0.01)  Streak=0  AF=2.5 
 tcp = 000000000000000000000000000000000000000000000000000000000000000000a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a0000dddd000e0000f00000000000000000000000000000000000000aaaa000dd00dd00e0000f0000kk00000000000000000000000000000000a00a000d00dd000e0000f000k00k0000000000000000000000000000000a00aa00ddd00000e0000f000k000k000000000000000000000000000000a000a000ddd0000e0000f00k0000k000000000000000000000000000000a000a00000ddd0000000f00kk000k0000000000000000000000000000000000000000000000000000000kkkk00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000t00000000l000000c00000000000000000000000000p000000000000000t00000000l000000c0000000000000p00000000000p0000000000000000t00000000l000000c00000000000000p000000000p00000000000000000t00000000l000000c00000000000000p000000000p0rrrr000000000000t000000l0l000000c00000000000000p00000000pp0r00r000s0ssss000t0000ll0ll000000c000000000000000p000p000p00r00r000sss000000t0000l000l000000c000000000000000p00ppp0p000r00r000s00000000t0000l000l000000c000000000000000p00p0p0p000r00r000s00000000t0000ll00l00000000000000000000000pp000pp0000rr0000s00000000t00000ll0l00000000000000000000000pp000000000000000s00000000t0000000ll00000000000000000000000p0000000000000000s000000000000000000000000c0000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 TextEdit = 
 tmdir = c:\bin\scratchfallback.exe
@@ -116,7 +121,7 @@ Data = {
     iush: is a directory
     iush: is a directory
     control
-    supported commands: cd pwd c: dir find md rd set write copy del echo cls date time color help exit
+    supported commands: cd pwd c: dir find md rd set type copy del echo cls date time color help exit
     cls: Clear all output text from screen
     pwd: Print the current working directory path
     cd [path]: change the current working directory
@@ -134,23 +139,24 @@ Data = {
     help [command]: Looks up and displays help files located in c:\iush\[topic].txt.
     #emh3iscanjIHKBcsiaubobuCBUXCBJK
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
-    color 00ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
+    bg black&color 00ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    30751
+    19626
     find [string]: find files or directory containing a string
     #T0JAExiN2j2wbK3S635cc6Njxd7ZQtTzjNb2uE6TVQnDpPBndQ5MhyqNU3wn8ap4WdgNkxLKzDXiX T43ccri0636Kkkak45rt3GSrAeUvEwAx51R6UnLT1qHm8BQVL3CpSvfucYRWp6hX6i393Uz52K6mK 4ah6zKqUppnVxeq50eTGFr4geF6tjFJAiJz6kXzyf2iSDv52AGHWZCag6iHD6DWgjmFApFBcSb9Rc mXa75XA5yzvTRZHnQqgu2DU2f4RXmk2r79AivC0rQ4pfxhyefD3S7hgBXBnB7jKL06JT4qqMH01wY LA6jYrarXLtbaCq8SJDvezwd4McLqnAeExnTFmQVSCwmdzkR7PmvB8d8VfGVFNJmpG0vwatd9AyR4 8FN98fmtvfW9Ww0tK84QQuURMDnAGy5RMxcF2Gi6mgiYg4QDC9ykaZ9f9LVgi3MqSh31n8RdkqCFN 9JL5CSu7qUCQn2eVWn2GQGCExSncANBH1UJ1nKvErvcWd4p18HMf6Rp8TA3nG7Gac4DrRjUpC2HNH XRtNtfDMpmDauU4c2GfWDmWUhZwMmUDvxRiE2cb2RmXShf7nP3eCdGmYecZjgn4b4icV0KcMapHvA SfT8A2MBR98yYaUhzm2XtKjJhp00ExmJuEgPB8NDebHHJwS49MqM4R9LEf0B4fGxSzqeBcHyuYUeL S1zqSDCKnG1mH2mJWx2an5fMVqfgu5NX8eyQAmvUqruPrxWmRkYX71X6r0PtLxE9GEBTEnjHPXrKB&nOTePad.exE
     On Scratch, by default, use ] for Shift, use < for Backspace, and ^ for Control
     000000000000000000000000000000000000000000000000000000000000000000a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a00000000000e0000f00000000000000000000000000000000000000a00a0000dddd000e0000f00000000000000000000000000000000000000aaaa000dd00dd00e0000f0000kk00000000000000000000000000000000a00a000d00dd000e0000f000k00k0000000000000000000000000000000a00aa00ddd00000e0000f000k000k000000000000000000000000000000a000a000ddd0000e0000f00k0000k000000000000000000000000000000a000a00000ddd0000000f00kk000k0000000000000000000000000000000000000000000000000000000kkkk00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000c000000000000000000000000000000000000000000t00000000l000000c00000000000000000000000000p000000000000000t00000000l000000c0000000000000p00000000000p0000000000000000t00000000l000000c00000000000000p000000000p00000000000000000t00000000l000000c00000000000000p000000000p0rrrr000000000000t000000l0l000000c00000000000000p00000000pp0r00r000s0ssss000t0000ll0ll000000c000000000000000p000p000p00r00r000sss000000t0000l000l000000c000000000000000p00ppp0p000r00r000s00000000t0000l000l000000c000000000000000p00p0p0p000r00r000s00000000t0000ll00l00000000000000000000000pp000pp0000rr0000s00000000t00000ll0l00000000000000000000000pp000000000000000s00000000t0000000ll00000000000000000000000p0000000000000000s000000000000000000000000c0000000000000000000000000000000000000000000000000000000000c00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
     iush: is a directory
     #Pvg2xQ5129qxwfB3xdNGH0uwt7rpma8v6FtjUHaCbkzgRJuA4pHyPSa7ccHpvBe3gDxxXYEuAkp2F QYVffH7hWMh3FugiXAZV0aAvCf1ew2YnWZuQAmvS246YXtnjnj1rxG3V6JEQH2dT1QjmH0UdSZqBt KTmfzudTYMraUhGum9xAXFGzHPnX7bXQJKMw8Xpf5w6mcXTzh6Kre4D1uuWfA7m4e2W3HqJ4HA44Y 3KSttq58TNq0airzfequB9GtbGnUmHdTDShPDia4cGPtrG2YyGRxGgfUyWx2r8d2pT0cNMx7e5ESh aAezBMV87QfxCWkc54KHTE9b0w3qe91tXdP710cwx0KhhfyRVJRhZhRTLRMh5wPk9upg9PkwVm8mx qNrxfJ7rzbEqvuP2SBUxJYH4uCzEut6nBcgurKVNc2LEFQ28Yi6hi67FpMEDnub2MbzbXthA3ZjEn j4yHUFxC7nCQpZjr2uZSEntJ1bw7feKbtvNBEdbj6JKCEUv6FHFWupdyTzkbEdkmDqYvy63z8EKpb BHz6P87nZ1w4CR5YLFZZGjkaA1HL57Znw0T3uF9Wryxkce7HaUn0aP3jkJjfbeRctDv2xvKvVj4fB 42BBiDaCwVzfeGeK1qxSpHu20F4aWEfPPXciTPgcNCmGqnvZRWA3CYxPygvbRNgTauS414ctfUztV aBvUcy1E9TvDLbgnzuVVQHiUYGyDw14adMBiV3FqfSTdg1m2ZUzN4fQcLz17jCxF4dBLrPTGEALJq&pAiNt.exE
-    de
+    
     c:\
     dir: lists the subdirectories and subfiles in the working directory
     md [directory]: Makes an empty directory (folder)
     copy [file] [new]: Copies a file (not a folder)
     exit: terminates the iush terminal (lol)
     #zdMUSWduYnqYpS8Rv00EUGtkXP8yFvRZAKY8PymV1gV2btiM616N7NpyYKWJpe73JATVNtxz9M7q1 ewa0YfytSe8Hc21YKBQuktvUyUtEm8AUwEEn5y78MpC19MxGxggpj0jtQjZnDQW60dtqK3ZGwwBYG 13u41RveHHLhtPScf9aJqg8vhJuUHgfrTttSBhaihzB550vQEwGUF8RqajGwziwYSyB8Y7xkPZHZG JNxGJe9cRixgu4ZP8gp0AAUvbz0ecPK2cNbrRKz2FdrL6cWiryfaGrdShEn7DzCnP1jv7qNGPkzKe GTz65edXwBeJnih0F0qjVByv8GxrdSDHTMYreERhyV7LyErTeZde6H03uJjTFg84035t4MXRWte0E FhHJphXign1xJWbZCeYfE8c7iJwUCFL4R7i2FqXTn9QGvVKWUWLLAGQVCSzp53J6XJu76Mn7X9Cum Tc2bytG9tEdfTLZTgd9v1CMbZCzyUYRkkAU8f3idjwefbcMFaYwm0N6pkeHna6mwNN5byk2KjnHB3 muY7e4iT54cduYDkAn2t7kXDbrB06ev90kUc7h9qH7MrNhV91v80UzU94ACKYGzwJQNH917QJAxGH dAJNRyUggfGy4pnrWZVfXTbwVy5xGSRrQYzd5xzUuJZXjk9yg3hwdzgxZJLK4JvTu9MjUmicW7Yzb PRkrGR5YG0JqAq2UMvgwK1FuSribf9zUXfE3ndrF74dHMnBk2Zm4EZhDA4SjYy74QXwNEJFeut1Qf&dOmEmOrY.eXE
-    color 00ffff&echo :(&echo A problem has been detected and the text has become blue to prevent damage to your computer.&echo &echo A Secret process crucial to system operation has been unexpectedly run!&echo If this is the first time you run this program screen, congrats!&echo If this screen appears again, follow these steps:&echo &echo Check to make sure any new fun Scratch Operating Systems aren't so bad that   they deserve to be continually have pain inflicted on them. &echo If this is a new installation, check your brain for any new software you may  need apart from this. &echo &echo If problems continue, disable or remove any urge to run c:\program\bsod.exe. &echo If you need to use Safe Mode to remove or disable unreasonable urges, press   Alt+F4 to enter Digital Detox mode, select the best-use location of your      mental RAM, and touch grass.&echo &echo &echo                                                                                                                                                                              
+    bg blue&color ffffff&echo :(&echo A problem has been detected and the screen has become blue to prevent damage to your computer.&echo &echo A Secret process crucial to system operation has been unexpectedly run!&echo If this is the first time you run this program screen, congrats!&echo If this screen appears again, follow these steps:&echo &echo Check to make sure any new fun Scratch Operating Systems aren't so bad that   they deserve to be continually have pain inflicted on them. &echo If this is a new installation, check your brain for any new software you may  need apart from this. &echo &echo If problems continue, disable or remove any urge to run c:\program\bsod.exe. &echo If you need to use Safe Mode to remove or disable unreasonable urges, press   Alt+F4 to enter Digital Detox mode, select the best-use location of your      mental RAM, and touch grass.&echo &echo &echo &echo
+    type [text or file]: outputs the text in the command, but if it matches a filename, outputs the file contents instead.
 }
 dcaps = { 
     0111010001100011111110001100011000100000
@@ -181,7 +187,6 @@ dcaps = {
     1111100001000100010001000100001111100000
 }
 Dueness = { 
-    1
     2
     3
     4
@@ -411,15 +416,16 @@ Name = {
     c:\iush\help\exit.txt
     c:\program\domemory.exe
     c:\program\bsod.exe
+    c:\iush\help\type.txt
 }
 OF MATRIX = { 
-    3.96
-    2.37
-    2.23
-    1.67
-    1.25
-    1.00
-    1.00
+    4.36
+    3.44
+    2.72
+    2.15
+    1.70
+    1.34
+    1.06
     1.00
     1.00
     1.00
@@ -433,265 +439,265 @@ OF MATRIX = {
     3.60
     3.90
     4.20
+    1.38
+    1.57
+    1.79
+    2.02
+    2.28
+    2.56
+    2.86
+    3.19
+    3.56
+    3.95
     1.33
-    1.49
-    1.67
-    1.89
-    2.14
-    2.42
-    2.76
-    3.14
-    3.58
-    4.08
-    1.28
-    1.39
-    1.52
-    1.70
-    1.91
-    2.18
-    2.51
-    2.91
-    3.41
-    4.01
-    1.26
-    1.34
-    1.45
-    1.59
-    1.78
-    2.03
+    1.48
+    1.66
+    1.86
+    2.09
     2.35
-    2.77
-    3.29
-    3.97
-    1.25
-    1.31
+    2.65
+    2.99
+    3.38
+    3.81
+    1.30
+    1.43
+    1.58
+    1.76
+    1.97
+    2.22
+    2.52
+    2.86
+    3.26
+    3.72
+    1.29
     1.40
     1.53
     1.70
-    1.94
-    2.25
-    2.66
-    3.21
-    3.93
-    1.24
-    1.29
-    1.37
-    1.48
-    1.64
-    1.86
-    2.17
-    2.58
-    3.15
-    3.90
-    1.23
+    1.90
+    2.13
+    2.42
+    2.76
+    3.17
+    3.65
     1.28
-    1.35
-    1.45
-    1.60
-    1.81
-    2.11
-    2.52
-    3.09
-    3.88
-    1.23
+    1.38
+    1.50
+    1.65
+    1.84
+    2.07
+    2.35
+    2.69
+    3.10
+    3.60
     1.27
+    1.36
+    1.47
+    1.61
+    1.79
+    2.02
+    2.29
+    2.63
+    3.04
+    3.55
+    1.26
+    1.34
+    1.45
+    1.58
+    1.76
+    1.97
+    2.24
+    2.58
+    3.00
+    3.51
+    1.26
     1.33
     1.43
     1.56
-    1.77
-    2.06
-    2.47
-    3.05
-    3.86
-    1.22
-    1.26
-    1.32
-    1.40
-    1.54
     1.73
-    2.01
-    2.42
-    3.01
-    3.84
-    1.22
+    1.94
+    2.20
+    2.54
+    2.96
+    3.48
+    1.25
+    1.32
+    1.42
+    1.54
+    1.70
+    1.91
+    2.17
+    2.50
+    2.92
+    3.45
+    1.25
+    1.31
+    1.40
+    1.52
+    1.68
+    1.88
+    2.14
+    2.47
+    2.89
+    3.42
     1.25
     1.31
     1.39
     1.51
-    1.70
-    1.98
-    2.38
-    2.97
-    3.82
-    1.22
-    1.25
+    1.66
+    1.85
+    2.11
+    2.44
+    2.86
+    3.40
+    1.24
     1.30
-    1.37
+    1.38
     1.49
-    1.67
-    1.95
-    2.35
-    2.94
-    3.81
-    1.22
+    1.64
+    1.83
+    2.08
+    2.41
+    2.83
+    3.37
+    1.24
+    1.30
+    1.38
+    1.48
+    1.63
+    1.81
+    2.06
+    2.39
+    2.81
+    3.35
+    1.24
+    1.29
+    1.37
+    1.47
+    1.61
+    1.80
+    2.04
+    2.37
+    2.79
+    3.34
     1.24
     1.29
     1.36
-    1.48
-    1.65
-    1.92
-    2.32
-    2.91
-    3.79
-    1.22
+    1.46
+    1.60
+    1.78
+    2.03
+    2.35
+    2.77
+    3.32
     1.24
+    1.28
+    1.36
+    1.45
+    1.59
+    1.77
+    2.01
+    2.33
+    2.75
+    3.30
+    1.23
     1.28
     1.35
-    1.46
-    1.63
-    1.89
-    2.29
-    2.89
-    3.78
-    1.21
-    1.24
-    1.28
-    1.34
     1.45
-    1.61
-    1.87
-    2.27
-    2.87
-    3.77
-    1.21
-    1.23
-    1.27
-    1.33
-    1.44
-    1.60
-    1.85
-    2.24
-    2.85
-    3.76
-    1.21
-    1.23
-    1.27
-    1.33
-    1.43
     1.58
-    1.83
-    2.22
-    2.83
-    3.75
-    1.21
+    1.75
+    1.99
+    2.31
+    2.73
+    3.29
     1.23
-    1.26
-    1.32
-    1.42
+    1.28
+    1.35
+    1.44
     1.57
-    1.82
-    2.20
-    2.81
-    3.74
-    1.21
-    1.23
-    1.26
-    1.32
-    1.41
-    1.56
-    1.80
-    2.19
-    2.79
-    3.73
-    1.21
-    1.23
-    1.26
-    1.31
-    1.40
-    1.55
-    1.79
-    2.17
-    2.78
-    3.73
+    1.74
+    1.98
+    2.30
+    2.72
+    3.27
 }
 recents = { }
-Right Click me to Import/Export learning data = { 
-    9747.6520633912
+Right Click: Import/Export data --- = { 
+    9750.5192439352
     0.01
-    iamdominic
+    player0764
     1.781
     9.456
     0
     How to go to the next page?
     N or PageDown
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How to go to the previous page?
     P or PageUp
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How to edit texts?
     E, Q, or A
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How to insert a new line in text editing?
     Shift+Enter
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
     Right Click top-right corner -> Import or Export
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     What is spreading cards over time?
     Spaced repetition
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     What is it when you are tested on this material?
     Active recall, or retrieval practice
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How to delete an item?
     Minus (-)
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How to add a new item?
     C
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How to exit the program?
     Ctrl+C
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How to exit text editing?
     Ctrl+X
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
     How do you get tested on this material?
     L
     1
-    9747.6520633912
+    9750.5192439352
     0
     2.5
 }
@@ -704,4 +710,14 @@ event_whenstageclicked ?? - probably legacy function from Scratch 2.0
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
 
-Back.svg
+black.svg
+blue.svg
+cyan.svg
+green.svg
+grey.svg
+orange.svg
+pink.svg
+purple.svg
+red.svg
+white.svg
+yellow.svg

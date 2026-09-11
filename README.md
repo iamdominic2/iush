@@ -17,7 +17,7 @@ Supported commands:<BR>
 `rd [directory]`: Removes an empty directory. Use `rd /s [directory]` to remove a non-empty directory (**and all files and subdirectories in the directory**)<BR>
 `set [file] [text]`: Changes the file's data to the text string you input<BR>
 `echo [text]`: Outputs the text back to you<BR>
-`write [text or file]`: Outputs text back to you; however, if you input an existing file path, it outputs the file's contents back to you<BR>
+`type [text or file]`: Outputs text back to you; however, if you input an existing file path, it outputs the file's contents back to you<BR>
 `copy [file] [new path]`: Copies a file to the new path (the original will not be erased)<BR>
 `cls`: Clears the screen - especially useful when it's too bloated or laggy!<BR>
 `date`: Outputs the date in DAYOFWEEK DD/MM/YYYY format. E.g. Monday 17/8/2026.<BR>
@@ -42,10 +42,7 @@ c:\program\regedit.exe (Command: `Regedit`)<BR>
 2. Use the mouse to copy text and Ctrl+V to paste it back! (*Note that Ctrl+C **aborts** the currently running command, and the mouse does NOT move the cursor position)
 3. Use `&` to chain commands together!
 4. (*Unique to iush*) However, if you want to **literally** have "&", for instance, when using `set` in a file to execute as a batch later, add `#LITERAL&` (**exact phrasing**) to the end of your command.
-5. Use `Page Up` and `Page Down` keys to scroll up/down (on some keyboards it's `Fn+Up` and `Fn+Down`)
-
-#### A catastrophic? bug
-After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though successfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.
+5. Use `Page Up` and `Page Down`, Shift+Up/Down keys, or Shift+Mouse Wheel to scroll up/down (on some keyboards it's `Fn+Up` and `Fn+Down`)
 
 ## Domemory
 ![Presentation](screenshots/presentation.png)
@@ -54,8 +51,8 @@ Classic spaced repetition active recall - Maybe the first of its kind on Scratch
 * Pre-trained modified SuperMemo 5 spaced repetition algorithm (SuperMemo 2 was too boring to code!) - with bilinear interpolation of the Absolute Factors (`AF`) (also known as Ease Factor or Ease in some other spaced repeititon apps)
 * No modern corporate "gamification" bloat - focus purely on the pragmatism of self-testing!
 * Cherish the wisdom of your new knowledge! <BR>
-* SM-5 optimal factor matrix derived from about 19,000 repetitions of me using SuperMemo itself:<BR>
-![OF-Matrix](screenshots/12406.jpg)
+* SM-5 optimal factor matrix derived from 26,631 repetitions of me using SuperMemo itself:<BR>
+![OF-Matrix](screenshots/image.png)
 ### AF changes and grades
 **(You evaluate your recall effort after viewing the answer, grading the flashcard from easy to a completely fail.)**<BR>
 1 (Fail): -0.15<BR>
@@ -101,6 +98,13 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 
 ## Example
 <img width="782" height="572" alt="2222" src="https://github.com/user-attachments/assets/fce4f786-534c-4759-8d8e-721acb61115c" />
+
+## Version history
+1.1: After executing `rd /s c:\`, I discovered something horrifying: only half of all my files were erased! I then made a shocking discovery: Though successfully removing a file erases it from the list, the `Counter` for the file check still increased by 1 even though all other values would move 1 backward, causing it to miss the immediate next file. This has since been fixed.<br>
+1.2: New executable program: bsod.exe, added missing help messages<br>
+1.3: A cooler dot matrix font, Fix white Domemory in Learning Mode even if c:\registry\color changes<br>
+1.4: Renamed `write` to `type`, `Home`, `End`, `Del` key support, scrolling with Mouse Wheel, Overwrite mode, Backspace no longer deletes if caret is at first position, universal Copy & Paste, adjust Domemory parameters<br>
+
 
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
 

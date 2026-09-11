@@ -1,3 +1,22 @@
+//----- Key pressed events --------------------------------------------------------------------------------------------
+
+WhenKeyPressed(home)
+{
+    If is compiled?
+    {
+        cursor location = 1;
+    }
+}
+
+WhenKeyPressed(end)
+{
+    If is compiled?
+    {
+        cursor location = (Variable.Length(TextEdit) + 1);
+    }
+}
+
+
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
 WhenBroadcastReceived(paint.exe)
@@ -328,18 +347,24 @@ Define Megakey (warp=false)
     Call Key(" ");
     If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])
     {
-        Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
-        TextEdit = JOINSTRING STRING;
-        Call Render("")("");
-        Sensing.ResetTimer();
-        Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.4));
-        Repeat Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])))
+        If (cursor location > 1)
         {
             Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
             TextEdit = JOINSTRING STRING;
             Call Render("")("");
             Sensing.ResetTimer();
-            Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.05));
+            Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.4));
+            Repeat Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])))
+            {
+                If (cursor location > 1)
+                {
+                    Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
+                    TextEdit = JOINSTRING STRING;
+                    Call Render("")("");
+                    Sensing.ResetTimer();
+                    Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.05));
+                }
+            }
         }
     }
     If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\enterkey")])
