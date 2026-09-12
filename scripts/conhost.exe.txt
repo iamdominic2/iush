@@ -530,7 +530,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                     }
                                                                     Else
                                                                     {
-                                                                        If 
+                                                                        If (JOINSTRING STRING == "iush")
                                                                         {
                                                                         }
                                                                         Else
@@ -1770,8 +1770,6 @@ Else
 {
     Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"), JOINSTRING STRING)) dry("") er(1);
 }
-
-shift;
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------

@@ -103,6 +103,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.3: A cooler dot matrix font, Fix white Domemory in Learning Mode even if c:\registry\color changes<br>
 1.4: Renamed `write` to `type`, `Home`, `End`, `Del` key support, scrolling with Mouse Wheel, Overwrite mode, Backspace no longer deletes if caret is at first position, universal Copy & Paste, adjust Domemory parameters<br>
 1.4.1: Fixed Scratch `Home`, `End` triggered by other keys due to compatibility issues, Scroll in Notepad without modifier, and Shift+Left/Right to skip across words (to avoid MacOS Command+Left/Right browser issues)
-
+1.4.2: Fixed a typo in the Domemory shortcut-bar
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
 

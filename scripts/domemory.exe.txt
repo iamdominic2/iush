@@ -437,7 +437,7 @@ WhenBroadcastReceived(Domemory.exe)
     {
         If (LearnMode == 0)
         {
-            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate L)earn", "  S)uspend  "), "Ctrl+C)Leave  Ctrl+X)Exit edit mode  ------------------------------------------------------------------------------");
+            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate ", "-)Delete S)uspend"), " Ctrl+C)Leave Ctrl+X)Exit editing mode------------------------------------------------------------------------------");
         }
         Else
         {

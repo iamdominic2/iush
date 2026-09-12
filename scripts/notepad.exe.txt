@@ -660,7 +660,7 @@ Define Render(string d)(string s) (warp=true)
             {
                 If (INSMODE == 0)
                 {
-                    Call Text(Operator.Join("[INSERT]  ", Operator.Join("Notepad: *", notepaddir))) italics("") bold("") cursor(n) curspos("");
+                    Call Text(Operator.Join("[INSERT]    ", Operator.Join("Notepad: *", notepaddir))) italics("") bold("") cursor(n) curspos("");
                 }
                 Else
                 {
