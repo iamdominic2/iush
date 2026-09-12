@@ -9,10 +9,10 @@ ac = random.exe
 act = 602
 actPATH = c:\registry\clipboard
 ad = copy c:\hello.bmp c:\s.bmp
-andfinder = 25
+andfinder = 5
 arrc = 2
 backspace = down arrow
-bedit = domemory
+bedit = dog
 Bold = 0
 CARDID = 1
 cc = 0
@@ -38,7 +38,7 @@ dtl = 21
 EDITMODE = 1
 EDITQONLY = 0
 emacs = 1
-exenow = set c:\registry\clipboard
+exenow = paint
 factor_b = 21
 fcc = 1
 Finaltext = DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate L)earn  S)uspend  Ctrl+C)Leave  Ctrl+X)Exit edit mode  ------------------------------------------------------------------------------
@@ -46,12 +46,12 @@ firstclick =
 Gotodialog = 0
 hideANS = 0
 INSMODE = 0
-instring =  
+instring = 
 Italics = 0
-JOINSTRING NO = 22
+JOINSTRING NO = 2
 JOINSTRING STRING = 
 jssb = hi
-lastclick = 
+lastclick = 1
 LearnMode = 0
 lettr = 208
 lsct = 0
@@ -65,13 +65,13 @@ notepaddir = NEW FILE
 notepaddisp =   
 notepadp = 7
 NotepadScroll = 0
-npbar = Save as what file? Enter the absolute path
+npbar = Quit without saving? Y/N
 oldcurspos = 1
 olddir = c:\
 oldnotepadir = ::
-oldTextedit = How to go to the next page?
-org = set c:\registry\clipboard
-orgmode = set
+oldTextedit = 
+org = paint
+orgmode = paint
 orgt = c:\iush\help\help.txt☙c:\bin\scratchfallback
 paintct = 2301
 paintnew = 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
@@ -141,7 +141,7 @@ Data = {
     This is a terminal for Scratch! In honour of Aayush. For help, type help for a list of commands and help [command] for further information.
     bg black&color 00ff00&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&c:\registry\random.exe&
     iush: is a directory
-    19626
+    22512
     find [string]: find files or directory containing a string
     #T0JAExiN2j2wbK3S635cc6Njxd7ZQtTzjNb2uE6TVQnDpPBndQ5MhyqNU3wn8ap4WdgNkxLKzDXiX T43ccri0636Kkkak45rt3GSrAeUvEwAx51R6UnLT1qHm8BQVL3CpSvfucYRWp6hX6i393Uz52K6mK 4ah6zKqUppnVxeq50eTGFr4geF6tjFJAiJz6kXzyf2iSDv52AGHWZCag6iHD6DWgjmFApFBcSb9Rc mXa75XA5yzvTRZHnQqgu2DU2f4RXmk2r79AivC0rQ4pfxhyefD3S7hgBXBnB7jKL06JT4qqMH01wY LA6jYrarXLtbaCq8SJDvezwd4McLqnAeExnTFmQVSCwmdzkR7PmvB8d8VfGVFNJmpG0vwatd9AyR4 8FN98fmtvfW9Ww0tK84QQuURMDnAGy5RMxcF2Gi6mgiYg4QDC9ykaZ9f9LVgi3MqSh31n8RdkqCFN 9JL5CSu7qUCQn2eVWn2GQGCExSncANBH1UJ1nKvErvcWd4p18HMf6Rp8TA3nG7Gac4DrRjUpC2HNH XRtNtfDMpmDauU4c2GfWDmWUhZwMmUDvxRiE2cb2RmXShf7nP3eCdGmYecZjgn4b4icV0KcMapHvA SfT8A2MBR98yYaUhzm2XtKjJhp00ExmJuEgPB8NDebHHJwS49MqM4R9LEf0B4fGxSzqeBcHyuYUeL S1zqSDCKnG1mH2mJWx2an5fMVqfgu5NX8eyQAmvUqruPrxWmRkYX71X6r0PtLxE9GEBTEnjHPXrKB&nOTePad.exE
     On Scratch, by default, use ] for Shift, use < for Backspace, and ^ for Control
@@ -622,7 +622,7 @@ OF MATRIX = {
 }
 recents = { }
 Right Click: Import/Export data --- = { 
-    9750.5192439352
+    9751.3859617245
     0.01
     player0764
     1.781
@@ -631,73 +631,73 @@ Right Click: Import/Export data --- = {
     How to go to the next page?
     N or PageDown
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How to go to the previous page?
     P or PageUp
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How to edit texts?
     E, Q, or A
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How to insert a new line in text editing?
     Shift+Enter
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     REMEMBER TO SAVE & LOAD YOUR LEARNING! HOW?
     Right Click top-right corner -> Import or Export
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     What is spreading cards over time?
     Spaced repetition
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     What is it when you are tested on this material?
     Active recall, or retrieval practice
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How to delete an item?
     Minus (-)
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How to add a new item?
     C
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How to exit the program?
     Ctrl+C
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How to exit text editing?
     Ctrl+X
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
     How do you get tested on this material?
     L
     1
-    9750.5192439352
+    9751.3859617245
     0
     2.5
 }

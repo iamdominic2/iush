@@ -102,9 +102,11 @@ WhenKeyPressed(left arrow)
         If ((EDITMODE < 3) Or (EDITMODE == 6))
         {
             cursor location += -1;
+            Call Ctrl_move(-1);
             If (cursor location == 0)
             {
                 cursor location += 1;
+                Stop(this script);
             }
         }
     }
@@ -117,6 +119,7 @@ WhenKeyPressed(right arrow)
         If ((EDITMODE < 3) Or (EDITMODE == 6))
         {
             cursor location += 1;
+            Call Ctrl_move(1);
             If (cursor location > (Variable.Length(TextEdit) + 1))
             {
                 cursor location += -1;
@@ -204,14 +207,6 @@ WhenKeyPressed(up arrow)
     }
 }
 
-WhenKeyPressed(end)
-{
-    If is compiled?
-    {
-        cursor location = (Variable.Length(TextEdit) + 1);
-    }
-}
-
 
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
@@ -244,6 +239,21 @@ Define attempt cd(string number or text) dry(string d) er(string r) (warp=false)
         If (r == 1)
         {
             List.Add(cm, "iush: fatal: directory non-existent");
+        }
+    }
+}
+
+Define Ctrl_move(string num) (warp=true)
+{
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\shiftkey")])
+    {
+        Repeat Until ((Not ((List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) < 37))) Or (List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) == 0))
+        {
+            cursor location += num;
+            If (cursor location == 1)
+            {
+                Stop(this script);
+            }
         }
     }
 }
@@ -772,7 +782,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                     }
                                                                                                                     Else
                                                                                                                     {
-                                                                                                                        List.Add(cm, "iush: fatal: help file not found");
+                                                                                                                        List.Add(cm, "iush: help file not found");
                                                                                                                     }
                                                                                                                 }
                                                                                                                 Else
@@ -791,6 +801,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                         If ((JOINSTRING STRING == "domemory") Or (JOINSTRING STRING == "domemory.exe"))
                                                                                                                         {
                                                                                                                             Stop(other scripts in sprite);
+                                                                                                                            List.Add(cm, "");
                                                                                                                             Event.BroadcastAndWait("Domemory.exe");
                                                                                                                             Stop(this script);
                                                                                                                         }
@@ -799,6 +810,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                             If ((JOINSTRING STRING == "paint.exe") Or (JOINSTRING STRING == "paint"))
                                                                                                                             {
                                                                                                                                 Call kill first((Variable.Length(JOINSTRING STRING) + 1)) chars from string(TextEdit) or at chr("");
+                                                                                                                                List.Add(cm, "");
                                                                                                                                 notepaddir = JOINSTRING STRING;
                                                                                                                                 domemory.exe = 3;
                                                                                                                                 Stop(other scripts in sprite);
@@ -810,6 +822,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                                 If ((JOINSTRING STRING == "notepad.exe") Or (JOINSTRING STRING == "notepad"))
                                                                                                                                 {
                                                                                                                                     Call kill first((Variable.Length(JOINSTRING STRING) + 1)) chars from string(TextEdit) or at chr("");
+                                                                                                                                    List.Add(cm, "");
                                                                                                                                     notepaddir = JOINSTRING STRING;
                                                                                                                                     domemory.exe = 2;
                                                                                                                                     Stop(other scripts in sprite);
@@ -1757,6 +1770,8 @@ Else
 {
     Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"), JOINSTRING STRING)) dry("") er(1);
 }
+
+shift;
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------

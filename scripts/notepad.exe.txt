@@ -5,6 +5,7 @@ WhenKeyPressed(left arrow)
     If (domemory.exe == 2)
     {
         cursor location += -1;
+        Call Ctrl_move(-1);
         If (cursor location == 0)
         {
             cursor location += 1;
@@ -16,39 +17,36 @@ WhenKeyPressed(right arrow)
 {
     If (domemory.exe == 2)
     {
-        If ((EDITMODE < 3) Or (EDITMODE == 6))
+        cursor location += 1;
+        Call Ctrl_move(1);
+        If (cursor location > (Variable.Length(TextEdit) + 1))
         {
-            cursor location += 1;
-            If (cursor location > (Variable.Length(TextEdit) + 1))
-            {
-                cursor location += -1;
-            }
+            cursor location += -1;
         }
     }
 }
 
 WhenKeyPressed(end)
 {
-    cursor location = (Variable.Length(TextEdit) + 1);
+    If is compiled?
+    {
+        cursor location = (Variable.Length(TextEdit) + 1);
+    }
 }
 
 WhenKeyPressed(down arrow)
 {
     If (domemory.exe == 2)
     {
-        If Sensing.KeyPressed(down arrow)
-        {
-        }
-        Else
-        {
-            If (NotepadScroll < realnl)
-            {
-                NotepadScroll += 1;
-            }
-            Else
-            {
-            }
-        }
+        NotepadScroll += 1;
+    }
+}
+
+WhenKeyPressed(up arrow)
+{
+    If (domemory.exe == 2)
+    {
+        NotepadScroll += -1;
     }
 }
 
@@ -65,7 +63,10 @@ WhenKeyPressed(v)
 
 WhenKeyPressed(home)
 {
-    cursor location = 1;
+    If is compiled?
+    {
+        cursor location = 1;
+    }
 }
 
 WhenKeyPressed(home)
@@ -76,31 +77,24 @@ WhenKeyPressed(home)
     }
 }
 
-WhenKeyPressed(up arrow)
-{
-    If (domemory.exe == 2)
-    {
-        If Sensing.KeyPressed(up arrow)
-        {
-        }
-        Else
-        {
-            If (NotepadScroll > 0)
-            {
-                NotepadScroll += -1;
-            }
-            Else
-            {
-            }
-        }
-    }
-}
-
 WhenKeyPressed(end)
 {
     If is compiled?
     {
         cursor location = (Variable.Length(TextEdit) + 1);
+    }
+}
+
+WhenKeyPressed(right arrow)
+{
+    If (domemory.exe == 2)
+    {
+        cursor location += 1;
+        Call Ctrl_move(1);
+        If (cursor location > (Variable.Length(TextEdit) + 1))
+        {
+            cursor location += -1;
+        }
     }
 }
 
@@ -271,6 +265,21 @@ WhenBroadcastReceived(PASTE)
 
 
 //----- Custom blocks -------------------------------------------------------------------------------------------------
+
+Define Ctrl_move(string num) (warp=true)
+{
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\shiftkey")])
+    {
+        Repeat Until ((Not ((List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) < 37))) Or (List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) == 0))
+        {
+            cursor location += num;
+            If (cursor location == 1)
+            {
+                Stop(this script);
+            }
+        }
+    }
+}
 
 Define INSERT at character(string chr) string(string NEW) oldstring(string OLD) (warp=true)
 {

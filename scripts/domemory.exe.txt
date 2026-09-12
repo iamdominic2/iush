@@ -204,15 +204,13 @@ WhenKeyPressed(left arrow)
 {
     If (domemory.exe == 1)
     {
-        If (domemory.exe == 1)
+        If ((EDITMODE < 3) Or (EDITMODE == 6))
         {
-            If ((EDITMODE < 3) Or (EDITMODE == 6))
+            cursor location += -1;
+            Call Ctrl_move(-1);
+            If (cursor location == 0)
             {
-                cursor location += -1;
-                If (cursor location == 0)
-                {
-                    cursor location += 1;
-                }
+                cursor location += 1;
             }
         }
     }
@@ -225,6 +223,7 @@ WhenKeyPressed(right arrow)
         If ((EDITMODE < 3) Or (EDITMODE == 6))
         {
             cursor location += 1;
+            Call Ctrl_move(1);
             If (cursor location > (Variable.Length(TextEdit) + 1))
             {
                 cursor location += -1;
@@ -431,6 +430,24 @@ WhenKeyPressed(end)
 
 WhenBroadcastReceived(Domemory.exe)
 {
+    EDITQONLY = 0;
+    CARDID = 1;
+    SECONDBAR = "";
+    Forever
+    {
+        If (LearnMode == 0)
+        {
+            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate L)earn", "  S)uspend  "), "Ctrl+C)Leave  Ctrl+X)Exit edit mode  ------------------------------------------------------------------------------");
+        }
+        Else
+        {
+            Finaltext = "DOMEMORY v1.4 ███------------------------------------------------------------------------------[Learning Mode]                                                                                                                                             ------------------------------------------------------------------------------";
+        }
+    }
+}
+
+WhenBroadcastReceived(Domemory.exe)
+{
     Forever
     {
         If ((Not (Sensing.MouseDown())) And (firstclick > ""))
@@ -456,24 +473,6 @@ WhenBroadcastReceived(Domemory.exe)
             }
             firstclick = "";
             lastclick = "";
-        }
-    }
-}
-
-WhenBroadcastReceived(Domemory.exe)
-{
-    EDITQONLY = 0;
-    CARDID = 1;
-    SECONDBAR = "";
-    Forever
-    {
-        If (LearnMode == 0)
-        {
-            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate L)earn", "  S)uspend  "), "Ctrl+C)Leave  Ctrl+X)Exit edit mode  ------------------------------------------------------------------------------");
-        }
-        Else
-        {
-            Finaltext = "DOMEMORY v1.4 ███------------------------------------------------------------------------------[Learning Mode]                                                                                                                                             ------------------------------------------------------------------------------";
         }
     }
 }
@@ -724,6 +723,21 @@ Define AF delta(string num) (warp=false)
     If (Right Click: Import/Export data ---[((CURITEM * 6) + 6)] < 1.5)
     {
         List.ReplaceItem(Right Click: Import/Export data ---, ((CURITEM * 6) + 6), 1.5);
+    }
+}
+
+Define Ctrl_move(string num) (warp=true)
+{
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\shiftkey")])
+    {
+        Repeat Until ((Not ((List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) < 37))) Or (List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) == 0))
+        {
+            cursor location += num;
+            If (cursor location == 1)
+            {
+                Stop(this script);
+            }
+        }
     }
 }
 

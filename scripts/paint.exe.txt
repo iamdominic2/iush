@@ -1,5 +1,31 @@
 //----- Key pressed events --------------------------------------------------------------------------------------------
 
+WhenKeyPressed(left arrow)
+{
+    If (domemory.exe == 3)
+    {
+        cursor location += -1;
+        Call Ctrl_move(-1);
+        If (cursor location == 0)
+        {
+            cursor location += 1;
+        }
+    }
+}
+
+WhenKeyPressed(right arrow)
+{
+    If (domemory.exe == 3)
+    {
+        cursor location += 1;
+        Call Ctrl_move(1);
+        If (cursor location > (Variable.Length(TextEdit) + 1))
+        {
+            cursor location += -1;
+        }
+    }
+}
+
 WhenKeyPressed(home)
 {
     If is compiled?
@@ -143,6 +169,21 @@ WhenBroadcastReceived(paint.exe)
 
 
 //----- Custom blocks -------------------------------------------------------------------------------------------------
+
+Define Ctrl_move(string num) (warp=true)
+{
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\shiftkey")])
+    {
+        Repeat Until ((Not ((List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) < 37))) Or (List.IndexOf(Letters, Operator.LetterOf(TextEdit, cursor location)) == 0))
+        {
+            cursor location += num;
+            If (cursor location == 1)
+            {
+                Stop(this script);
+            }
+        }
+    }
+}
 
 Define INSERT at character(string chr) string(string NEW) oldstring(string OLD) (warp=true)
 {
@@ -581,7 +622,10 @@ Define Render(string d)(string s) (warp=true)
     Motion.GoToXY(-235, -170);
     Call Text(npbar) italics("") bold("") cursor(n) curspos("");
     Motion.GoToXY(-235, -155);
-    Call Text(TextEdit) italics("") bold("") cursor(n) curspos("");
+    If Operator.Contains(npbar, "enter the absolute path")
+    {
+        Call Text(Operator.Join(TextEdit, " ")) italics("") bold("") cursor(1) curspos(cursor location);
+    }
     Call Paint-Render WB("");
 }
 
@@ -888,6 +932,14 @@ Else
 }
 
 notepaddir = 0;
+
+Operator.Contains(npbar, "O)Open");
+
+Operator.Contains(npbar, "O)Open");
+
+Operator.Contains(npbar, "O)Open");
+
+Operator.Contains(npbar, "O)Open");
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
