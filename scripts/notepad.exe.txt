@@ -42,14 +42,6 @@ WhenKeyPressed(down arrow)
     }
 }
 
-WhenKeyPressed(up arrow)
-{
-    If (domemory.exe == 2)
-    {
-        NotepadScroll += -1;
-    }
-}
-
 WhenKeyPressed(v)
 {
     If (domemory.exe == 2)
@@ -85,16 +77,11 @@ WhenKeyPressed(end)
     }
 }
 
-WhenKeyPressed(right arrow)
+WhenKeyPressed(up arrow)
 {
     If (domemory.exe == 2)
     {
-        cursor location += 1;
-        Call Ctrl_move(1);
-        If (cursor location > (Variable.Length(TextEdit) + 1))
-        {
-            cursor location += -1;
-        }
+        NotepadScroll += -1;
     }
 }
 
