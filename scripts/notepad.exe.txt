@@ -42,6 +42,14 @@ WhenKeyPressed(down arrow)
     }
 }
 
+WhenKeyPressed(up arrow)
+{
+    If (domemory.exe == 2)
+    {
+        NotepadScroll += -1;
+    }
+}
+
 WhenKeyPressed(v)
 {
     If (domemory.exe == 2)
@@ -74,14 +82,6 @@ WhenKeyPressed(end)
     If is compiled?
     {
         cursor location = (Variable.Length(TextEdit) + 1);
-    }
-}
-
-WhenKeyPressed(up arrow)
-{
-    If (domemory.exe == 2)
-    {
-        NotepadScroll += -1;
     }
 }
 
@@ -162,27 +162,21 @@ WhenBroadcastReceived(Notepad.exe)
         Call Render("")("s");
         If ((Not (Sensing.MouseDown())) And (firstclick > ""))
         {
-            If (Sensing.Timer() > 0.05)
+            If (Not (Sensing.MouseDown()))
             {
-                If (firstclick > lastclick)
+                If (firstclick > 0)
                 {
-                    fcc = lastclick;
-                    firstclick = lastclick;
-                    lastclick = fcc;
+                    If (firstclick > lastclick)
+                    {
+                        fcc = lastclick;
+                        firstclick = lastclick;
+                        lastclick = fcc;
+                    }
+                    Call Get-string st(TextEdit);
+                    dd3 = 0;
+                    firstclick = 0;
                 }
-                Call kill first((firstclick - 1)) chars from string(TextEdit) or at chr("");
-                bedit = JOINSTRING STRING;
-                Call first(((lastclick - firstclick) + 1)) chars from string(bedit) terminateelse("`````````y79t3cj1x8o1omZ");
-                bedit = JOINSTRING STRING;
-                Repeat Until (Not ((Operator.LetterOf(bedit, 1) == "☙")))
-                {
-                    Call kill first(1) chars from string(bedit) or at chr("");
-                    bedit = JOINSTRING STRING;
-                }
-                List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\clipboard"), bedit);
             }
-            firstclick = "";
-            lastclick = "";
         }
         If (Sensing.KeyPressed(s) And ((domemory.exe == 2) And Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\shiftkey")])))
         {
@@ -266,6 +260,24 @@ Define Ctrl_move(string num) (warp=true)
             }
         }
     }
+}
+
+Define Get-string st(string st) (warp=true)
+{
+    clipb = "";
+    act = 0;
+    Repeat (Variable.Length(st))
+    {
+        act += 1;
+        If (((act > (firstclick - 1)) And (act < (lastclick + 1))) And List.ContainsItem(Letters, Operator.LetterOf(st, act)))
+        {
+            clipb = Operator.Join(clipb, Operator.LetterOf(st, act));
+        }
+        Else
+        {
+        }
+    }
+    List.ReplaceItem(Data, List.IndexOf(Name, "c:\registry\clipboard"), clipb);
 }
 
 Define INSERT at character(string chr) string(string NEW) oldstring(string OLD) (warp=true)
@@ -941,9 +953,405 @@ Define Typer color(string n) (warp=true)
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
 
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
 
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
+
+If (Not (Sensing.MouseDown()))
+{
+    If (firstclick > 0)
+    {
+        If (firstclick > lastclick)
+        {
+            fcc = lastclick;
+            firstclick = lastclick;
+            lastclick = fcc;
+        }
+        Call Get-string st(text);
+        dd3 = 0;
+        firstclick = 0;
+    }
+}
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------

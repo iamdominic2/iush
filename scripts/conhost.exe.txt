@@ -59,6 +59,7 @@ WhenGreenFlagClicked()
                         Call kill first(1) chars from string(bedit) or at chr("");
                         bedit = JOINSTRING STRING;
                     }
+                    JOINSTRING STRING = "";
                     List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\clipboard"), bedit);
                 }
                 firstclick = "";
@@ -191,6 +192,18 @@ WhenKeyPressed(down arrow)
     }
 }
 
+WhenKeyPressed(a)
+{
+    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
+    {
+        If (domemory.exe == 0)
+        {
+            cursor location = 1;
+            Wait Until (Not (Sensing.KeyPressed(a)));
+        }
+    }
+}
+
 WhenKeyPressed(up arrow)
 {
     Sensing.ResetTimer();
@@ -208,18 +221,6 @@ WhenKeyPressed(up arrow)
                 TextEdit = recents[rec];
                 cursor location = (Variable.Length(TextEdit) + 1);
             }
-        }
-    }
-}
-
-WhenKeyPressed(a)
-{
-    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
-    {
-        If (domemory.exe == 0)
-        {
-            cursor location = 1;
-            Wait Until (Not (Sensing.KeyPressed(a)));
         }
     }
 }
@@ -927,23 +928,23 @@ Define first(string n) chars from string(string string) terminateelse(string ccc
 {
     If (cccccc == "☙")
     {
-        Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate("☙") or("");
+        Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate("☙") or("") nope(1);
     }
     Else
     {
         If (cccccc == "&")
         {
-            Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate("&") or("");
+            Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate("&") or("") nope(1);
         }
         Else
         {
             If (n == "")
             {
-                Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate(Operator.Join(cccccc, " ")) or("wvawv797nNZOmCGi6G7q5Oq4cAzz50pbql0KeL4zgWVZ4fjRjUsSblDXtBh7hftWG2iuB4KfPhC7erXoKViv5b5buNZOmCGi6G7q5Oq4cAzz50pbql0KeL4zgWVZ4fjRjUsSblDXtBh7hftWG2iuB4KfPhC7erXoKViv5b5bunv");
+                Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate(Operator.Join(cccccc, " ")) or("wvawv797nNZOmCGi6G7q5Oq4cAzz50pbql0KeL4zgWVZ4fjRjUsSblDXtBh7hftWG2iuB4KfPhC7erXoKViv5b5buNZOmCGi6G7q5Oq4cAzz50pbql0KeL4zgWVZ4fjRjUsSblDXtBh7hftWG2iuB4KfPhC7erXoKViv5b5bunv") nope(1);
             }
             Else
             {
-                Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate(Operator.Join(cccccc, " ")) or(n);
+                Call terminal: Joinstring text(string) Location(n) Increment((Variable.Length(string) - n)) new("") terminate(Operator.Join(cccccc, " ")) or(n) nope(1);
             }
         }
     }
@@ -1014,13 +1015,13 @@ Define Key(string s) (warp=false)
                     Sensing.ResetTimer();
                     If (s == "enter")
                     {
-                        Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment("") new("☙") terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv");
+                        Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment("") new("☙") terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") nope("");
                     }
                     Else
                     {
                         If ((INSMODE == 1) And (cursor location < Variable.Length(TextEdit)))
                         {
-                            Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new(s) terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv");
+                            Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new(s) terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") nope("");
                             cursor location += 1;
                         }
                         Else
@@ -1031,7 +1032,7 @@ Define Key(string s) (warp=false)
                             }
                             Else
                             {
-                                Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment("") new(s) terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv");
+                                Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment("") new(s) terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") nope("");
                             }
                         }
                     }
@@ -1310,7 +1311,7 @@ Define Megakey (warp=false)
     }
     If (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]) And (cursor location > 1))
     {
-        Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
+        Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("") nope("");
         If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\shiftkey")])
         {
         }
@@ -1322,7 +1323,7 @@ Define Megakey (warp=false)
         {
             If (cursor location > 1)
             {
-                Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
+                Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("") nope("");
                 TextEdit = JOINSTRING STRING;
                 Call Render("")("");
                 Sensing.ResetTimer();
@@ -1549,7 +1550,7 @@ Define subrender(string d)(string s) (warp=true)
     Call Typer color((1 - d));
 }
 
-Define terminal: Joinstring text(string st) Location(string ct) Increment(string inc) new(string nw) terminate(string end) or(string e2n) (warp=false)
+Define terminal: Joinstring text(string st) Location(string ct) Increment(string inc) new(string nw) terminate(string end) or(string e2n) nope(string xxxx) (warp=false)
 {
     JOINSTRING STRING = "";
     JOINSTRING NO = 0;
@@ -1572,7 +1573,10 @@ Define terminal: Joinstring text(string st) Location(string ct) Increment(string
         JOINSTRING NO += 1;
         JOINSTRING STRING = Operator.Join(JOINSTRING STRING, Operator.LetterOf(st, JOINSTRING NO));
     }
-    cursor location += (0 - (inc + back));
+    If (Not ((xxxx == 1)))
+    {
+        cursor location += (0 - (inc + back));
+    }
 }
 
 Define Text(string text) italics(string italics) bold(string bold) cursor(string curse) curspos(string cup) (warp=true)

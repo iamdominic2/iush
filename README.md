@@ -105,5 +105,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.4.1: Fixed Scratch `Home`, `End` triggered by other keys due to compatibility issues, Scroll in Notepad without modifier, and Shift+Left/Right to skip across words (to avoid MacOS Command+Left/Right browser issues)
 1.4.2: Fixed a typo in the Domemory shortcut-bar
 1.4.3: Fixed right arrow moves twice in Notepad, cursor now more visible
+1.4.4: Fixed clipboard bugs!
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
 

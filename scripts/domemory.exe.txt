@@ -767,7 +767,7 @@ Define first(string n) chars from string(string string) terminateelse(string ccc
     }
 }
 
-Define Get-string st(string st) (warp=false)
+Define Get-string st(string st) (warp=true)
 {
     clipb = "";
     act = 0;
