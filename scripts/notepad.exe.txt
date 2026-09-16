@@ -31,6 +31,12 @@ WhenKeyPressed(end)
     If is compiled?
     {
         cursor location = (Variable.Length(TextEdit) + 1);
+        NotepadReal = -500;
+        Control.Wait(0);
+        Repeat Until (Not ((NotepadReal == -500)))
+        {
+            NotepadScroll += 1;
+        }
     }
 }
 
@@ -38,15 +44,10 @@ WhenKeyPressed(down arrow)
 {
     If (domemory.exe == 2)
     {
-        NotepadScroll += 1;
-    }
-}
-
-WhenKeyPressed(up arrow)
-{
-    If (domemory.exe == 2)
-    {
-        NotepadScroll += -1;
+        If (NotepadReal < 160)
+        {
+            NotepadScroll += 1;
+        }
     }
 }
 
@@ -66,6 +67,7 @@ WhenKeyPressed(home)
     If is compiled?
     {
         cursor location = 1;
+        NotepadScroll = 0;
     }
 }
 
@@ -82,6 +84,21 @@ WhenKeyPressed(end)
     If is compiled?
     {
         cursor location = (Variable.Length(TextEdit) + 1);
+    }
+}
+
+WhenKeyPressed(up arrow)
+{
+    If (domemory.exe == 2)
+    {
+        If (NotepadReal > -160)
+        {
+            NotepadScroll += -1;
+            If (NotepadScroll < 0)
+            {
+                NotepadScroll = 0;
+            }
+        }
     }
 }
 
@@ -162,7 +179,11 @@ WhenBroadcastReceived(Notepad.exe)
         Call Render("")("s");
         If ((Not (Sensing.MouseDown())) And (firstclick > ""))
         {
-            If (Not (Sensing.MouseDown()))
+            If ((firstclick == lastclick) And (Sensing.Timer() < 0.2))
+            {
+                cursor location = lastclick;
+            }
+            Else
             {
                 If (firstclick > 0)
                 {
@@ -173,10 +194,11 @@ WhenBroadcastReceived(Notepad.exe)
                         lastclick = fcc;
                     }
                     Call Get-string st(TextEdit);
-                    dd3 = 0;
-                    firstclick = 0;
                 }
+                Control.Wait(0.5);
             }
+            dd3 = 0;
+            firstclick = "";
         }
         If (Sensing.KeyPressed(s) And ((domemory.exe == 2) And Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\shiftkey")])))
         {
@@ -224,12 +246,6 @@ WhenBroadcastReceived(Notepad.exe)
             {
                 Call NotepadSaveas("");
             }
-        }
-        If (Sensing.KeyPressed(delete) And is compiled?)
-        {
-            Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-            cursor location += 1;
-            TextEdit = JOINSTRING STRING;
         }
     }
 }
@@ -500,6 +516,21 @@ Define Megakey (warp=false)
     Call Key("/");
     Call Key("`");
     Call Key(" ");
+    If (Sensing.KeyPressed(delete) And is compiled?)
+    {
+        Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+        cursor location += 1;
+        TextEdit = JOINSTRING STRING;
+        Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+        Repeat Until (Not (Sensing.KeyPressed(delete)))
+        {
+            Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+            cursor location += 1;
+            TextEdit = JOINSTRING STRING;
+            Sensing.ResetTimer();
+            Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
+        }
+    }
     If (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]) And (cursor location > 1))
     {
         Call terminal: Joinstring text(TextEdit) Location((cursor location - 2)) Increment(1) new("") terminate("") or("");
@@ -522,9 +553,6 @@ Define Megakey (warp=false)
     If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\enterkey")])
     {
         Call Key("enter");
-    }
-    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])
-    {
     }
 }
 
@@ -627,7 +655,8 @@ Define Render(string d)(string s) (warp=true)
             scroll += 1;
         }
     }
-    Motion.GoToXY(-235, -150);
+    Motion.GoToXY(-235, -170);
+    Call Text(npbar) italics("") bold("") cursor(n) curspos("");
     If Operator.Contains(npbar, ")PASTE")
     {
         Motion.GoToXY(-235, -160);
@@ -673,8 +702,6 @@ Define Render(string d)(string s) (warp=true)
         Motion.GoToXY(-235, -160);
         Call Text(notepaddir) italics("") bold("") cursor(n) curspos("");
     }
-    Motion.GoToXY(-235, -170);
-    Call Text(npbar) italics("") bold("") cursor(n) curspos("");
 }
 
 Define rls (warp=true)
@@ -759,18 +786,6 @@ Define Text(string text) italics(string italics) bold(string bold) cursor(string
         dd1 = 0;
         If (bold == 50)
         {
-            If (Operator.LetterOf(text, Count) == "☙")
-            {
-                nlct += 1;
-                Motion.SetX(-235);
-                If (nlct > NotepadScroll)
-                {
-                    Motion.ChangeYBy(-8);
-                }
-            }
-            Else
-            {
-            }
             If ((((Sensing.MouseX() < (Motion.XPosition() + 8)) And (Sensing.MouseY() > (Motion.YPosition() - 8))) And Sensing.MouseDown()) And (dd2 > 0))
             {
                 If (firstclick < 1)
@@ -806,120 +821,124 @@ Define Text(string text) italics(string italics) bold(string bold) cursor(string
         }
         Else
         {
+            If (Operator.LetterOf(text, Count) == "⣦")
+            {
+                Motion.ChangeXBy(-2);
+            }
+            If ((nlct < NotepadScroll) And (bold == 50))
+            {
+                Pen.SetPenColorToColor(#000000);
+            }
+            Else
+            {
+                Pen.SetPenColorToColor(Operator.Join("0x", Data[List.IndexOf(Name, "c:\registry\color")]));
+            }
+            Repeat (8)
+            {
+                Repeat (5)
+                {
+                    Counter += 1;
+                    Motion.ChangeXBy(1);
+                    Looks.SwitchCostumeTo(NONE);
+                    Looks.SwitchCostumeTo(Operator.LetterOf(text, Count));
+                    If (Count == cup)
+                    {
+                        NotepadReal = Motion.YPosition();
+                    }
+                    If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
+                    {
+                        If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                        {
+                            If (Not ((Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                        Else
+                        {
+                            If (Not ((Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                    }
+                    Else
+                    {
+                        If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                        {
+                            If (Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                        Else
+                        {
+                            If (Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                    }
+                    Looks.SwitchCostumeTo(NONE);
+                }
+                Repeat (1)
+                {
+                    Motion.ChangeXBy(1);
+                    Looks.SwitchCostumeTo(NONE);
+                    If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
+                    {
+                        If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                        {
+                            If (Not (("" == 1)))
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                        Else
+                        {
+                            If (Not (("" == 1)))
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                    }
+                    Else
+                    {
+                        If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
+                        {
+                            If ("" == 1)
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                        Else
+                        {
+                            If ("" == 1)
+                            {
+                                Pen.Down();
+                                Pen.Clear();
+                            }
+                        }
+                    }
+                    Looks.SwitchCostumeTo(NONE);
+                }
+                lettr += 1;
+                Motion.ChangeXBy(-6);
+                Motion.ChangeYBy(-1);
+            }
+            Motion.ChangeYBy(8);
             If (Operator.LetterOf(text, Count) == "☙")
             {
             }
             Else
             {
-                If (Operator.LetterOf(text, Count) == "⣦")
-                {
-                    Motion.ChangeXBy(-2);
-                }
-                If ((nlct < NotepadScroll) And (bold == 50))
-                {
-                    Pen.SetPenColorToColor(#000000);
-                }
-                Else
-                {
-                    Pen.SetPenColorToColor(Operator.Join("0x", Data[List.IndexOf(Name, "c:\registry\color")]));
-                }
-                Repeat (8)
-                {
-                    Repeat (5)
-                    {
-                        Counter += 1;
-                        Motion.ChangeXBy(1);
-                        Looks.SwitchCostumeTo(NONE);
-                        Looks.SwitchCostumeTo(Operator.LetterOf(text, Count));
-                        If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                        {
-                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                            {
-                                If (Not ((Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                            Else
-                            {
-                                If (Not ((Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)))
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                        }
-                        Else
-                        {
-                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                            {
-                                If (Operator.LetterOf(font[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                            Else
-                            {
-                                If (Operator.LetterOf(dcaps[List.IndexOf(Letters, Operator.LetterOf(text, Count))], Counter) == 1)
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                        }
-                        Looks.SwitchCostumeTo(NONE);
-                    }
-                    Repeat (1)
-                    {
-                        Motion.ChangeXBy(1);
-                        Looks.SwitchCostumeTo(NONE);
-                        If ((((Count == cup) And ((Sensing.Timer() % 1) < 0.62)) And (curse == 1)) Or (dd1 == 1))
-                        {
-                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                            {
-                                If (Not (("" == 1)))
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                            Else
-                            {
-                                If (Not (("" == 1)))
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                        }
-                        Else
-                        {
-                            If ((Costume.GetNumberName(number) == 1) Or (Costume.GetNumberName(number) > 27))
-                            {
-                                If ("" == 1)
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                            Else
-                            {
-                                If ("" == 1)
-                                {
-                                    Pen.Down();
-                                    Pen.Clear();
-                                }
-                            }
-                        }
-                        Looks.SwitchCostumeTo(NONE);
-                    }
-                    lettr += 1;
-                    Motion.ChangeXBy(-6);
-                    Motion.ChangeYBy(-1);
-                }
-                Motion.ChangeYBy(8);
                 Motion.ChangeXBy(6);
                 If (Motion.XPosition() > 232)
                 {
@@ -935,6 +954,18 @@ Define Text(string text) italics(string italics) bold(string bold) cursor(string
         If (Motion.YPosition() < (-179 + (bold * 0.38)))
         {
             Stop(this script);
+        }
+        If (Operator.LetterOf(text, Count) == "☙")
+        {
+            nlct += 1;
+            Motion.SetX(-235);
+            If (nlct > NotepadScroll)
+            {
+                Motion.ChangeYBy(-8);
+            }
+        }
+        Else
+        {
         }
     }
 }
@@ -953,404 +984,134 @@ Define Typer color(string n) (warp=true)
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
-If (Not (Sensing.MouseDown()))
+Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+cursor location += 1;
+TextEdit = JOINSTRING STRING;
+Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+Repeat Until (Not (Sensing.KeyPressed(delete)))
 {
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
-}
-
-If (Not (Sensing.MouseDown()))
-{
-    If (firstclick > 0)
-    {
-        If (firstclick > lastclick)
-        {
-            fcc = lastclick;
-            firstclick = lastclick;
-            lastclick = fcc;
-        }
-        Call Get-string st(text);
-        dd3 = 0;
-        firstclick = 0;
-    }
+    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+    cursor location += 1;
+    TextEdit = JOINSTRING STRING;
+    Sensing.ResetTimer();
+    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
 

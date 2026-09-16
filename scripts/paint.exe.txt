@@ -412,8 +412,21 @@ Define Megakey (warp=false)
     {
         Call Key("enter");
     }
-    If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])
+    If (is compiled? And Sensing.KeyPressed(delete))
     {
+        Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+        cursor location += 1;
+        TextEdit = JOINSTRING STRING;
+        Sensing.ResetTimer();
+        Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+        Repeat Until (Not (Sensing.KeyPressed(delete)))
+        {
+            Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+            cursor location += 1;
+            TextEdit = JOINSTRING STRING;
+            Sensing.ResetTimer();
+            Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
+        }
     }
 }
 

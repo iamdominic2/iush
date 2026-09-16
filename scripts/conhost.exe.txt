@@ -59,8 +59,6 @@ WhenGreenFlagClicked()
                         Call kill first(1) chars from string(bedit) or at chr("");
                         bedit = JOINSTRING STRING;
                     }
-                    JOINSTRING STRING = "";
-                    List.ReplaceItem(Data, List.IndexOf(Name, "C:\registry\clipboard"), bedit);
                 }
                 firstclick = "";
                 lastclick = "";
@@ -950,6 +948,24 @@ Define first(string n) chars from string(string string) terminateelse(string ccc
     }
 }
 
+Define Get-string st(string st) (warp=true)
+{
+    clipb = "";
+    act = 0;
+    Repeat (Variable.Length(st))
+    {
+        act += 1;
+        If (((act > (firstclick - 1)) And (act < (lastclick + 1))) And List.ContainsItem(Letters, Operator.LetterOf(st, act)))
+        {
+            clipb = Operator.Join(clipb, Operator.LetterOf(st, act));
+        }
+        Else
+        {
+        }
+    }
+    List.ReplaceItem(Data, List.IndexOf(Name, "c:\registry\clipboard"), clipb);
+}
+
 Define INSERT at character(string chr) string(string NEW) oldstring(string OLD) (warp=true)
 {
     cccccc = 0;
@@ -1318,7 +1334,7 @@ Define Megakey (warp=false)
         TextEdit = JOINSTRING STRING;
         Call Render("")("");
         Sensing.ResetTimer();
-        Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.1));
+        Wait Until ((Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")]))) Or (Sensing.Timer() > 0.4));
         Repeat Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\backspacekey")])))
         {
             If (cursor location > 1)
@@ -1391,7 +1407,20 @@ Define Megakey (warp=false)
         Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
         cursor location += 1;
         TextEdit = JOINSTRING STRING;
-        Control.Wait(0.1);
+        Call Render("")("");
+        Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
+        Repeat Until (Not (Sensing.KeyPressed(delete)))
+        {
+            Sensing.ResetTimer();
+            Call Render("")("");
+            Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
+            cursor location += 1;
+            TextEdit = JOINSTRING STRING;
+            Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
+            If (cursor location > 1)
+            {
+            }
+        }
     }
 }
 
@@ -1468,17 +1497,17 @@ Define Render(string d)(string s) (warp=true)
     Motion.GoToXY(-235, -170);
     If Sensing.MouseDown()
     {
-        Call Text(Operator.Join("[SELECT]    iush ", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("@", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), " "))) italics("") bold("") cursor(n) curspos("");
+        Call Text(Operator.Join("[SELECT]    iush ", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("@", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), " "))) italics("") bold("") cursor(n) curspos("") gd("");
     }
     Else
     {
         If (INSMODE == 1)
         {
-            Call Text(Operator.Join("[OVERWRITE] iush ", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("@", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), " "))) italics("") bold("") cursor(n) curspos("");
+            Call Text(Operator.Join("[OVERWRITE] iush ", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("@", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), " "))) italics("") bold("") cursor(n) curspos("") gd("");
         }
         Else
         {
-            Call Text(Operator.Join("[INSERT]    iush ", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("@", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), " "))) italics("") bold("") cursor(n) curspos("");
+            Call Text(Operator.Join("[INSERT]    iush ", Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join("@", (cursor location + Variable.Length(Data[List.IndexOf(Name, "c:\registry\workingdirectory")]))), Operator.Join(":", List.Length(cm))), Operator.Join(" (", (scroll - List.Length(cm)))), ")"), " "))) italics("") bold("") cursor(n) curspos("") gd("");
         }
         If (List.Length(Name) > List.Length(Data))
         {
@@ -1579,7 +1608,7 @@ Define terminal: Joinstring text(string st) Location(string ct) Increment(string
     }
 }
 
-Define Text(string text) italics(string italics) bold(string bold) cursor(string curse) curspos(string cup) (warp=true)
+Define Text(string text) italics(string italics) bold(string bold) cursor(string curse) curspos(string cup) gd(string y) (warp=true)
 {
     Pen.SetPenSizeTo(1);
     Count = 0;
@@ -1610,6 +1639,33 @@ Define Text(string text) italics(string italics) bold(string bold) cursor(string
                 }
                 lastclick = dd3;
                 dd2 = -99999999999;
+            }
+            If (Not (Sensing.MouseDown()))
+            {
+                If (firstclick > 0)
+                {
+                    If ((firstclick == lastclick) And (Sensing.Timer() < 0.2))
+                    {
+                        If ((lastclick - Variable.Length(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">")), "")))) > 0)
+                        {
+                            cursor location = (lastclick - Variable.Length(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">")), ""))));
+                        }
+                    }
+                    Else
+                    {
+                        If (firstclick > lastclick)
+                        {
+                            fcc = lastclick;
+                            firstclick = lastclick;
+                            lastclick = fcc;
+                        }
+                        Control.Wait(0.5);
+                        Call Get-string st(text);
+                        dd3 = 0;
+                        firstclick = 0;
+                    }
+                }
+                dd1 = 0;
             }
             If ((lastclick > firstclick) And (firstclick > 0))
             {
@@ -1770,13 +1826,20 @@ Define Typer color(string n) (warp=true)
         A-text += 1;
         Q-text = Operator.Join(Q-text, Operator.Join("☙", cm[A-text]));
     }
-    If (cursor location > Variable.Length(TextEdit))
+    If ((Sensing.Timer() % 1) < 0.62)
     {
-        Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), " "))) italics("") bold(50) cursor(n) curspos((cursor location + Variable.Length(Operator.Join(Operator.Join(Q-text, "☙"), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), "")))));
+        If (cursor location > Variable.Length(TextEdit))
+        {
+            Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), " "))) italics("") bold(50) cursor(n) curspos((cursor location + Variable.Length(Operator.Join(Operator.Join(Q-text, "☙"), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), ""))))) gd(1);
+        }
+        Else
+        {
+            Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), ""))) italics("") bold(50) cursor(n) curspos((cursor location + Variable.Length(Operator.Join(Operator.Join(Q-text, "☙"), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), ""))))) gd(1);
+        }
     }
     Else
     {
-        Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), ""))) italics("") bold(50) cursor(n) curspos((cursor location + Variable.Length(Operator.Join(Operator.Join(Q-text, "☙"), Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), "")))));
+        Call Text(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), ""))) italics("") bold(50) cursor(n) curspos(-1) gd(1);
     }
 }
 
@@ -1795,6 +1858,8 @@ Else
 {
     Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"), JOINSTRING STRING)) dry("") er(1);
 }
+
+Operator.Join("apple ", TextEdit);
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------

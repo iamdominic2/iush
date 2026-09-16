@@ -430,24 +430,6 @@ WhenKeyPressed(end)
 
 WhenBroadcastReceived(Domemory.exe)
 {
-    EDITQONLY = 0;
-    CARDID = 1;
-    SECONDBAR = "";
-    Forever
-    {
-        If (LearnMode == 0)
-        {
-            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate ", "-)Delete S)uspend"), " Ctrl+C)Leave Ctrl+X)Exit editing mode------------------------------------------------------------------------------");
-        }
-        Else
-        {
-            Finaltext = "DOMEMORY v1.4 ███------------------------------------------------------------------------------[Learning Mode]                                                                                                                                             ------------------------------------------------------------------------------";
-        }
-    }
-}
-
-WhenBroadcastReceived(Domemory.exe)
-{
     Forever
     {
         If ((Not (Sensing.MouseDown())) And (firstclick > ""))
@@ -473,6 +455,24 @@ WhenBroadcastReceived(Domemory.exe)
             }
             firstclick = "";
             lastclick = "";
+        }
+    }
+}
+
+WhenBroadcastReceived(Domemory.exe)
+{
+    EDITQONLY = 0;
+    CARDID = 1;
+    SECONDBAR = "";
+    Forever
+    {
+        If (LearnMode == 0)
+        {
+            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate ", "-)Delete S)uspend"), " Ctrl+C)Leave Ctrl+X)Exit editing mode------------------------------------------------------------------------------");
+        }
+        Else
+        {
+            Finaltext = "DOMEMORY v1.4 ███------------------------------------------------------------------------------[Learning Mode]                                                                                                                                             ------------------------------------------------------------------------------";
         }
     }
 }
@@ -1123,7 +1123,7 @@ Define Megakey (warp=false)
             }
             cursor location += 1;
             TextEdit = JOINSTRING STRING;
-            Control.Wait(0.06);
+            Control.Wait(0.1);
         }
         If (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\backspacekey")]) And (cursor location > 1))
         {
@@ -1143,7 +1143,7 @@ Define Megakey (warp=false)
                 }
             }
             TextEdit = JOINSTRING STRING;
-            Control.Wait(0.06);
+            Control.Wait(0.1);
         }
     }
 }
@@ -1258,6 +1258,7 @@ Define Text(string text) italics(string italics) bold(string bold) cursor(string
                     firstclick = lastclick;
                     lastclick = fcc;
                 }
+                Control.Wait(0.5);
                 Call Get-string st(text);
                 dd3 = 0;
                 firstclick = 0;
@@ -1607,22 +1608,6 @@ TextEdit = instring;
 cursor location += Variable.Length(clipb);
 
 ("" == 1);
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
 
 Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
 
