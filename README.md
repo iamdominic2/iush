@@ -107,5 +107,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.4.3: Fixed right arrow moves twice in Notepad, cursor now more visible
 1.4.4: Fixed clipboard bugs!
 1.4.5: Fixed notepad scrolling, now a delay to show what is copied, notepad and conhost clicks moves cursor
+1.4.6: Fixed new copying script skipping newline, blank save in Notepad overwriting document, PageUp and PageDown now work in Notepad, cursor length for click increased from 0.2s to 0.5s
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
 

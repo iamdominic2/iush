@@ -510,6 +510,8 @@ Define NotepadSaveas(string sp) (warp=false)
                     npbar = "Error: No root drive!❤️";
                     TextEdit = oldTextedit;
                     Call Render("")("s");
+                    Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+                    Wait Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]);
                 }
             }
         }

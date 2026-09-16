@@ -501,7 +501,6 @@ WhenBroadcastReceived(Domemory.exe)
     clipb = Data[List.IndexOf(Name, "c:\registry\clipboard")];
     Repeat Until (domemory.exe == 0)
     {
-        List.ReplaceItem(Data, List.IndexOf(Name, "c:\registry\clipboard"), clipb);
         Call statusbar;
         If (EDITMODE == 0)
         {
@@ -1258,10 +1257,10 @@ Define Text(string text) italics(string italics) bold(string bold) cursor(string
                     firstclick = lastclick;
                     lastclick = fcc;
                 }
-                Control.Wait(0.5);
                 Call Get-string st(text);
                 dd3 = 0;
                 firstclick = 0;
+                Control.Wait(0.5);
             }
         }
         dd1 = 0;
@@ -1591,25 +1590,7 @@ Call kill first((firstclick - 1)) chars from string(Operator.Join(Q-text, Operat
 
 Call kill first((firstclick - 1)) chars from string(Operator.Join(Q-text, Operator.Join(Operator.Join("☙", Operator.Join(Operator.Join(Data[List.IndexOf(Name, "c:\registry\workingdirectory")], ">"), TextEdit)), " "))) or at chr("");
 
-Call INSERT at character(cursor location) string(clipb) oldstring(TextEdit);
-TextEdit = instring;
-cursor location += Variable.Length(clipb);
-
-Call INSERT at character(cursor location) string(clipb) oldstring(TextEdit);
-TextEdit = instring;
-cursor location += Variable.Length(clipb);
-
-Call INSERT at character(cursor location) string(clipb) oldstring(TextEdit);
-TextEdit = instring;
-cursor location += Variable.Length(clipb);
-
-Call INSERT at character(cursor location) string(clipb) oldstring(TextEdit);
-TextEdit = instring;
-cursor location += Variable.Length(clipb);
-
 ("" == 1);
-
-Call Text(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Operator.Join(Finaltext, "Α"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 1)], " ")), "█Η------------------------------------------------------------------------------Δ"), Operator.Join(Right Click: Import/Export data ---[((CURITEM * 6) + 2)], " █Κ------------------------------------------------------------------------------█ ")), Operator.Join(STATUS BAR, " ")), Operator.Join("█ ", Operator.Join(SECONDBAR, " ")))) italics("") bold("") cursor((((EDITMODE == 1) * (Q-text start + cursor location)) + ((EDITMODE == 2) * (A-text start + cursor location))));
 
 List.IndexOf(Name, "c:\registry\clipbard");
 

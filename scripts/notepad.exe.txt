@@ -102,6 +102,44 @@ WhenKeyPressed(up arrow)
     }
 }
 
+WhenKeyPressed(page down)
+{
+    If is compiled?
+    {
+        Repeat (10)
+        {
+            If (domemory.exe == 2)
+            {
+                If (NotepadReal < 160)
+                {
+                    NotepadScroll += 1;
+                }
+            }
+        }
+    }
+}
+
+WhenKeyPressed(page up)
+{
+    If is compiled?
+    {
+        Repeat (10)
+        {
+            If (domemory.exe == 2)
+            {
+                If (NotepadReal > -160)
+                {
+                    NotepadScroll += -1;
+                    If (NotepadScroll < 0)
+                    {
+                        NotepadScroll = 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 //----- Broadcast received events -------------------------------------------------------------------------------------
 
@@ -179,7 +217,7 @@ WhenBroadcastReceived(Notepad.exe)
         Call Render("")("s");
         If ((Not (Sensing.MouseDown())) And (firstclick > ""))
         {
-            If ((firstclick == lastclick) And (Sensing.Timer() < 0.2))
+            If ((firstclick == lastclick) And (Sensing.Timer() < 0.5))
             {
                 cursor location = lastclick;
             }
@@ -636,9 +674,15 @@ Define NotepadSaveas(string sp) (warp=false)
                     npbar = "Error: No root drive!❤️";
                     TextEdit = oldTextedit;
                     Call Render("")("s");
+                    Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
+                    Wait Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]);
                 }
             }
         }
+    }
+    Else
+    {
+        TextEdit = oldTextedit;
     }
     cursor location = oldcurspos;
     Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
@@ -979,139 +1023,6 @@ Define Typer color(string n) (warp=true)
     {
         cursor location = (Variable.Length(TextEdit) + 1);
     }
-}
-
-
-//----- Orphaned blocks -----------------------------------------------------------------------------------------------
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
-}
-
-Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-cursor location += 1;
-TextEdit = JOINSTRING STRING;
-Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.4));
-Repeat Until (Not (Sensing.KeyPressed(delete)))
-{
-    Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new("");
-    cursor location += 1;
-    TextEdit = JOINSTRING STRING;
-    Sensing.ResetTimer();
-    Wait Until ((Not (Sensing.KeyPressed(delete))) Or (Sensing.Timer() > 0.05));
 }
 
 
