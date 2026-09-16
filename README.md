@@ -106,5 +106,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.4.2: Fixed a typo in the Domemory shortcut-bar
 1.4.3: Fixed right arrow moves twice in Notepad, cursor now more visible
 1.4.4: Fixed clipboard bugs!
+1.4.5: Fixed notepad scrolling, now a delay to show what is copied, notepad and conhost clicks moves cursor
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
 
