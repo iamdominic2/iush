@@ -851,7 +851,7 @@ Define Key(string s) (warp=false)
                 }
                 Else
                 {
-                    If ((INSMODE == 1) And (cursor location < Variable.Length(TextEdit)))
+                    If (((INSMODE == 1) And (cursor location < Variable.Length(TextEdit))) And (Not ((Operator.LetterOf(TextEdit, cursor location) == "☙"))))
                     {
                         Call Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new(s);
                         cursor location += 1;
@@ -1595,6 +1595,8 @@ Call kill first((firstclick - 1)) chars from string(Operator.Join(Q-text, Operat
 List.IndexOf(Name, "c:\registry\clipbard");
 
 Data[List.IndexOf(Name, "c:\registry\clipbard")];
+
+(((INSMODE == 1) And (cursor location < Variable.Length(TextEdit))) And (Not ((Operator.LetterOf(TextEdit, (cursor location - 1)) == "☙"))));
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------

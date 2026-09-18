@@ -51,42 +51,6 @@ WhenKeyPressed(down arrow)
     }
 }
 
-WhenKeyPressed(v)
-{
-    If (domemory.exe == 2)
-    {
-        If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
-        {
-            Event.Broadcast("PASTE");
-        }
-    }
-}
-
-WhenKeyPressed(home)
-{
-    If is compiled?
-    {
-        cursor location = 1;
-        NotepadScroll = 0;
-    }
-}
-
-WhenKeyPressed(home)
-{
-    If is compiled?
-    {
-        cursor location = 1;
-    }
-}
-
-WhenKeyPressed(end)
-{
-    If is compiled?
-    {
-        cursor location = (Variable.Length(TextEdit) + 1);
-    }
-}
-
 WhenKeyPressed(up arrow)
 {
     If (domemory.exe == 2)
@@ -137,6 +101,42 @@ WhenKeyPressed(page up)
                 }
             }
         }
+    }
+}
+
+WhenKeyPressed(v)
+{
+    If (domemory.exe == 2)
+    {
+        If Sensing.KeyPressed(Data[List.IndexOf(Name, "C:\registry\controlkey")])
+        {
+            Event.Broadcast("PASTE");
+        }
+    }
+}
+
+WhenKeyPressed(home)
+{
+    If is compiled?
+    {
+        cursor location = 1;
+        NotepadScroll = 0;
+    }
+}
+
+WhenKeyPressed(home)
+{
+    If is compiled?
+    {
+        cursor location = 1;
+    }
+}
+
+WhenKeyPressed(end)
+{
+    If is compiled?
+    {
+        cursor location = (Variable.Length(TextEdit) + 1);
     }
 }
 
@@ -410,7 +410,7 @@ Define Key(string s) (warp=false)
                     }
                     Else
                     {
-                        If ((INSMODE == 1) And (cursor location < Variable.Length(TextEdit)))
+                        If (((INSMODE == 1) And (cursor location < Variable.Length(TextEdit))) And (Not ((Operator.LetterOf(TextEdit, cursor location) == "☙"))))
                         {
                             Call terminal: Joinstring text(TextEdit) Location((cursor location - 1)) Increment(1) new(s) terminate("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv") or("cwqc5nhqryiwcwrqv512wqfwfqnjwfqnkwfqnsavckascv");
                             cursor location += 1;

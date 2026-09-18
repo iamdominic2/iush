@@ -108,5 +108,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.4.4: Fixed clipboard bugs!
 1.4.5: Fixed notepad scrolling, now a delay to show what is copied, notepad and conhost clicks moves cursor
 1.4.6: Fixed new copying script skipping newline, blank save in Notepad overwriting document, PageUp and PageDown now work in Notepad, cursor length for click increased from 0.2s to 0.5s
+1.4.7: Fixed Overwrite mode overwriting newline and Black Background exists in Paint even if terminal background color is another color
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! : )
 

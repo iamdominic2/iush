@@ -534,7 +534,11 @@ Define Paint-Render WB(string number or text) (warp=true)
         Repeat (59)
         {
             paintct += 1;
-            Pen.SetPenColorToColor((List.IndexOf(Letters, Operator.LetterOf(paintram, paintct)) * 798915));
+            Pen.SetPenColorToColor(((List.IndexOf(Letters, Operator.LetterOf(paintram, paintct)) * 798915) + 0));
+            If (Operator.LetterOf(paintram, paintct) == 0)
+            {
+                Pen.SetPenColorToColor(#000000);
+            }
             Motion.ChangeXBy(4);
             Motion.ChangeYBy(-4);
             If ((Sensing.MouseDown() And Sensing.TouchingObject(cursor.exe)) And (Sensing.MouseY() > -140))
@@ -947,14 +951,6 @@ Else
 }
 
 notepaddir = 0;
-
-Operator.Contains(npbar, "O)Open");
-
-Operator.Contains(npbar, "O)Open");
-
-Operator.Contains(npbar, "O)Open");
-
-Operator.Contains(npbar, "O)Open");
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
