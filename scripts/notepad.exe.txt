@@ -194,6 +194,7 @@ WhenBroadcastReceived(Notepad.exe)
         }
         If (Sensing.KeyPressed(i) And Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\controlkey")]))
         {
+            cursposb = cursor location;
             npbar = "Open what file? Enter the absolute path";
             oldTextedit = TextEdit;
             TextEdit = "";
@@ -211,6 +212,7 @@ WhenBroadcastReceived(Notepad.exe)
             Else
             {
                 TextEdit = oldTextedit;
+                cursor location = cursposb;
             }
             Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
         }
@@ -248,7 +250,9 @@ WhenBroadcastReceived(Notepad.exe)
                 }
                 Else
                 {
+                    cursposb = cursor location;
                     Call NotepadSaveas(1);
+                    cursor location = cursposb;
                 }
             }
         }
@@ -1024,6 +1028,12 @@ Define Typer color(string n) (warp=true)
         cursor location = (Variable.Length(TextEdit) + 1);
     }
 }
+
+
+//----- Orphaned blocks -----------------------------------------------------------------------------------------------
+
+cursposb = cursor location;
+cursor location = cursposb;
 
 
 //----- Costumes ------------------------------------------------------------------------------------------------------
