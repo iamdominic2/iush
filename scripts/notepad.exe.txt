@@ -51,21 +51,6 @@ WhenKeyPressed(down arrow)
     }
 }
 
-WhenKeyPressed(up arrow)
-{
-    If (domemory.exe == 2)
-    {
-        If (NotepadReal > -160)
-        {
-            NotepadScroll += -1;
-            If (NotepadScroll < 0)
-            {
-                NotepadScroll = 0;
-            }
-        }
-    }
-}
-
 WhenKeyPressed(page down)
 {
     If is compiled?
@@ -99,6 +84,21 @@ WhenKeyPressed(page up)
                         NotepadScroll = 0;
                     }
                 }
+            }
+        }
+    }
+}
+
+WhenKeyPressed(up arrow)
+{
+    If (domemory.exe == 2)
+    {
+        If (NotepadReal > -160)
+        {
+            NotepadScroll += -1;
+            If (NotepadScroll < 0)
+            {
+                NotepadScroll = 0;
             }
         }
     }
@@ -329,7 +329,10 @@ Define Get-string st(string st) (warp=true)
         act += 1;
         If (((act > (firstclick - 1)) And (act < (lastclick + 1))) And List.ContainsItem(Letters, Operator.LetterOf(st, act)))
         {
-            clipb = Operator.Join(clipb, Operator.LetterOf(st, act));
+            If (Not ((((firstclick == act) Or (act == lastclick)) And (Operator.LetterOf(st, act) == "☙"))))
+            {
+                clipb = Operator.Join(clipb, Operator.LetterOf(st, act));
+            }
         }
         Else
         {

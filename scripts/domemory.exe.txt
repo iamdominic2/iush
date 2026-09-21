@@ -768,6 +768,10 @@ Define first(string n) chars from string(string string) terminateelse(string ccc
 
 Define Get-string st(string st) (warp=true)
 {
+}
+
+Define Get-string st(string st) (warp=true)
+{
     clipb = "";
     act = 0;
     Repeat (Variable.Length(st))
@@ -775,7 +779,10 @@ Define Get-string st(string st) (warp=true)
         act += 1;
         If (((act > (firstclick - 1)) And (act < (lastclick + 1))) And List.ContainsItem(Letters, Operator.LetterOf(st, act)))
         {
-            clipb = Operator.Join(clipb, Operator.LetterOf(st, act));
+            If (Not ((((firstclick == act) Or (act == lastclick)) And (Operator.LetterOf(st, act) == "☙"))))
+            {
+                clipb = Operator.Join(clipb, Operator.LetterOf(st, act));
+            }
         }
         Else
         {
