@@ -481,7 +481,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                     olddir = Data[List.IndexOf(Name, "C:\registry\workingdirectory")];
                                                                     If (Not ((JOINSTRING STRING == "")))
                                                                     {
-                                                                        If (List.IndexOf(Name, "C:\registry\workingdirectory") == "c:\")
+                                                                        If Data[List.IndexOf(Name, "C:\registry\workingdirectory")]
                                                                         {
                                                                             Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), JOINSTRING STRING)) dry("") er(1);
                                                                         }
@@ -505,7 +505,6 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                             If (Operator.LetterOf(TextEdit, Variable.Length(TextEdit)) == "\")
                                                                             {
                                                                                 Call first((Variable.Length(Data[List.IndexOf(Name, "C:\registry\workingdirectory")]) - 1)) chars from string(Data[List.IndexOf(Name, "C:\registry\workingdirectory")]) terminateelse("");
-                                                                                Call attempt cd(JOINSTRING STRING) dry("") er(1);
                                                                             }
                                                                             If (Operator.LetterOf(TextEdit, Variable.Length(TextEdit)) == ":")
                                                                             {
@@ -1856,18 +1855,11 @@ Define Typer color(string n) (warp=true)
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
 
+("" == "c:\");
+
 Call Real_full_dirfind TEXT(TextEdit);
 
 black;
-
-If (Operator.LetterOf(TextEdit, Variable.Length(TextEdit)) == "\")
-{
-    Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], ""), JOINSTRING STRING)) dry("") er(1);
-}
-Else
-{
-    Call attempt cd(Operator.Join(Operator.Join(Data[List.IndexOf(Name, "C:\registry\workingdirectory")], "\"), JOINSTRING STRING)) dry("") er(1);
-}
 
 Operator.Join("apple ", TextEdit);
 

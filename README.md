@@ -111,5 +111,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.4.7: Fixed Overwrite mode overwriting newline and Black Background exists in Paint even if terminal background color is another color
 1.4.8: Notepad saves previous cursor location when moving to the save/load screen
 1.4.9: Fixed copying unwanted newlines at start and end of strings
+1.4.10: Fixed `cd` not working at `C:\`
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! as much as it cured my boredom when making it! : )
 
