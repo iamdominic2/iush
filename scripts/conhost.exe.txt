@@ -878,7 +878,7 @@ Define execute(string cmd) skip new(string number or text) SIGINT(string i) (war
                                                                                                                                             }
                                                                                                                                             Else
                                                                                                                                             {
-                                                                                                                                                List.Add(cm, "ERROR: Command not found. To see a list of commands, type Help.");
+                                                                                                                                                List.Add(cm, "ERROR: Command not found. To see a list of commands, type Help. For a detailedlist of what each command does, type Help /a.");
                                                                                                                                             }
                                                                                                                                         }
                                                                                                                                     }
@@ -1855,13 +1855,9 @@ Define Typer color(string n) (warp=true)
 
 //----- Orphaned blocks -----------------------------------------------------------------------------------------------
 
-("" == "c:\");
-
 Call Real_full_dirfind TEXT(TextEdit);
 
 black;
-
-Operator.Join("apple ", TextEdit);
 
 Wait Until (Not (Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")])));
 Wait Until Sensing.KeyPressed(Data[List.IndexOf(Name, "c:\registry\enterkey")]);

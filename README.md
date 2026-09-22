@@ -23,7 +23,7 @@ Supported commands:<BR>
 `date`: Outputs the date in DAYOFWEEK DD/MM/YYYY format. E.g. Monday 17/8/2026.<BR>
 `time`: Outputs the 24-hour current time in HH:MM:SS. For instance, 20:25:19.<BR>
 `color [hex]`: Changes the color of the text (6-digit hex; if it becomes black due to a typo of an invalid command or an input of `000000`, blind-type something like `color ffffff` and it would fix itself) <BR>
-`help`: Gives a list of commands, from `c:\iush\help\.txt`<BR>
+`help`: Gives a list of commands, from `c:\iush\help\.txt`. Use `help /a` if you need to know what each command does.<BR>
 `help [command]`: Gives help with the command, from `c:\iush\help\[COMMANDNAME].txt`<BR>
 `find [string]`: Searches for a file or directory with a string in its name.<BR>
 `exit`: Exits the terminal.<BR>
@@ -112,5 +112,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.4.8: Notepad saves previous cursor location when moving to the save/load screen
 1.4.9: Fixed copying unwanted newlines at start and end of strings
 1.4.10: Fixed `cd` not working at `C:\`
+1.4.11: `help /a` command for detailed help of all commands
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! as much as it cured my boredom when making it! : )
 
