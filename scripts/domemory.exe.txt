@@ -430,6 +430,24 @@ WhenKeyPressed(end)
 
 WhenBroadcastReceived(Domemory.exe)
 {
+    EDITQONLY = 0;
+    CARDID = 1;
+    SECONDBAR = "";
+    Forever
+    {
+        If (LearnMode == 0)
+        {
+            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate ", "-)Delete S)uspend"), " Ctrl+C)Leave Ctrl+X)Exit editing mode------------------------------------------------------------------------------");
+        }
+        Else
+        {
+            Finaltext = "DOMEMORY v1.4 ███------------------------------------------------------------------------------[Learning Mode]                                                                                                                                             ------------------------------------------------------------------------------";
+        }
+    }
+}
+
+WhenBroadcastReceived(Domemory.exe)
+{
     Forever
     {
         If ((Not (Sensing.MouseDown())) And (firstclick > ""))
@@ -455,24 +473,6 @@ WhenBroadcastReceived(Domemory.exe)
             }
             firstclick = "";
             lastclick = "";
-        }
-    }
-}
-
-WhenBroadcastReceived(Domemory.exe)
-{
-    EDITQONLY = 0;
-    CARDID = 1;
-    SECONDBAR = "";
-    Forever
-    {
-        If (LearnMode == 0)
-        {
-            Finaltext = Operator.Join(Operator.Join("DOMEMORY v1.4 ███------------------------------------------------------------------------------E)dit Q)uestion A)nswer G)o To P)rev N)ext L)earn R)eset C)reate Ctrl+V)Paste T)rade Q&A  D)uplicate ", "-)Delete S)uspend"), " Ctrl+C)Leave Ctrl+X)Exit editing mode------------------------------------------------------------------------------");
-        }
-        Else
-        {
-            Finaltext = "DOMEMORY v1.4 ███------------------------------------------------------------------------------[Learning Mode]                                                                                                                                             ------------------------------------------------------------------------------";
         }
     }
 }

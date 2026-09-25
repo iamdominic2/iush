@@ -113,5 +113,6 @@ Again, **NOTE THAT** Domemory save data is **separate**.  It was originally a se
 1.4.9: Fixed copying unwanted newlines at start and end of strings
 1.4.10: Fixed `cd` not working at `C:\`
 1.4.11: `help /a` command for detailed help of all commands
+1.4.12: Better partial path support for using the `set` command, launching notepad, paint, and custom programs; fixed `cd` command not working at places other than `C:\`
 #### Have fun with `iush`, and I hope it can cure your terminal *terminal* anxiety (if you had it)! as much as it cured my boredom when making it! : )
 
